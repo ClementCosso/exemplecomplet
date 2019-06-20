@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import "antd/dist/antd.css";
 import { Switch, NavLink, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
