@@ -1,9 +1,8 @@
 const passport = require("passport");
 
-const User = require("../../models/user-model.js");
+const User = require("../../models/User.js");
 
-require('./local-strategy');
-
+require("./local-strategy");
 
 // serializeUser(): defines what data to save in the session
 // (happens when you log in successfully)
@@ -30,9 +29,7 @@ passport.deserializeUser((userId, done) => {
     .catch(err => done(err));
 });
 
-
-function passportBasicSetup(theApp){
-
+function passportBasicSetup(theApp) {
   // passport super power is here:
   theApp.use(passport.initialize()); // <== 'fires' the passport package
   theApp.use(passport.session()); // <== connects passport to the session
