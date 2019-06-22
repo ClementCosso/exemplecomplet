@@ -12,7 +12,7 @@ module.exports = [
     employee: true,
     quote: "il faut pas pousser Mehdi dans les orties",
     teamleader: true,
-    email: "clement@relevanc.com",
+    email: "c@rc.com",
     role: "Projet",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt))
   },

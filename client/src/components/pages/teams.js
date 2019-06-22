@@ -9,11 +9,27 @@ class Teams extends Component {
     team: []
   };
 
-  componentDidMount() {
+  refreshTeams = () => {
     api.getTeams().then(team => {
       this.setState({ team: team });
     });
+  };
+
+  componentDidMount() {
+    this.refreshTeams();
   }
+
+  deleteUser = keyId => {
+    api.deleteUser(keyId).then(_ => {
+      this.refreshTeams();
+    });
+  };
+
+  editUser = keyId => {
+    api.editUser(keyId).then(_ => {
+      this.refreshTeams();
+    });
+  };
 
   render() {
     return (
@@ -25,9 +41,19 @@ class Teams extends Component {
           </Button>
         </div>
         <div className="team-container">
-          {this.state.team.map((e, index) => (
-            <TeamCard title={e.username} description={e.role} key={index} />
-          ))}
+          {this.state.team
+            .filter(e => !e.hidden)
+            .map((e, index) => (
+              <TeamCard
+                key={index}
+                edit={e}
+                title={e.username}
+                description={e.role}
+                deleteUser={this.deleteUser}
+                editUser={this.editUser}
+                keyId={e._id}
+              />
+            ))}
         </div>
       </div>
     );

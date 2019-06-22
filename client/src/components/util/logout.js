@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Button } from "antd";
 
 class Logout extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Logout extends Component {
   }
 
   render() {
-    return <button onClick={event => this.handleSubmit(event)}>Logout</button>;
+    return <Button onClick={event => this.handleSubmit(event)}>Logout</Button>;
   }
 }
 

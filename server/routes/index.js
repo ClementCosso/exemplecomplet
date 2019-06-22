@@ -11,6 +11,8 @@ const bcryptSalt = 10;
 
 let isAuthenticated = (req, res, next) => {
   console.log("log", req.user);
+  console.log("log", req.isAuthenticated());
+  console.log("log", req.session);
   if (req.user) {
     // <== if there's user in the session (user is logged in)
     next(); // ==> go to the next route ---
@@ -44,10 +46,24 @@ let isLeader = (req, res, next) => {
 
 //==================  routes  ==================//
 
-router.get("/people", (req, res, next) => {
+router.get("/people", isAuthenticated, (req, res, next) => {
   User.find().then(users => {
-    res.send(users);
+    res.send(users).catch(err => {
+      console.log(err);
+      res.status(500).send({ message: err });
+    });
   });
+});
+
+router.get("/projects", isAuthenticated, (req, res, next) => {
+  Project.find()
+    .then(projects => {
+      res.send(projects);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({ message: err });
+    });
 });
 
 //==================  routes  ==================//
@@ -78,15 +94,6 @@ router.get("/api/projects", isAuthenticated, isAdmin, (req, res, next) => {
 
 router.get("/rights", isAuthenticated, (req, res, next) => {
   res.render("rights");
-});
-
-router.get("/projects", isAuthenticated, (req, res, next) => {
-  Project.find().then(projects => {
-    projects.sort(function(a, b) {
-      return a.title.localeCompare(b.title);
-    });
-    res.render("projects", { projects });
-  });
 });
 
 router.get("/calendar", isAuthenticated, (req, res, next) => {

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Card, Icon, Avatar } from "antd";
+import api from "../util/apis";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 class TeamCard extends Component {
@@ -16,9 +19,13 @@ class TeamCard extends Component {
             />
           }
           actions={[
-            <Icon type="edit" />,
-            <Icon type="snippets" />,
-            <Icon type="delete" />
+            <Link to={`/teams/edit/${this.props.keyId}`}>
+              <Icon type="edit" />
+            </Link>,
+            <Icon
+              onClick={() => this.props.deleteUser(this.props.keyId)}
+              type="delete"
+            />
           ]}
         >
           <Meta
@@ -29,7 +36,6 @@ class TeamCard extends Component {
             description={this.props.description}
           />
         </Card>
-        ,
       </div>
     );
   }

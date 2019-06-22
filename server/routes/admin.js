@@ -44,10 +44,6 @@ let isLeader = (req, res, next) => {
 
 //==================  routes  ==================//
 
-router.get("/users/new", isAuthenticated, isAdmin, (req, res, next) => {
-  res.render("newuser");
-});
-
 router.post("/users/new", isAuthenticated, isAdmin, (req, res, next) => {
   req.body.password = bcrypt.hashSync(
     req.body.password,
@@ -55,48 +51,62 @@ router.post("/users/new", isAuthenticated, isAdmin, (req, res, next) => {
   );
   req.body.employee = req.body.employee == "on";
   req.body.teamleader = req.body.teamleader == "on";
-  User.create(req.body).then(user => {
-    res.redirect("/people");
-  });
-});
-
-router.get("/users/delete/:id", isAuthenticated, isAdmin, (req, res, next) => {
-  User.deleteOne({ _id: req.params.id }).then(_ => {
-    res.redirect("/people");
+  req.body.administrator = req.body.administrator == "on";
+  let user = req.body;
+  User.create(user).then(_ => {
+    res.send("ok");
   });
 });
 
 router.get("/users/archive/:id", isAuthenticated, isAdmin, (req, res, next) => {
-  User.updateOne({ _id: req.params.id }, { $set: { hidden: true } }).then(_ => {
-    res.redirect("/people");
-  });
-});
-
-// router.get("/users/edit/:id", (req, res, next) => {
-//   User.updateOne({ _id: req.params.id }).then(_ => {
-//     res.redirect("/people");
-//   });
-// });
-
-router.get("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
-  User.findById(req.params.id).then(user => {
-    res.render("useredit", { user });
-  });
+  User.updateOne({ _id: req.params.id }, { $set: { hidden: true } }).then(
+    usr => {
+      res.send("ok");
+    }
+  );
 });
 
 router.post("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
   const updatedUser = {
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password,
     quote: req.body.quote,
-
+    avatar: req.body.avatar,
+    image: req.body.image,
+    administrator: req.body.administrator,
+    teamleader: req.body.teamleader,
+    employee: req.body.employee,
     role: req.body.role
   };
-  User.updateOne({ _id: req.params.id }, updatedUser).then(user => {
-    res.redirect("/people");
+  User.updateOne({ _id: req.params.id }, updatedUser)
+    .then(user => {
+      res.send(user);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({ message: err });
+    });
+});
+
+router.get("/users/edit/:id", (req, res, next) => {
+  User.findOne({ _id: req.params.id }).then(user => {
+    res.send(user);
   });
 });
+
+//==================  routes  ==================//
+
+// router.get("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
+//   User.findById(req.params.id).then(user => {
+//     res.render("useredit", { user });
+//   });
+// });
+
+// router.get("/users/delete/:id", isAuthenticated, isAdmin, (req, res, next) => {
+//     User.deleteOne({ _id: req.params.id }).then(_ => {
+//       res.redirect("/people");
+//     });
+//   });
 
 router.get("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
   res.render("newproject");

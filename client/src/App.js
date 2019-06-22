@@ -14,6 +14,9 @@ import Teams from "./components/pages/teams";
 import Projects from "./components/pages/projects";
 import Timesheets from "./components/pages/projects";
 import NewUser from "./components/pages/newuser";
+import EditUser from "./components/pages/editUser";
+import background from "./kraken_desktop_hero_2880.jpg";
+import disconnectedNav from "./components/util/disconnectedNav";
 
 class App extends Component {
   constructor() {
@@ -48,7 +51,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.currentUser);
     return (
       <div className="App">
         {this.state.currentUser ? (
@@ -70,6 +72,8 @@ class App extends Component {
               <NavLink to="/"> Home </NavLink>
               <NavLink to="/login-page"> Login </NavLink>
             </nav>
+            <div>hello</div>
+            <img class="background" src={background} />
           </header>
         )}
 
@@ -90,6 +94,10 @@ class App extends Component {
             exact
             path="/teams/new"
             render={() => this.isAuthenticated(<NewUser />)}
+          />
+          <Route
+            path="/teams/edit/:userId"
+            render={() => this.isAuthenticated(<EditUser />)}
           />
           <Route
             path="/projects"

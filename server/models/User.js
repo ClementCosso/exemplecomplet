@@ -15,7 +15,7 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     avatar: { type: String, default: "images/pangong-tso.png" },
     image: { type: String, default: "images/pangong-tso.png" },
-    quote: { type: String, required: true },
+    quote: { type: String },
     administrator: Boolean,
     teamleader: { type: Boolean, required: true },
     employee: { type: Boolean, required: true },

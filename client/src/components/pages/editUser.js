@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../util/apis";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import {
   Form,
   Input,
@@ -18,7 +18,7 @@ import {
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 
-class NewUser extends Component {
+class EditUser extends Component {
   state = {
     redirect: false,
     username: "",
@@ -41,8 +41,31 @@ class NewUser extends Component {
     this.setState({ role: val });
   };
 
-  addNewUser = e => {
-    api.addNewUser(this.state).then(res => this.setState({ redirect: true }));
+  componentDidMount() {
+    const { params } = this.props.match;
+
+    api.getUser(params.userId).then(user => {
+      this.setState({
+        username: user.username,
+        email: user.email,
+        password: user.password,
+        avatar: user.avatar,
+        image: user.image,
+        quote: user.quote,
+        administrator: user.administrator,
+        teamleader: user.teamleader,
+        employee: user.employee,
+        role: user.role
+      });
+    });
+  }
+
+  editUser = e => {
+    const { params } = this.props.match;
+
+    api
+      .editUser(params.userId, this.state)
+      .then(res => this.setState({ redirect: true }));
   };
 
   render() {
@@ -57,6 +80,11 @@ class NewUser extends Component {
             prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
             value={this.state.username}
             onChange={this.handleChange}
+            // suffix={
+            //   <Tooltip title="Extra information">
+            //     <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
+            //   </Tooltip>
+            // }
           />
           <Input
             placeholder="Email"
@@ -64,6 +92,11 @@ class NewUser extends Component {
             prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
             value={this.state.email}
             onChange={this.handleChange}
+            // suffix={
+            //   <Tooltip title="Extra information">
+            //     <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
+            //   </Tooltip>
+            // }
           />
           <Input.Password
             id="password"
@@ -114,20 +147,32 @@ class NewUser extends Component {
             }
           />
 
-          <Checkbox id="teamleader" onChange={this.handleChange}>
+          <Checkbox
+            id="teamleader"
+            checked={this.state.teamleader}
+            onChange={this.handleSelectChange}
+          >
             Team Leader
           </Checkbox>
-          <Checkbox id="employee" onChange={this.handleChange}>
+          <Checkbox
+            id="employee"
+            checked={this.state.employee}
+            onChange={this.handleSelectChange}
+          >
             Interne (vs.freelance)
           </Checkbox>
-          <Checkbox id="administrator" onChange={this.handleChange}>
+          <Checkbox
+            id="administrator"
+            checked={this.state.administrator}
+            onChange={this.handleSelectChange}
+          >
             Admin
           </Checkbox>
         </div>
-        <Button onClick={this.addNewUser}>Ajouter</Button>
+        <Button onClick={this.editUser}>Editer</Button>
       </div>
     );
   }
 }
 
-export default NewUser;
+export default withRouter(EditUser);

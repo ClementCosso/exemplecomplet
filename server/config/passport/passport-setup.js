@@ -1,8 +1,8 @@
-const passport = require("passport");
+// const passport = require("passport");
 
 const User = require("../../models/User.js");
 
-require("./local-strategy");
+const passport = require("./local-strategy");
 
 // serializeUser(): defines what data to save in the session
 // (happens when you log in successfully)

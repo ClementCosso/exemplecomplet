@@ -33,7 +33,6 @@ class Login extends Component {
         const { userDoc } = response.data;
         // send "userDoc" to the App.js function that changes "currentUser"
         this.props.onUserChange(userDoc);
-        // alert("Logged in successfully!");
       })
 
       .catch(err => {
