@@ -2,21 +2,20 @@ import React, { Component } from "react";
 import "./App.css";
 import { Switch, NavLink, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-
 import axios from "axios";
-
-import Signup from "./components/user-pages/Signup";
 import Login from "./components/user-pages/Login";
-import Home from "./components/Home";
-import Logout from "./components/util/logout";
 import Dashboard from "./components/pages/dashboard";
 import Teams from "./components/pages/teams";
 import Projects from "./components/pages/projects";
-import Timesheets from "./components/pages/projects";
+import Timesheets from "./components/pages/timesheets";
 import NewUser from "./components/pages/newuser";
+import NewTimesheets from "./components/pages/newtimesheets";
 import EditUser from "./components/pages/editUser";
-import background from "./kraken_desktop_hero_2880.jpg";
-import disconnectedNav from "./components/util/disconnectedNav";
+import Home from "./home.jpg";
+import DisconnectedNav from "./components/util/disconnectedNav";
+import ConnectedNav from "./components/util/connectedNav";
+import ProjectModal from "./components/util/editProjectModal";
+import EditTimesheets from "./components/pages/editTimesheets";
 
 class App extends Component {
   constructor() {
@@ -53,33 +52,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.currentUser ? (
-          <header>
-            <nav>
-              <NavLink to="/dashboard"> Dashboard </NavLink>
-              <NavLink to="/teams"> Teams </NavLink>
-              <NavLink to="/projects"> Projects </NavLink>
-              <NavLink to="/timesheets"> Timesheets </NavLink>
-              <Logout
+        <div className="Nav">
+          {this.state.currentUser ? (
+            <header>
+              <ConnectedNav
                 currentUser={this.state.currentUser}
                 onUserChange={userDoc => this.syncCurrentUser(userDoc)}
               />
-            </nav>
-          </header>
-        ) : (
-          <header>
-            <nav>
-              <NavLink to="/"> Home </NavLink>
-              <NavLink to="/login-page"> Login </NavLink>
-            </nav>
-            <div>hello</div>
-            <img class="background" src={background} />
-          </header>
-        )}
+            </header>
+          ) : (
+            <header>
+              {/* <DisconnectedNav /> */}
+              <Login
+                currentUser={this.state.currentUser}
+                onUserChange={userDoc => this.syncCurrentUser(userDoc)}
+              />
+            </header>
+          )}
+        </div>
 
         <Switch>
-          {/* this is example how to normally do the Route: */}
-          {/* <Route path="/somePage" component={ someComponentThatWillRenderWhenUSerClickThisLink }   /> */}
           <Route
             exact
             path="/dashboard"
@@ -103,12 +95,28 @@ class App extends Component {
             path="/projects"
             render={() => this.isAuthenticated(<Projects />)}
           />
+
           <Route
+            exact
             path="/timesheets"
             render={() => this.isAuthenticated(<Timesheets />)}
           />
           <Route
-            path="/login-page"
+            exact
+            path="/timesheets/new"
+            render={() => this.isAuthenticated(<NewTimesheets />)}
+          />
+          <Route
+            exact
+            path="/timesheets/edit/:timesheetId"
+            render={props =>
+              this.isAuthenticated(
+                <EditTimesheets timesheetId={props.match.params.timesheetId} />
+              )
+            }
+          />
+          {/* <Route
+            path="/"
             render={() =>
               this.isNotAuthenticated(
                 <Login
@@ -117,7 +125,7 @@ class App extends Component {
                 />
               )
             }
-          />
+          /> */}
         </Switch>
       </div>
     );

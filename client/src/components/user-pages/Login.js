@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import { Icon, Input, Button } from "antd";
 
 class Login extends Component {
   constructor(props) {
@@ -50,25 +51,27 @@ class Login extends Component {
       <section className="LoginPage">
         <h2>Log In</h2>
 
-        <form onSubmit={event => this.handleSubmit(event)}>
-          <label> Email: </label>
-          <input
+        <form className="login-form">
+          <Input
             value={this.state.email}
             onChange={event => this.genericSync(event)}
             type="email"
             name="email"
-            placeholder="superstar@ironhack.com"
+            placeholder="tagadata@relevanc.com"
+            prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
+            onPressEnter={event => this.handleSubmit(event)}
           />
-
-          <label> Password: </label>
-          <input
+          <Input
             value={this.state.originalPassword}
             onChange={event => this.genericSync(event)}
             type="password"
             name="originalPassword"
-            placeholder="****"
+            placeholder="Password"
+            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+            onPressEnter={event => this.handleSubmit(event)}
           />
-          <button>Log In</button>
+
+          <Button onClick={event => this.handleSubmit(event)}>Log In</Button>
         </form>
         {this.state.message && <div> {this.state.message} </div>}
       </section>

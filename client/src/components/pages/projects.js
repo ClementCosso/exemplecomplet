@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import api from "../util/apis";
-import { List, Button, Table, Divider, Tag } from "antd";
+import TableofProjects from "../util/tableofProjects";
+import ActionProject from "../util/actionProject";
+import { Icon, Button, Table, Divider, Tag } from "antd";
 import { Link } from "react-router-dom";
+import ProjectModal from "../util/editProjectModal";
 
 class Projects extends Component {
   state = {
+    Action: "Ajouter",
     projects: []
   };
 
@@ -15,15 +19,29 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    console.log("component did mount");
     this.refreshProjects();
   }
 
-  // deleteUser = keyId => {
-  //   api.deleteUser(keyId).then(_ => {
-  //     this.refreshTeams();
-  //   });
-  // };
+  deleteProject = key => {
+    api.deleteProject(key).then(_ => {
+      this.refreshProjects();
+    });
+  };
+
+  addNewProject = (e, f, g) => {
+    const project = { title: e, description: f, owner: g };
+    api.addNewProject(project).then(_ => {
+      this.refreshProjects();
+    });
+  };
+
+  setAction = e => {
+    this.setState({ Action: e });
+  };
+
+  editProject = e => {
+    api.editProject(e).then(res => this.refreshProjects());
+  };
 
   // editUser = keyId => {
   //   api.editUser(keyId).then(_ => {
@@ -35,57 +53,20 @@ class Projects extends Component {
     return (
       <div>
         <h1>Projects</h1>
-        <div>
-          <Button>
-            <Link to="/teams/new"> Nouveau projet</Link>
-          </Button>
-        </div>
-        <div>
-          <div className="tableContainer">
-            <Table
-              columns={[
-                {
-                  title: "Nom du projet",
-                  dataIndex: "name",
-                  key: "name"
-                },
-                {
-                  title: "Description",
-                  dataIndex: "description",
-                  key: "description"
-                },
 
-                {
-                  title: "Owner",
-                  key: "owner",
-                  dataIndex: "owner",
-                  render: tag => (
-                    <span>
-                      <Tag color="blue" key={tag}>
-                        {tag.toUpperCase()}
-                      </Tag>
-                    </span>
-                  )
-                },
-                {
-                  title: "Action",
-                  key: "action",
-                  render: () => (
-                    <span>
-                      <a href="javascript:;">Edit</a>
-                      <Divider type="vertical" />
-                      <a href="javascript:;">Delete</a>
-                    </span>
-                  )
-                }
-              ]}
-              dataSource={this.state.projects.map((e, index) => ({
-                name: e.title,
-                description: e.description,
-                owner: e.owner
-              }))}
+        <div className="projectPage">
+          <div className="projectsTableContainer">
+            <TableofProjects
+              deleteProject={this.deleteProject}
+              dataSource={this.state.projects}
+              refreshProjects={this.refreshProjects}
+              editProject={this.editProject}
             />
           </div>
+          <ActionProject
+            refreshProjects={this.refreshProjects}
+            actionProject={this.addNewProject}
+          />
         </div>
       </div>
     );
@@ -93,54 +74,3 @@ class Projects extends Component {
 }
 
 export default Projects;
-
-// <Table
-//   columns={[{
-//   title: "Nom du projet",
-//   dataIndex: "name",
-//   key: "name"
-// },
-// {
-//   title: "Description",
-//   dataIndex: "description",
-//   key: "description"
-// },
-
-// {
-//   title: "Owner",
-//   key: "owner",
-//   dataIndex: "owner",
-//   render: tags => (
-//     <span>
-//       {tags.map(tag => {
-//         let color = tag.length > 5 ? "geekblue" : "green";
-//         if (tag === "loser") {
-//           color = "volcano";
-//         }
-//         return (
-//           <Tag color={color} key={tag}>
-//             {tag.toUpperCase()}
-//           </Tag>
-//         );
-//       })}
-//     </span>
-//   )
-// },
-// {
-//   title: "Action",
-//   key: "action",
-//   render: () => (
-//     <span>
-//       <a href="javascript:;">Edit</a>
-//       <Divider type="vertical" />
-//       <a href="javascript:;">Delete</a>
-//     </span>
-//   )
-// }]}
-//   dataSource={this.state.projects.map(e => ({
-//     key : e[index],
-//     title: e.title,
-//     description: e.description,
-//     owner: e.owner
-//   }))}
-// />

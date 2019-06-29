@@ -14,7 +14,7 @@ class Logout extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios
-      .delete("http://localhost:3001/api/logout")
+      .delete("http://localhost:3001/api/logout", { withCredentials: true })
       .then(response => {
         console.log("Login Page", response.data);
         const { userDoc } = response.data;

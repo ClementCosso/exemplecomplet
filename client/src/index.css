@@ -26,9 +26,36 @@ code {
   width: 45%;
 }
 
-.tableContainer {
-  margin: 35px auto 5px auto;
+.login-container {
+  width: 25vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectsTableContainer {
   display: flex;
+  margin-right: 6vw;
   flex-direction: column;
-  width: 65%;
+  width: 80%;
+}
+
+.projectPage {
+  margin: 35px 5% 5px 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Simpleinput {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
 }

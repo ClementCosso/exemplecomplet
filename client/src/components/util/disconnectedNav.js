@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-class disconnectedNav extends Component {
-  constructor() {
-    super();
-  }
-
+class DisconnectedNav extends Component {
   render() {
     return (
-      <div className="Nav">
+      <div>
         <nav>
           <NavLink to="/"> Home </NavLink>
           <NavLink to="/login-page"> Login </NavLink>
@@ -18,4 +14,4 @@ class disconnectedNav extends Component {
   }
 }
 
-export default disconnectedNav;
+export default DisconnectedNav;
