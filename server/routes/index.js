@@ -58,11 +58,36 @@ router.get("/people", isAuthenticated, (req, res, next) => {
 router.get("/projects", isAuthenticated, (req, res, next) => {
   Project.find()
     .then(projects => {
+      projects.sort(function(a, b) {
+        // return a.created_at.localeCompare(b.created_at);
+        return b.created_at - a.created_at;
+      });
       res.send(projects);
     })
     .catch(err => {
       console.log(err);
       res.status(500).send({ message: err });
+    });
+});
+
+router.get("/calendar", isAuthenticated, (req, res, next) => {
+  User.findOne({ _id: req.user._id }).then(user => {
+    Calendar.find({ user: user._id }).then(calendars => {
+      calendars.sort(function(a, b) {
+        return b.week - a.week;
+      });
+      res.send(calendars);
+    });
+  });
+});
+
+router.get("/calendar/delete/:id", function(req, res) {
+  Calendar.findByIdAndDelete({ _id: req.params.id })
+    .then(calendar => {
+      res.redirect("back");
+    })
+    .catch(error => {
+      console.log(error);
     });
 });
 
@@ -74,7 +99,7 @@ router.get("/", isAuthenticated, (req, res, next) => {
   });
 });
 
-router.get("/api/dashboard", isAuthenticated, isAdmin, (req, res, next) => {
+router.get("/api/dashboard", isAuthenticated, (req, res, next) => {
   Calendar.find()
     .populate("user")
     .populate({
@@ -86,7 +111,7 @@ router.get("/api/dashboard", isAuthenticated, isAdmin, (req, res, next) => {
     });
 });
 
-router.get("/api/projects", isAuthenticated, isAdmin, (req, res, next) => {
+router.get("/api/projects", isAuthenticated, (req, res, next) => {
   Project.find().then(project => {
     res.send(project);
   });
@@ -94,18 +119,6 @@ router.get("/api/projects", isAuthenticated, isAdmin, (req, res, next) => {
 
 router.get("/rights", isAuthenticated, (req, res, next) => {
   res.render("rights");
-});
-
-router.get("/calendar", isAuthenticated, (req, res, next) => {
-  User.findOne({ _id: req.user._id }).then(user => {
-    Calendar.find({ user: user._id }).then(calendars => {
-      calendars.sort(function(a, b) {
-        return a.week - b.week;
-      });
-      console.log(calendars);
-      res.render("calendar", { calendars, user });
-    });
-  });
 });
 
 router.get("/calendar/new", isAuthenticated, (req, res, next) => {
@@ -117,9 +130,37 @@ router.get("/calendar/new", isAuthenticated, (req, res, next) => {
 router.post("/calendar/new", isAuthenticated, (req, res, next) => {
   let calendar = req.body;
   calendar.user = req.user._id;
+  console.log("calendar", calendar);
+  Calendar.create(calendar)
+    .then(calendar => {
+      res.send(calendar);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({ message: err });
+    });
+});
 
-  Calendar.create(calendar).then(_ => {
-    res.redirect("/calendar");
+router.post("/calendar/edit/:id", isAuthenticated, (req, res, next) => {
+  const updatedCalendar = {
+    user: req.user,
+    works: req.body.works,
+    week: req.body.week,
+    year: req.body.year
+  };
+  Calendar.updateOne({ _id: req.params.id }, updatedCalendar)
+    .then(cal => {
+      res.send(cal);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({ message: err });
+    });
+});
+
+router.get("/calendar/edit/:id", (req, res, next) => {
+  Calendar.findOne({ _id: req.params.id }).then(cal => {
+    res.send(cal);
   });
 });
 

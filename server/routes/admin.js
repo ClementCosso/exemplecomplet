@@ -94,33 +94,6 @@ router.get("/users/edit/:id", (req, res, next) => {
   });
 });
 
-//==================  routes  ==================//
-
-// router.get("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
-//   User.findById(req.params.id).then(user => {
-//     res.render("useredit", { user });
-//   });
-// });
-
-// router.get("/users/delete/:id", isAuthenticated, isAdmin, (req, res, next) => {
-//     User.deleteOne({ _id: req.params.id }).then(_ => {
-//       res.redirect("/people");
-//     });
-//   });
-
-router.get("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
-  res.render("newproject");
-});
-
-router.post("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
-  let project = req.body;
-  console.log("req body", req.body);
-
-  Project.create(project).then(_ => {
-    res.redirect("/projects");
-  });
-});
-
 router.get("/projects/delete/:id", function(req, res) {
   Project.findByIdAndDelete({ _id: req.params.id })
     .then(project => {
@@ -129,6 +102,39 @@ router.get("/projects/delete/:id", function(req, res) {
     .catch(error => {
       console.log(error);
     });
+});
+
+router.post("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
+  let project = req.body;
+  console.log("req body", req.body);
+  Project.create(project).then(_ => {
+    res.send("yes");
+  });
+});
+
+router.post("/project/edit/", isAuthenticated, isAdmin, (req, res, next) => {
+  const updatedProject = {
+    title: req.body.title,
+    description: req.body.description,
+    owner: req.body.owner,
+    id: req.body.id
+  };
+  console.log(updatedProject);
+  console.log(req.body.id);
+  Project.findOneAndUpdate({ _id: req.body.id }, updatedProject)
+    .then(project => {
+      res.status(200).send(project);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({ message: err });
+    });
+});
+
+//==================  routes  ==================//
+
+router.get("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
+  res.render("newproject");
 });
 
 module.exports = router;

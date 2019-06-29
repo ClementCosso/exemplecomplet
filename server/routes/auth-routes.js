@@ -115,10 +115,9 @@ router.post("/login", (req, res, next) => {
 
 router.delete("/logout", (req, res, next) => {
   // "req.logOut()" is a Passport method that removes the user ID from session
-  req.logOut();
-
-  // send empty "userDoc" when you log out
+  req.logout();
   res.json({ userDoc: null });
+  // next(null);
 });
 
 // GET "/checkuser" allows the client to check to see:
