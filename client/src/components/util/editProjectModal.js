@@ -58,7 +58,7 @@ class ProjectModal extends Component {
     return (
       <div>
         <Modal
-          title="Basic Modal"
+          title={`Editer le projet ${this.state.title}`}
           visible={this.state.visible}
           onOk={() => {
             this.props.changeOnClose();
@@ -71,31 +71,41 @@ class ProjectModal extends Component {
             this.handleCancel();
           }}
         >
-          <Input
-            id="title"
-            name="title"
-            value={this.state.title}
-            prefix={<Icon type="bulb" style={{ color: "rgba(0,0,0,.25)" }} />}
-            onChange={this.handleChange}
-          />
-
-          <TextArea
-            name="description"
-            value={this.state.description}
-            autosize={{ minRows: 2, maxRows: 6 }}
-            id="description"
-            prefix={
-              <Icon type="file-search" style={{ color: "rgba(0,0,0,.25)" }} />
-            }
-            onChange={this.handleChange}
-          />
-          <Input
-            name="owner"
-            id="owner"
-            prefix={<Icon type="crown" style={{ color: "rgba(0,0,0,.25)" }} />}
-            value={this.state.owner}
-            onChange={this.handleChange}
-          />
+          <div className="form-input">
+            <Input
+              id="title"
+              placeholder="Nom du projet"
+              name="title"
+              value={this.state.title}
+              prefix={<Icon type="bulb" style={{ color: "rgba(0,0,0,.25)" }} />}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <TextArea
+              placeholder="Description"
+              name="description"
+              value={this.state.description}
+              autosize={{ minRows: 2, maxRows: 6 }}
+              id="description"
+              prefix={
+                <Icon type="file-search" style={{ color: "rgba(0,0,0,.25)" }} />
+              }
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <Input
+              placeholder="Owner"
+              name="owner"
+              id="owner"
+              prefix={
+                <Icon type="crown" style={{ color: "rgba(0,0,0,.25)" }} />
+              }
+              value={this.state.owner}
+              onChange={this.handleChange}
+            />
+          </div>
         </Modal>
       </div>
     );

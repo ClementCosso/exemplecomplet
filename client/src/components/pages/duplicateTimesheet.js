@@ -23,9 +23,11 @@ import SubNavbar from "../util/subNavbar";
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 
-class EditTimesheets extends Component {
+class DuplicateTimesheets extends Component {
   state = {
     redirect: false,
+    forbidenWeeks: [],
+    weekToTest: 0,
     disabled: true,
     dataSource: [],
     week: null,
@@ -64,6 +66,14 @@ class EditTimesheets extends Component {
     api.getProjects().then(projects => {
       this.setState({ projects: projects });
     });
+  };
+
+  testValue = () => {
+    if (this.state.forbidenWeeks.includes(this.state.weekToTest)) {
+      this.setState({ disabled: true });
+    } else {
+      this.setState({ disabled: false });
+    }
   };
 
   //   getTimesheet = () => {
@@ -109,19 +119,17 @@ class EditTimesheets extends Component {
     const { id, value } = e.target;
     this.setState({ [id]: value });
   };
-  //   handleSemaineChange = val => {
-  //     this.setState({ week: val });
-  //     this.setState({ weekToTest: `${this.state.year}${val}` });
-  //     this.testValue();
-  //     console.log(this.state);
-  //   };
+  handleSemaineChange = val => {
+    this.setState({ week: val });
+    this.setState({ weekToTest: `${this.state.year}${val}` });
+    this.testValue();
+  };
 
-  //   handleYearChange = val => {
-  //     this.setState({ year: val });
-  //     this.setState({ weekToTest: `${val}${this.state.week}` });
-  //     this.testValue();
-  //     console.log(this.state);
-  //   };
+  handleYearChange = val => {
+    this.setState({ year: val });
+    this.setState({ weekToTest: `${val}${this.state.week}` });
+    this.testValue();
+  };
 
   handleSelectChange = val => {
     this.setState({ role: val });
@@ -207,7 +215,6 @@ class EditTimesheets extends Component {
         <div className="container">
           <InputNumber
             id="year"
-            disabled={this.state.disabled}
             min={2019}
             max={2020}
             label="Année"
@@ -218,7 +225,6 @@ class EditTimesheets extends Component {
             onChange={this.handleYearChange}
           />
           <InputNumber
-            disabled={this.state.disabled}
             id="week"
             min={1}
             hasFeedback
@@ -386,6 +392,7 @@ class EditTimesheets extends Component {
           />
         </div>
         <Button
+          disabled={this.state.disabled}
           onClick={e => {
             this.addworks();
           }}
@@ -405,4 +412,4 @@ class EditTimesheets extends Component {
   }
 }
 
-export default EditTimesheets;
+export default DuplicateTimesheets;

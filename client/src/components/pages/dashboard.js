@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { Input } from "antd";
+import SubNavbar from "../util/subNavbar";
+const { Search } = Input;
 
 class Dashboard extends Component {
   render() {
     return (
       <section>
-        <h1> Dashboard </h1>
+        <SubNavbar />
       </section>
     );
   }

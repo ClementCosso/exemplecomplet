@@ -14,6 +14,8 @@ import {
   Button,
   AutoComplete
 } from "antd";
+import SubNavbar from "../util/subNavbar";
+const { Search } = Input;
 
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -29,7 +31,7 @@ class EditUser extends Component {
     quote: "",
     administrator: false,
     teamleader: false,
-    employee: false,
+    freelance: false,
     role: ""
   };
 
@@ -39,6 +41,13 @@ class EditUser extends Component {
   };
   handleSelectChange = val => {
     this.setState({ role: val });
+  };
+
+  handleFreeChange = e => {
+    this.setState({ freelance: e.target.checked });
+  };
+  handleAdminChange = e => {
+    this.setState({ freelance: e.target.checked });
   };
 
   componentDidMount() {
@@ -54,7 +63,7 @@ class EditUser extends Component {
         quote: user.quote,
         administrator: user.administrator,
         teamleader: user.teamleader,
-        employee: user.employee,
+        freelance: user.freelance,
         role: user.role
       });
     });
@@ -73,38 +82,73 @@ class EditUser extends Component {
       <Redirect to="/teams" />
     ) : (
       <div>
-        <div className="container">
-          <Input
-            placeholder="Prénom et Nom"
-            id="username"
-            prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-            value={this.state.username}
-            onChange={this.handleChange}
-            // suffix={
-            //   <Tooltip title="Extra information">
-            //     <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
-            //   </Tooltip>
-            // }
-          />
-          <Input
-            placeholder="Email"
-            id="email"
-            prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
-            value={this.state.email}
-            onChange={this.handleChange}
-            // suffix={
-            //   <Tooltip title="Extra information">
-            //     <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
-            //   </Tooltip>
-            // }
-          />
-          <Input.Password
-            id="password"
-            placeholder="Mot de passe"
-            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
+        <div className="subnavbar">
+          <div className="subcontent">
+            <Search
+              disabled
+              className="searchBar"
+              placeholder="Rechercher"
+              name="search"
+              value={this.state.search}
+              onChange={e => this.handleChange(e)}
+              enterButton
+            />
+            <div className="actionButton">
+              <div>
+                <Button
+                  type="danger"
+                  shape="round"
+                  icon="android"
+                  onClick={this.editUser}
+                >
+                  Editer
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="form-container">
+          <div className="form-input">
+            <Input
+              placeholder="Prénom et Nom"
+              id="username"
+              prefix={
+                <Icon type="android" style={{ color: "rgba(0,0,0,.25)" }} />
+              }
+              value={this.state.username}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <Input
+              placeholder="Email"
+              id="email"
+              prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <Input.Password
+              id="password"
+              placeholder="Mot de passe"
+              prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-input">
+            <Input
+              id="image"
+              placeholder="Photo URL"
+              onChange={this.handleChange}
+              prefix={
+                <Icon type="reddit" style={{ color: "rgba(0,0,0,.25)" }} />
+              }
+              value={this.state.image}
+            />
+          </div>
+
           <Select
             id="role"
             onChange={this.handleSelectChange}
@@ -128,48 +172,29 @@ class EditUser extends Component {
             <Option value="UX/UI">UX/UI</Option>
             <Option value="Autre">Autre</Option>
           </Select>
-
-          <Input
-            id="image"
-            placeholder="Photo URL"
-            onChange={this.handleChange}
-            prefix={<Icon type="reddit" style={{ color: "rgba(0,0,0,.25)" }} />}
-            value={this.state.image}
-          />
-
-          <Input
-            id="avatar"
-            value={this.state.avatar}
-            onChange={this.handleChange}
-            placeholder="Avatar URL"
-            prefix={
-              <Icon type="aliwangwang" style={{ color: "rgba(0,0,0,.25)" }} />
-            }
-          />
-
-          <Checkbox
-            id="teamleader"
-            checked={this.state.teamleader}
-            onChange={this.handleSelectChange}
-          >
-            Team Leader
-          </Checkbox>
-          <Checkbox
-            id="employee"
-            checked={this.state.employee}
-            onChange={this.handleSelectChange}
-          >
-            Interne (vs.freelance)
-          </Checkbox>
-          <Checkbox
-            id="administrator"
-            checked={this.state.administrator}
-            onChange={this.handleSelectChange}
-          >
-            Admin
-          </Checkbox>
+          <div className="checkboxes">
+            <div className="form-checkbox">
+              <Checkbox
+                checked={this.state.freelance}
+                id="freelance"
+                onChange={this.handleFreeChange}
+              >
+                Freelance
+              </Checkbox>
+            </div>
+            <div className="form-checkbox">
+              {" "}
+              <Checkbox
+                checked={this.state.administrator}
+                id="administrator"
+                onChange={this.handleChange}
+              >
+                Admin
+              </Checkbox>
+            </div>
+          </div>
         </div>
-        <Button onClick={this.editUser}>Editer</Button>
+        {/* <Button onClick={this.addNewUser}>Ajouter</Button> */}
       </div>
     );
   }

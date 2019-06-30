@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import api from "../util/apis";
 import { Redirect } from "react-router-dom";
+
 import {
   Form,
+  DatePicker,
+  Radio,
   Input,
   Tooltip,
   Icon,
@@ -18,9 +21,11 @@ import {
   AutoComplete,
   InputNumber
 } from "antd";
+import SubNavbar from "../util/subNavbar";
 
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
 class NewTimesheets extends Component {
   state = {
@@ -161,6 +166,10 @@ class NewTimesheets extends Component {
     console.log(this.state.works);
   }
 
+  onDateChange(date, dateString) {
+    console.log(date, dateString);
+  }
+
   addNewTimesheets = e => {
     api
       .addNewTimesheets(this.state)
@@ -187,7 +196,13 @@ class NewTimesheets extends Component {
       <Redirect to="/timesheets" />
     ) : (
       <div>
+        <SubNavbar />
         <div className="container">
+          <WeekPicker
+            onChange={(e, f) => this.onDateChange(e, f)}
+            placeholder="Select Week"
+          />
+
           <InputNumber
             id="year"
             min={2019}

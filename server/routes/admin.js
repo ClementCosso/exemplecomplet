@@ -49,8 +49,7 @@ router.post("/users/new", isAuthenticated, isAdmin, (req, res, next) => {
     req.body.password,
     bcrypt.genSaltSync(bcryptSalt)
   );
-  req.body.employee = req.body.employee == "on";
-  req.body.teamleader = req.body.teamleader == "on";
+  req.body.freelance = req.body.freelance == "on";
   req.body.administrator = req.body.administrator == "on";
   let user = req.body;
   User.create(user).then(_ => {
@@ -75,7 +74,7 @@ router.post("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
     image: req.body.image,
     administrator: req.body.administrator,
     teamleader: req.body.teamleader,
-    employee: req.body.employee,
+    freelance: req.body.freelance,
     role: req.body.role
   };
   User.updateOne({ _id: req.params.id }, updatedUser)

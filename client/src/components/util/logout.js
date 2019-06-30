@@ -30,7 +30,16 @@ class Logout extends Component {
   }
 
   render() {
-    return <Button onClick={event => this.handleSubmit(event)}>Logout</Button>;
+    return (
+      <Button
+        type="primary"
+        shape="round"
+        icon="logout"
+        onClick={event => this.handleSubmit(event)}
+      >
+        Logout
+      </Button>
+    );
   }
 }
 

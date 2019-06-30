@@ -18,7 +18,7 @@ const userSchema = new Schema(
     quote: { type: String },
     administrator: Boolean,
     teamleader: { type: Boolean, required: true },
-    employee: { type: Boolean, required: true },
+    freelance: { type: Boolean, required: true },
     role: {
       type: String,
       enum: [

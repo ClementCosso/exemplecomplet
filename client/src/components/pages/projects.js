@@ -5,6 +5,7 @@ import ActionProject from "../util/actionProject";
 import { Icon, Button, Table, Divider, Tag } from "antd";
 import { Link } from "react-router-dom";
 import ProjectModal from "../util/editProjectModal";
+import SubNavbar from "../util/subNavbar";
 
 class Projects extends Component {
   state = {
@@ -52,7 +53,7 @@ class Projects extends Component {
   render() {
     return (
       <div>
-        <h1>Projects</h1>
+        <SubNavbar />
 
         <div className="projectPage">
           <div className="projectsTableContainer">

@@ -8,7 +8,7 @@ const { Meta } = Card;
 class TeamCard extends Component {
   render() {
     return (
-      <div>
+      <div className="card">
         <Card
           hoverable
           style={{ width: 300 }}
@@ -28,13 +28,7 @@ class TeamCard extends Component {
             />
           ]}
         >
-          <Meta
-            avatar={
-              <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-            }
-            title={this.props.title}
-            description={this.props.description}
-          />
+          <Meta title={this.props.title} description={this.props.description} />
         </Card>
       </div>
     );

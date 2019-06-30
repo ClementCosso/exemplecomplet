@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { Icon, Input, Button } from "antd";
+import image from "../../../src/reporting.png";
 
 class Login extends Component {
   constructor(props) {
@@ -48,33 +49,55 @@ class Login extends Component {
     return this.state.redirect ? (
       <Redirect to="/dashboard" />
     ) : (
-      <section className="LoginPage">
-        <h2>Log In</h2>
-
-        <form className="login-form">
-          <Input
-            value={this.state.email}
-            onChange={event => this.genericSync(event)}
-            type="email"
-            name="email"
-            placeholder="tagadata@relevanc.com"
-            prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
-            onPressEnter={event => this.handleSubmit(event)}
-          />
-          <Input
-            value={this.state.originalPassword}
-            onChange={event => this.genericSync(event)}
-            type="password"
-            name="originalPassword"
-            placeholder="Password"
-            prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
-            onPressEnter={event => this.handleSubmit(event)}
-          />
-
-          <Button onClick={event => this.handleSubmit(event)}>Log In</Button>
+      <div className="firstPage">
+        <br />
+        <form>
+          <section className="LoginPage">
+            <div className="login-form">
+              <div className="login-input">
+                <Input
+                  value={this.state.email}
+                  onChange={event => this.genericSync(event)}
+                  type="email"
+                  name="email"
+                  placeholder="datagada@relevanc.com"
+                  prefix={
+                    <Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />
+                  }
+                  onPressEnter={event => this.handleSubmit(event)}
+                />
+              </div>
+              <div className="login-input">
+                <Input
+                  value={this.state.originalPassword}
+                  onChange={event => this.genericSync(event)}
+                  type="password"
+                  name="originalPassword"
+                  placeholder="Password"
+                  prefix={
+                    <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                  }
+                  onPressEnter={event => this.handleSubmit(event)}
+                />
+              </div>
+              <Button
+                type="primary"
+                shape="round"
+                icon="login"
+                onClick={event => this.handleSubmit(event)}
+              >
+                Log In
+              </Button>
+              {this.state.message && <div> {this.state.message} </div>}
+            </div>
+            <div className="login-image">
+              <div />
+              <img src={image} />
+            </div>
+          </section>
         </form>
-        {this.state.message && <div> {this.state.message} </div>}
-      </section>
+        <br />
+      </div>
     );
   }
 }

@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -13,23 +14,52 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.card {
+  margin-right: 2vw;
+  margin-top: 2vw;
+}
 
+.checkboxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vh;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.container {
-  margin: 35px auto 5px auto;
+.form-container {
+  margin: 18vh auto 5px auto;
   display: flex;
   flex-direction: column;
   width: 45%;
 }
 
-.login-container {
-  width: 25vw;
-  margin-left: auto;
-  margin-right: auto;
+.LoginPage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 20vw;
+}
+.login-form {
+  width: 30vw;
+  margin-left: 8vw;
+}
+.login-image {
+  width: 20vw;
+  margin-right: 10vw;
+}
+
+.firstPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+#login-image {
+  width: 60vw;
+  height: auto;
 }
 
 .projectsTableContainer {
@@ -45,9 +75,90 @@ code {
   justify-content: space-between;
 }
 
-.Simpleinput {
+.login-input {
   margin-top: 2vh;
   margin-bottom: 2vh;
+}
+
+.form-input {
+  margin-bottom: 3vh;
+}
+
+.navbar {
+  height: 70px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 0.1px solid rgb(212, 212, 212);
+  color: white;
+  box-shadow: 0px 5px 5px 0px rgba(114, 95, 129, 0.096),
+    0px 1px 5px 0px rgba(194, 194, 194, 0.192);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-right: 30px;
+  height: 70px;
+}
+
+.nav-first-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 70px;
+}
+
+.nav-items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-items:hover {
+  /* background-color: rgba(182, 182, 182, 0.411); */
+  border-bottom: 2px solid;
+  /* color: rgb(10, 0, 143); */
+  /* box-shadow: inset 0px 5px 5px 0px rgba(179, 179, 179, 0.24),
+    inset 0px 1px 5px 0px rgba(224, 224, 224, 0.507); */
+}
+
+.searchBar {
+  max-width: 360px;
+  margin-left: 50px;
+}
+
+.subnavbar {
+  height: 70px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 0.1px solid rgb(212, 212, 212);
+
+  box-shadow: 0px 5px 5px 0px rgba(114, 95, 129, 0.096),
+    0px 1px 5px 0px rgba(194, 194, 194, 0.192);
+}
+
+.subcontent {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  pading-right: 50px;
 }
 
 #components-form-demo-normal-login .login-form {

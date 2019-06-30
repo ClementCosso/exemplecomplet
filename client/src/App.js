@@ -16,6 +16,7 @@ import DisconnectedNav from "./components/util/disconnectedNav";
 import ConnectedNav from "./components/util/connectedNav";
 import ProjectModal from "./components/util/editProjectModal";
 import EditTimesheets from "./components/pages/editTimesheets";
+import DuplicateTimesheets from "./components/pages/duplicateTimesheet";
 
 class App extends Component {
   constructor() {
@@ -42,8 +43,15 @@ class App extends Component {
     console.log("current user", this.state.currentUser);
   }
 
+  // isAuthenticated(component) {
+  //   return this.state.currentUser ? component : <Redirect to="/" />;
+  // }
+  // isNotAuthenticated(component) {
+  //   return !this.state.currentUser ? component : <Redirect to="/dashboard" />;
+  // }
+
   isAuthenticated(component) {
-    return this.state.currentUser ? component : <Redirect to="/" />;
+    return this.state.currentUser ? component : <Redirect to="/dashboard" />;
   }
   isNotAuthenticated(component) {
     return !this.state.currentUser ? component : <Redirect to="/dashboard" />;
@@ -112,6 +120,17 @@ class App extends Component {
             render={props =>
               this.isAuthenticated(
                 <EditTimesheets timesheetId={props.match.params.timesheetId} />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/timesheets/duplicate/:timesheetId"
+            render={props =>
+              this.issAuthenticated(
+                <DuplicateTimesheets
+                  timesheetId={props.match.params.timesheetId}
+                />
               )
             }
           />
