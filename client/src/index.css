@@ -62,17 +62,10 @@ code {
   height: auto;
 }
 
-.projectsTableContainer {
-  display: flex;
-  margin-right: 6vw;
-  flex-direction: column;
-  width: 80%;
-}
-
 .projectPage {
   margin: 35px 5% 5px 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .login-input {
@@ -159,6 +152,7 @@ code {
   flex-wrap: wrap;
   padding-left: 50px;
   pading-right: 50px;
+  justify-content: space-evenly;
 }
 
 #components-form-demo-normal-login .login-form {

@@ -45,13 +45,15 @@ let isLeader = (req, res, next) => {
 //==================  routes  ==================//
 
 router.post("/users/new", isAuthenticated, isAdmin, (req, res, next) => {
+  let user = req.body;
+  console.log("req.body", req.body);
   req.body.password = bcrypt.hashSync(
     req.body.password,
     bcrypt.genSaltSync(bcryptSalt)
   );
   req.body.freelance = req.body.freelance == "on";
   req.body.administrator = req.body.administrator == "on";
-  let user = req.body;
+
   User.create(user).then(_ => {
     res.send("ok");
   });

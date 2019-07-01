@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import api from "../util/apis";
 import { Redirect } from "react-router-dom";
+import { LocaleProvider } from "antd";
+import fr_FR from "antd/lib/locale-provider/fr_FR";
+import "moment/locale/fr";
 
 import {
   Form,
@@ -199,6 +202,7 @@ class NewTimesheets extends Component {
         <SubNavbar />
         <div className="container">
           <WeekPicker
+            locale={fr_FR}
             onChange={(e, f) => this.onDateChange(e, f)}
             placeholder="Select Week"
           />

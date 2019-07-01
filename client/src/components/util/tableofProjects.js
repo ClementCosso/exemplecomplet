@@ -38,16 +38,19 @@ class TableofProjects extends Component {
             {
               title: "Nom du projet",
               dataIndex: "name",
-              key: "name"
+              key: "name",
+              width: 200
             },
             {
               title: "Description",
               dataIndex: "description",
-              key: "description"
+              key: "description",
+              width: 650
             },
 
             {
               title: "Owner",
+              width: 200,
               key: "owner",
               dataIndex: "owner",
               render: tag => (
@@ -59,7 +62,7 @@ class TableofProjects extends Component {
               )
             },
             {
-              title: "Action",
+              title: "Actions",
               key: "action",
               render: (text, record) => (
                 <span>

@@ -45,11 +45,7 @@ class newUserDrawer extends React.Component {
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item label="Name">
-                  {getFieldDecorator("name", {
-                    rules: [
-                      { required: true, message: "Please enter user name" }
-                    ]
-                  })(<Input placeholder="Please enter user name" />)}
+                  <Input placeholder="Please enter user name" />
                 </Form.Item>
               </Col>
               <Col span={12}>
