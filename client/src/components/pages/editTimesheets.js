@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import api from "../util/apis";
 import { Redirect } from "react-router-dom";
+import fr_FR from "antd/lib/locale-provider/fr_FR";
+import "moment/locale/fr";
 import {
   Form,
   Input,
@@ -16,12 +18,15 @@ import {
   Divider,
   Button,
   AutoComplete,
-  InputNumber
+  InputNumber,
+  DatePicker
 } from "antd";
 import SubNavbar from "../util/subNavbar";
 
+const { Search } = Input;
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
 class EditTimesheets extends Component {
   state = {
@@ -66,27 +71,6 @@ class EditTimesheets extends Component {
     });
   };
 
-  //   getTimesheet = () => {
-  //     const { params } = this.props.match;
-
-  //     api.getTimesheet(params.timesheetId).then(timesheet => {
-  //       this.setState_id
-  //         week: timesheet.week,
-  //         year: timesheet.year,
-  //         user: timesheet.user,
-  //         works: timesheet.works
-  //       });
-  //     });
-  //   };
-
-  //   testValue = () => {
-  //     if (this.state.forbidenWeeks.includes(this.state.weekToTest)) {
-  //       this.setState({ disabled: true });
-  //     } else {
-  //       this.setState({ disabled: false });
-  //     }
-  //   };
-
   componentDidMount() {
     this.refreshProjects();
 
@@ -109,19 +93,6 @@ class EditTimesheets extends Component {
     const { id, value } = e.target;
     this.setState({ [id]: value });
   };
-  //   handleSemaineChange = val => {
-  //     this.setState({ week: val });
-  //     this.setState({ weekToTest: `${this.state.year}${val}` });
-  //     this.testValue();
-  //     console.log(this.state);
-  //   };
-
-  //   handleYearChange = val => {
-  //     this.setState({ year: val });
-  //     this.setState({ weekToTest: `${val}${this.state.week}` });
-  //     this.testValue();
-  //     console.log(this.state);
-  //   };
 
   handleSelectChange = val => {
     this.setState({ role: val });
@@ -203,37 +174,60 @@ class EditTimesheets extends Component {
       <Redirect to="/timesheets" />
     ) : (
       <div>
-        <SubNavbar />
-        <div className="container">
-          <InputNumber
-            id="year"
-            disabled={this.state.disabled}
-            min={2019}
-            max={2020}
-            label="Année"
-            hasFeedback
-            defaultValue={2019}
-            placeholder="Année"
-            value={this.state.year}
-            onChange={this.handleYearChange}
-          />
-          <InputNumber
-            disabled={this.state.disabled}
-            id="week"
-            min={1}
-            hasFeedback
-            max={52}
-            placeholder="#semaine"
-            onChange={this.handleSemaineChange}
-            value={this.state.week}
-          />
+        <div className="subnavbar">
+          <div className="subcontent">
+            <Search
+              disabled
+              className="searchBar"
+              placeholder="Rechercher"
+              id="search"
+              value={this.state.search}
+              onChange={e => this.handleChange(e)}
+              enterButton
+            />
+            <div className="weekPicker">
+              <WeekPicker
+                disabled
+                locale={fr_FR}
+                onChange={(e, f) => this.onDateChange(e, f)}
+                placeholder="Select Week"
+              />
+            </div>
+            <div className="timesheets-buttons">
+              <div className="addline-button">
+                <Button
+                  ghost
+                  shape="round"
+                  type="primary"
+                  onClick={e => {
+                    this.addworks();
+                  }}
+                >
+                  <Icon type="ordered-list" /> Ajouter une ligne
+                </Button>
+              </div>
+              <div>
+                <Button
+                  shape="round"
+                  type="primary"
+                  onClick={e => {
+                    this.editCalendar();
+                  }}
+                >
+                  <Icon type="check" /> Sauvegarder
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
+
+        <div className="TimesheetsTable">
           <Table
             columns={[
               {
                 title: "Nom du projet",
                 dataIndex: "name",
+                width: 400,
                 key: "name",
                 render: (text, record) => (
                   <Select
@@ -385,21 +379,6 @@ class EditTimesheets extends Component {
             )}
           />
         </div>
-        <Button
-          onClick={e => {
-            this.addworks();
-          }}
-        >
-          Ajouter une ligne
-        </Button>
-
-        <Button
-          onClick={e => {
-            this.editCalendar();
-          }}
-        >
-          Sauvegarder la timesheet
-        </Button>
       </div>
     );
   }

@@ -79,7 +79,7 @@ class TeamCard extends Component {
           cover={
             <img
               alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              src="https://images.pexels.com/photos/285286/pexels-photo-285286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
             />
           }
           actions={[

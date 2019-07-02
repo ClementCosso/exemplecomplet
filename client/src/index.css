@@ -1,3 +1,7 @@
+.addline-button {
+  margin-right: 3vw;
+}
+
 .background {
   height: 100%;
   background-repeat: no-repeat;
@@ -36,9 +40,28 @@ code {
   width: 45%;
 }
 
+.firstPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+#login-image {
+  width: 20vw;
+  height: auto;
+}
+
+.login-input {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.form-input {
+  margin-bottom: 3vh;
+}
 .LoginPage {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   padding-right: 20vw;
 }
@@ -51,42 +74,14 @@ code {
   margin-right: 10vw;
 }
 
-.firstPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100vh;
-}
-#login-image {
-  width: 60vw;
-  height: auto;
-}
-
-.projectPage {
-  margin: 35px 5% 5px 5%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.login-input {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-}
-
-.form-input {
-  margin-bottom: 3vh;
-}
-
 .navbar {
   height: 70px;
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(250, 250, 250);
   flex-direction: column;
   justify-content: center;
-  border-bottom: 0.1px solid rgb(212, 212, 212);
+  border-bottom: 0.2px solid rgba(95, 11, 112, 0.39);
   color: white;
-  box-shadow: 0px 5px 5px 0px rgba(114, 95, 129, 0.096),
-    0px 1px 5px 0px rgba(194, 194, 194, 0.192);
 }
 
 .nav-content {
@@ -123,6 +118,18 @@ code {
   /* box-shadow: inset 0px 5px 5px 0px rgba(179, 179, 179, 0.24),
     inset 0px 1px 5px 0px rgba(224, 224, 224, 0.507); */
 }
+.projectPage {
+  border: 0.5px solid rgba(165, 165, 165, 0.116);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 0px 5px 4px rgba(114, 95, 129, 0.096),
+    0px 0px 3px 2px rgba(194, 194, 194, 0.11);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 22px 5% 5px 5%;
+
+  display: flex;
+  justify-content: space-around;
+}
 
 .searchBar {
   max-width: 360px;
@@ -132,10 +139,10 @@ code {
 .subnavbar {
   height: 70px;
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(250, 250, 250);
   flex-direction: column;
   justify-content: center;
-  border-bottom: 0.1px solid rgb(212, 212, 212);
+  border-bottom: 0.2px solid rgba(95, 11, 112, 0.39);
 
   box-shadow: 0px 5px 5px 0px rgba(114, 95, 129, 0.096),
     0px 1px 5px 0px rgba(194, 194, 194, 0.192);
@@ -146,13 +153,48 @@ code {
   justify-content: space-between;
   margin-right: 30px;
 }
+.timesheets-buttons {
+  display: flex;
+}
 
+.TimesheetsTable {
+  border: 0.5px solid rgba(165, 165, 165, 0.116);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 0px 5px 4px rgba(114, 95, 129, 0.096),
+    0px 0px 3px 2px rgba(194, 194, 194, 0.11);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 22px 5% 5px 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.TimesheetsRecapTable {
+  border: 0.5px solid rgba(165, 165, 165, 0.116);
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0px 0px 5px 4px rgba(114, 95, 129, 0.096),
+    0px 0px 3px 2px rgba(194, 194, 194, 0.11);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 22px 5% 5px 5%;
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+}
 .team-container {
   display: flex;
   flex-wrap: wrap;
   padding-left: 50px;
   pading-right: 50px;
   justify-content: space-evenly;
+}
+
+.timesheets-table {
+  margin-top: 22px;
+}
+
+.weekPicker {
+  margin-right: 3vw;
 }
 
 #components-form-demo-normal-login .login-form {

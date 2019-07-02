@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { Icon, Input, Button } from "antd";
-import image from "../../../src/reporting.png";
+import image from "../../../src/the_future_of_vendor_credentialing.png";
 
 class Login extends Component {
   constructor(props) {
@@ -91,7 +91,6 @@ class Login extends Component {
               {this.state.message && <div> {this.state.message} </div>}
             </div>
             <div className="login-image">
-              <div />
               <img src={image} />
             </div>
           </section>

@@ -1,30 +1,52 @@
 import React, { Component } from "react";
-import { Icon, Button, Table, Divider, Tag } from "antd";
+import {
+  Icon,
+  Button,
+  Input,
+  Drawer,
+  Form,
+  Col,
+  Row,
+  Select,
+  Checkbox,
+  DatePicker,
+  Table,
+  Divider,
+  Tag
+} from "antd";
 import ProjectModal from "../util/editProjectModal";
 import { Link } from "react-router-dom";
 import api from "../util/apis";
+const { Search } = Input;
+const { Option } = Select;
 
 class TableofProjects extends Component {
   state = {
-    drawerOpen: false,
+    // drawerOpen: false,
+    visible: false,
     title: "",
     description: "",
-    owner: ""
+    owner: "",
+    id: ""
   };
 
-  toggleChildMenu = () => {
-    this.setState({ drawerOpen: !this.state.drawerOpen });
+  showDrawer = () => {
+    this.setState({
+      visible: true
+    });
+    console.log(this.state);
   };
 
-  // editUser = keyId => {
-  //   api.editUser(keyId).then(_ => {
-  //     this.refreshTeams();
-  //   });
-  // };
+  onClose = () => {
+    this.setState({
+      visible: false
+    });
+  };
 
-  // editProject = (e, f, g) => {
-  //   this.props.editProject(e, f, g);
-  // };
+  handleChange(e) {
+    let { id, value } = e.target;
+    this.setState({ [id]: value });
+  }
 
   refreshProjects = () => {
     this.props.refreshProjects();
@@ -42,7 +64,7 @@ class TableofProjects extends Component {
               width: 200
             },
             {
-              title: "Description",
+              title: "Description du projet",
               dataIndex: "description",
               key: "description",
               width: 650
@@ -55,7 +77,7 @@ class TableofProjects extends Component {
               dataIndex: "owner",
               render: tag => (
                 <span>
-                  <Tag color="blue" key={tag}>
+                  <Tag color="geekblue" key={tag}>
                     {tag.toUpperCase()}
                   </Tag>
                 </span>
@@ -66,27 +88,30 @@ class TableofProjects extends Component {
               key: "action",
               render: (text, record) => (
                 <span>
-                  {/* <Link to={`/projects/edit/${record.key}`}> */}
-                  <Icon
-                    color="black"
-                    onClick={() => {
-                      this.toggleChildMenu();
-                      this.setState({
-                        title: record.name,
-                        description: record.description,
-                        owner: record.owner,
-                        projectId: record.key
-                      });
-                    }}
-                    type="edit"
-                  />
-                  {/* </Link> */}
+                  <Link>
+                    <Icon
+                      color="black"
+                      onClick={() => {
+                        // this.toggleChildMenu();
+                        this.setState({
+                          title: record.name,
+                          description: record.description,
+                          owner: record.owner,
+                          id: record.key
+                        });
+                        this.showDrawer();
+                      }}
+                      type="edit"
+                    />
+                  </Link>
 
                   <Divider type="vertical" />
-                  <Icon
-                    onClick={() => this.props.deleteProject(record.key)}
-                    type="delete"
-                  />
+                  <Link>
+                    <Icon
+                      onClick={() => this.props.deleteProject(record.key)}
+                      type="delete"
+                    />
+                  </Link>
                 </span>
               )
             }
@@ -98,16 +123,106 @@ class TableofProjects extends Component {
             key: e._id
           }))}
         />
-        <ProjectModal
-          drawerOpen={this.state.drawerOpen}
-          changeOnClose={this.toggleChildMenu}
-          title={this.state.title}
-          description={this.state.description}
-          owner={this.state.owner}
-          id={this.state.projectId}
-          refreshProjects={this.props.refreshProjects}
-          editProject={this.props.editProject}
-        />
+
+        <div>
+          <Drawer
+            title={`Editer le projet ${this.state.title}`}
+            width={720}
+            onClose={this.onClose}
+            visible={this.state.visible}
+          >
+            {}
+            <Form layout="vertical" hideRequiredMark>
+              <Row gutter={16}>
+                <Col span={24}>
+                  <Form.Item label="Nom">
+                    <Input
+                      id="title"
+                      placeholder="Nom du projet"
+                      prefix={
+                        <Icon
+                          type="bulb"
+                          style={{ color: "rgba(0,0,0,.25)" }}
+                        />
+                      }
+                      value={this.state.title}
+                      onChange={e => this.handleChange(e)}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={24}>
+                  <Form.Item label="Owner">
+                    <Input
+                      id="owner"
+                      placeholder="Owner"
+                      prefix={
+                        <Icon
+                          type="crown"
+                          style={{ color: "rgba(0,0,0,.25)" }}
+                        />
+                      }
+                      value={this.state.owner}
+                      onChange={e => this.handleChange(e)}
+                      style={{ width: "100%" }}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={24}>
+                  <Form.Item label="Description">
+                    <Input
+                      id="description"
+                      placeholder="Description du projet"
+                      prefix={
+                        <Icon
+                          type="experiment"
+                          style={{ color: "rgba(0,0,0,.25)" }}
+                        />
+                      }
+                      value={this.state.description}
+                      onChange={e => this.handleChange(e)}
+                      style={{ width: "100%" }}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+            </Form>
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                bottom: 0,
+                width: "100%",
+                borderTop: "1px solid #e9e9e9",
+                padding: "10px 16px",
+                background: "#fff",
+                textAlign: "right"
+              }}
+            >
+              <Button
+                shape="round"
+                onClick={this.onClose}
+                style={{ marginRight: 8 }}
+              >
+                Annuler
+              </Button>
+              <Button
+                shape="round"
+                onClick={e => {
+                  this.onClose();
+                  this.props.editProject(this.state);
+                  this.refreshProjects();
+                }}
+                type="primary"
+              >
+                Editer
+              </Button>
+            </div>
+          </Drawer>
+        </div>
       </div>
     );
   }

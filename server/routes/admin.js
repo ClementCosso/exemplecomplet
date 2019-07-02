@@ -114,14 +114,15 @@ router.post("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
 });
 
 router.post("/project/edit/", isAuthenticated, isAdmin, (req, res, next) => {
+  console.log("received");
   const updatedProject = {
     title: req.body.title,
     description: req.body.description,
     owner: req.body.owner,
-    id: req.body.id
+    id: req.body.projectId
   };
-  console.log(updatedProject);
-  console.log(req.body.id);
+  console.log("project", updatedProject);
+  console.log("id", req.body.id);
   Project.findOneAndUpdate({ _id: req.body.id }, updatedProject)
     .then(project => {
       res.status(200).send(project);

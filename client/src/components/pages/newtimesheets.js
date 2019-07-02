@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../util/apis";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { LocaleProvider } from "antd";
 import fr_FR from "antd/lib/locale-provider/fr_FR";
 import "moment/locale/fr";
@@ -25,7 +25,7 @@ import {
   InputNumber
 } from "antd";
 import SubNavbar from "../util/subNavbar";
-
+const { Search } = Input;
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
@@ -72,6 +72,61 @@ class NewTimesheets extends Component {
     });
   };
 
+  componentDidMount() {
+    this.refreshProjects();
+    this.refreshCalendars();
+  }
+
+  handleChange = e => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
+  };
+
+  handleSelectChange = val => {
+    this.setState({ role: val });
+  };
+
+  handleProjectChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].project = e;
+    this.setState(stateCopy);
+  }
+
+  handlelundiChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].lundi = e;
+    this.setState(stateCopy);
+  }
+  handlemardiChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].mardi = e;
+    this.setState(stateCopy);
+  }
+  handlemercrediChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].mercredi = e;
+    this.setState(stateCopy);
+  }
+  handlejeudiChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].jeudi = e;
+    this.setState(stateCopy);
+  }
+  handlevendrediChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].vendredi = e;
+    this.setState(stateCopy);
+  }
+  handlesamediChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].samedi = e;
+    this.setState(stateCopy);
+  }
+  handledimancheChange(index, e) {
+    let stateCopy = Object.assign({}, this.state);
+    stateCopy.works[index].dimanche = e;
+    this.setState(stateCopy);
+  }
   refreshCalendars = () => {
     api.getCalendars().then(calendars => {
       this.setState({ calendars: calendars }, e => {
@@ -84,23 +139,22 @@ class NewTimesheets extends Component {
     });
   };
 
-  testValue = () => {
-    if (this.state.forbidenWeeks.includes(this.state.weekToTest)) {
+  testValue = e => {
+    if (this.state.forbidenWeeks.includes(e)) {
       this.setState({ disabled: true });
     } else {
       this.setState({ disabled: false });
     }
   };
-
-  componentDidMount() {
-    this.refreshProjects();
-    this.refreshCalendars();
+  onDateChange(date, dateString) {
+    console.log("hello");
+    this.setState({
+      year: parseFloat(date.format("YYYY")),
+      week: parseFloat(date.format("W")),
+      weekToTest: `${date.format("YYYY")}${date.format("W")}`
+    });
+    this.testValue(`${date.format("YYYY")}${date.format("W")}`);
   }
-
-  handleChange = e => {
-    const { id, value } = e.target;
-    this.setState({ [id]: value });
-  };
   handleSemaineChange = val => {
     this.setState(
       { week: val, weekToTest: `${this.state.year}${val}` },
@@ -114,64 +168,6 @@ class NewTimesheets extends Component {
       this.testValue
     );
   };
-
-  handleSelectChange = val => {
-    this.setState({ role: val });
-  };
-
-  handleProjectChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].project = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-
-  handlelundiChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].lundi = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-  handlemardiChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].mardi = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-  handlemercrediChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].mercredi = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-  handlejeudiChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].jeudi = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-  handlevendrediChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].vendredi = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-  handlesamediChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].samedi = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-  handledimancheChange(index, e) {
-    let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].dimanche = e;
-    this.setState(stateCopy);
-    console.log(this.state.works);
-  }
-
-  onDateChange(date, dateString) {
-    console.log(date, dateString);
-  }
 
   addNewTimesheets = e => {
     api
@@ -199,41 +195,60 @@ class NewTimesheets extends Component {
       <Redirect to="/timesheets" />
     ) : (
       <div>
-        <SubNavbar />
-        <div className="container">
-          <WeekPicker
-            locale={fr_FR}
-            onChange={(e, f) => this.onDateChange(e, f)}
-            placeholder="Select Week"
-          />
-
-          <InputNumber
-            id="year"
-            min={2019}
-            max={2020}
-            label="Année"
-            hasFeedback
-            defaultValue={2019}
-            placeholder="Année"
-            value={this.state.year}
-            onChange={this.handleYearChange}
-          />
-          <InputNumber
-            id="week"
-            min={1}
-            hasFeedback
-            max={52}
-            placeholder="#semaine"
-            onChange={this.handleSemaineChange}
-            value={this.state.week}
-          />
+        <div className="subnavbar">
+          <div className="subcontent">
+            <Search
+              disabled
+              className="searchBar"
+              placeholder="Rechercher"
+              id="search"
+              value={this.state.search}
+              onChange={e => this.handleChange(e)}
+              enterButton
+            />
+            <div className="weekPicker">
+              <WeekPicker
+                locale={fr_FR}
+                onChange={(e, f) => this.onDateChange(e, f)}
+                placeholder="Select Week"
+              />
+            </div>
+            <div className="timesheets-buttons">
+              <div className="addline-button">
+                <Button
+                  ghost
+                  shape="round"
+                  type="primary"
+                  onClick={e => {
+                    this.addworks();
+                  }}
+                >
+                  <Icon type="ordered-list" /> Ajouter une ligne
+                </Button>
+              </div>
+              <div>
+                <Button
+                  disabled={this.state.disabled}
+                  shape="round"
+                  type="primary"
+                  onClick={e => {
+                    this.addNewCalendar();
+                  }}
+                >
+                  <Icon type="check" /> Sauvegarder
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
+
+        <div className="TimesheetsTable">
           <Table
             columns={[
               {
                 title: "Nom du projet",
                 dataIndex: "name",
+                width: 400,
                 key: "name",
                 render: (text, record) => (
                   <Select
@@ -372,22 +387,6 @@ class NewTimesheets extends Component {
             }))}
           />
         </div>
-        <Button
-          onClick={e => {
-            this.addworks();
-          }}
-        >
-          Ajouter une ligne
-        </Button>
-
-        <Button
-          disabled={this.state.disabled}
-          onClick={e => {
-            this.addNewCalendar();
-          }}
-        >
-          Sauvegarder la timesheet
-        </Button>
       </div>
     );
   }

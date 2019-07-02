@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import api from "../util/apis";
 import { Redirect } from "react-router-dom";
+import fr_FR from "antd/lib/locale-provider/fr_FR";
+import "moment/locale/fr";
 import {
   Form,
+  DatePicker,
   Input,
   Tooltip,
   Icon,
@@ -20,8 +23,10 @@ import {
 } from "antd";
 import SubNavbar from "../util/subNavbar";
 
+const { Search } = Input;
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 
 class DuplicateTimesheets extends Component {
   state = {
@@ -50,6 +55,15 @@ class DuplicateTimesheets extends Component {
     user: null
   };
 
+  addNewCalendar = e => {
+    const calendar = {
+      week: this.state.week,
+      year: this.state.year,
+      works: this.state.works
+    };
+    api.addNewCalendar(calendar).then(res => this.setState({ redirect: true }));
+  };
+
   editCalendar = e => {
     const calendar = {
       week: this.state.week,
@@ -68,41 +82,30 @@ class DuplicateTimesheets extends Component {
     });
   };
 
-  testValue = () => {
-    if (this.state.forbidenWeeks.includes(this.state.weekToTest)) {
+  refreshCalendars = () => {
+    api.getCalendars().then(calendars => {
+      this.setState({ calendars: calendars }, e => {
+        const forbidenWeeks = this.state.calendars.map(
+          e => `${e.year}${e.week}`
+        );
+
+        this.setState({ forbidenWeeks: forbidenWeeks });
+      });
+    });
+  };
+
+  testValue = e => {
+    if (this.state.forbidenWeeks.includes(e)) {
       this.setState({ disabled: true });
     } else {
       this.setState({ disabled: false });
     }
   };
 
-  //   getTimesheet = () => {
-  //     const { params } = this.props.match;
-
-  //     api.getTimesheet(params.timesheetId).then(timesheet => {
-  //       this.setState_id
-  //         week: timesheet.week,
-  //         year: timesheet.year,
-  //         user: timesheet.user,
-  //         works: timesheet.works
-  //       });
-  //     });
-  //   };
-
-  //   testValue = () => {
-  //     if (this.state.forbidenWeeks.includes(this.state.weekToTest)) {
-  //       this.setState({ disabled: true });
-  //     } else {
-  //       this.setState({ disabled: false });
-  //     }
-  //   };
-
   componentDidMount() {
     this.refreshProjects();
+    this.refreshCalendars();
 
-    // const { params } = this.props.match.params.id;
-
-    // api.getTimesheet(params.timesheetId).then(timesheet => {
     api.getTimesheet(this.props.timesheetId).then(timesheet => {
       this.setState({
         week: timesheet.week,
@@ -130,6 +133,16 @@ class DuplicateTimesheets extends Component {
     this.setState({ weekToTest: `${val}${this.state.week}` });
     this.testValue();
   };
+
+  onDateChange(date, dateString) {
+    console.log("hello");
+    this.setState({
+      year: parseFloat(date.format("YYYY")),
+      week: parseFloat(date.format("W")),
+      weekToTest: `${date.format("YYYY")}${date.format("W")}`
+    });
+    this.testValue(`${date.format("YYYY")}${date.format("W")}`);
+  }
 
   handleSelectChange = val => {
     this.setState({ role: val });
@@ -185,12 +198,6 @@ class DuplicateTimesheets extends Component {
     console.log(this.state.works);
   }
 
-  //   addNewTimesheets = e => {
-  //     api
-  //       .addNewTimesheets(this.state)
-  //       .then(res => this.setState({ redirect: true }));
-  //   };
-
   addworks = e => {
     this.state.works.push({
       project: "",
@@ -211,35 +218,60 @@ class DuplicateTimesheets extends Component {
       <Redirect to="/timesheets" />
     ) : (
       <div>
-        <SubNavbar />
-        <div className="container">
-          <InputNumber
-            id="year"
-            min={2019}
-            max={2020}
-            label="Année"
-            hasFeedback
-            defaultValue={2019}
-            placeholder="Année"
-            value={this.state.year}
-            onChange={this.handleYearChange}
-          />
-          <InputNumber
-            id="week"
-            min={1}
-            hasFeedback
-            max={52}
-            placeholder="#semaine"
-            onChange={this.handleSemaineChange}
-            value={this.state.week}
-          />
+        <div className="subnavbar">
+          <div className="subcontent">
+            <Search
+              disabled
+              className="searchBar"
+              placeholder="Rechercher"
+              id="search"
+              value={this.state.search}
+              onChange={e => this.handleChange(e)}
+              enterButton
+            />
+            <div className="weekPicker">
+              <WeekPicker
+                locale={fr_FR}
+                onChange={(e, f) => this.onDateChange(e, f)}
+                placeholder="Select Week"
+              />
+            </div>
+            <div className="timesheets-buttons">
+              <div className="addline-button">
+                <Button
+                  ghost
+                  shape="round"
+                  type="primary"
+                  onClick={e => {
+                    this.addworks();
+                  }}
+                >
+                  <Icon type="ordered-list" /> Ajouter une ligne
+                </Button>
+              </div>
+              <div>
+                <Button
+                  disabled={this.state.disabled}
+                  shape="round"
+                  type="primary"
+                  onClick={e => {
+                    this.addNewCalendar();
+                  }}
+                >
+                  <Icon type="check" /> Sauvegarder
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
+
+        <div className="TimesheetsTable">
           <Table
             columns={[
               {
                 title: "Nom du projet",
                 dataIndex: "name",
+                width: 400,
                 key: "name",
                 render: (text, record) => (
                   <Select
@@ -391,22 +423,6 @@ class DuplicateTimesheets extends Component {
             )}
           />
         </div>
-        <Button
-          disabled={this.state.disabled}
-          onClick={e => {
-            this.addworks();
-          }}
-        >
-          Ajouter une ligne
-        </Button>
-
-        <Button
-          onClick={e => {
-            this.editCalendar();
-          }}
-        >
-          Sauvegarder la timesheet
-        </Button>
       </div>
     );
   }

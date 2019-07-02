@@ -127,7 +127,7 @@ class App extends Component {
             exact
             path="/timesheets/duplicate/:timesheetId"
             render={props =>
-              this.issAuthenticated(
+              this.isAuthenticated(
                 <DuplicateTimesheets
                   timesheetId={props.match.params.timesheetId}
                 />

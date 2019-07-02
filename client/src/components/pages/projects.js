@@ -82,9 +82,10 @@ class Projects extends Component {
     this.setState({ [id]: value });
   }
 
-  editProject = e => {
+  editProject(e) {
+    console.log("call");
     api.editProject(e).then(res => this.refreshProjects());
-  };
+  }
 
   render() {
     return (
@@ -101,7 +102,12 @@ class Projects extends Component {
             />
 
             <div>
-              <Button shape="round" type="primary" onClick={this.showDrawer}>
+              <Button
+                ghost
+                shape="round"
+                type="primary"
+                onClick={this.showDrawer}
+              >
                 <Icon type="plus" /> Nouveau projet
               </Button>
               <Drawer
