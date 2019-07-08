@@ -28,7 +28,8 @@ class TeamCard extends Component {
     image: "",
     administrator: false,
     freelance: false,
-    role: ""
+    role: "",
+    _id: ""
   };
   getUser = keyId => {
     api.getUser(keyId).then(user => {
@@ -39,10 +40,30 @@ class TeamCard extends Component {
         image: user.image,
         administrator: user.administrator,
         freelance: user.freelance,
-        role: user.role
+        role: user.role,
+        _id: user._id
       });
     });
   };
+  refreshState = () => {
+    api.getTeams().then(team => {
+      this.setState({ team: team });
+      this.setState({
+        username: "",
+        email: "",
+        password: "",
+        avatar: "",
+        image: "",
+        quote: "",
+        administrator: false,
+        teamleader: false,
+        freelance: false,
+        role: "",
+        _id: ""
+      });
+    });
+  };
+
   showDrawer = () => {
     this.setState({
       visible: true
@@ -55,10 +76,10 @@ class TeamCard extends Component {
     });
   };
   handleFreeChange = e => {
-    this.setState({ freelance: e.target.value });
+    this.setState({ freelance: e.target.checked });
   };
   handleAdminChange = e => {
-    this.setState({ administrator: e.target.value });
+    this.setState({ administrator: e.target.checked });
   };
 
   handleChange(e) {
@@ -196,7 +217,6 @@ class TeamCard extends Component {
                         <div className="form-checkbox">
                           <Checkbox
                             checked={this.state.freelance}
-                            value="on"
                             onChange={this.handleFreeChange}
                           >
                             Freelance
@@ -206,7 +226,6 @@ class TeamCard extends Component {
                           {" "}
                           <Checkbox
                             checked={this.state.administrator}
-                            value="on"
                             onChange={this.handleAdminChange}
                           >
                             Admin
@@ -239,8 +258,9 @@ class TeamCard extends Component {
                     shape="round"
                     onClick={e => {
                       this.onClose();
-                      this.addNewUser();
-                      this.refreshTeams();
+                      this.props.editUser(this.state);
+                      this.refreshState();
+                      this.props.afteredit();
                     }}
                     type="primary"
                   >

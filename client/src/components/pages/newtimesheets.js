@@ -39,6 +39,7 @@ class NewTimesheets extends Component {
     year: 2019,
     calendars: [],
     forbidenWeeks: [],
+    allowClear: false,
     weekToTest: 0,
     disabled: true,
     projects: [],
@@ -89,6 +90,7 @@ class NewTimesheets extends Component {
   handleProjectChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].project = e;
+
     this.setState(stateCopy);
   }
 
@@ -147,7 +149,6 @@ class NewTimesheets extends Component {
     }
   };
   onDateChange(date, dateString) {
-    console.log("hello");
     this.setState({
       year: parseFloat(date.format("YYYY")),
       week: parseFloat(date.format("W")),
@@ -208,6 +209,7 @@ class NewTimesheets extends Component {
             />
             <div className="weekPicker">
               <WeekPicker
+                allowClear={this.state.allowClear}
                 locale={fr_FR}
                 onChange={(e, f) => this.onDateChange(e, f)}
                 placeholder="Select Week"

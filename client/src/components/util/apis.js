@@ -23,10 +23,8 @@ const api = {
       .catch(err => console.log("deleteUser", err));
   },
 
-  editUser: function(id, data) {
-    return ressource
-      .post(`/admin/users/edit/${id}`, data)
-      .then(res => res.data);
+  editUser: function(data) {
+    return ressource.post(`/admin/users/edit/`, data).then(res => res.data);
   },
 
   getUser: function(id) {
@@ -67,7 +65,6 @@ const api = {
   },
 
   addNewCalendar: function(project) {
-    console.log("project", project);
     return ressource.post("/calendar/new", project).then(res => res.data);
   },
   editCalendar: function(id, project) {
@@ -78,6 +75,9 @@ const api = {
 
   getTimesheet: function(id) {
     return ressource.get(`/calendar/edit/${id}`).then(res => res.data);
+  },
+  getAllCalendars: function() {
+    return ressource.get(`/calendar/all`).then(res => res.data);
   }
 };
 

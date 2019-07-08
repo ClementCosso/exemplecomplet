@@ -187,7 +187,7 @@ class EditUser extends Component {
               <Checkbox
                 checked={this.state.administrator}
                 id="administrator"
-                onChange={this.handleChange}
+                onChange={this.handleAdminChange}
               >
                 Admin
               </Checkbox>

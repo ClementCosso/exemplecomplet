@@ -46,13 +46,10 @@ let isLeader = (req, res, next) => {
 
 router.post("/users/new", isAuthenticated, isAdmin, (req, res, next) => {
   let user = req.body;
-  console.log("req.body", req.body);
   req.body.password = bcrypt.hashSync(
     req.body.password,
     bcrypt.genSaltSync(bcryptSalt)
   );
-  req.body.freelance = req.body.freelance == "on";
-  req.body.administrator = req.body.administrator == "on";
 
   User.create(user).then(_ => {
     res.send("ok");
@@ -67,7 +64,7 @@ router.get("/users/archive/:id", isAuthenticated, isAdmin, (req, res, next) => {
   );
 });
 
-router.post("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
+router.post("/users/edit/", isAuthenticated, isAdmin, (req, res, next) => {
   const updatedUser = {
     username: req.body.username,
     email: req.body.email,
@@ -77,9 +74,10 @@ router.post("/users/edit/:id", isAuthenticated, isAdmin, (req, res, next) => {
     administrator: req.body.administrator,
     teamleader: req.body.teamleader,
     freelance: req.body.freelance,
-    role: req.body.role
+    role: req.body.role,
+    _id: req.body._id
   };
-  User.updateOne({ _id: req.params.id }, updatedUser)
+  User.updateOne({ _id: req.body._id }, updatedUser)
     .then(user => {
       res.send(user);
     })
@@ -114,15 +112,13 @@ router.post("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
 });
 
 router.post("/project/edit/", isAuthenticated, isAdmin, (req, res, next) => {
-  console.log("received");
   const updatedProject = {
     title: req.body.title,
     description: req.body.description,
     owner: req.body.owner,
     id: req.body.projectId
   };
-  console.log("project", updatedProject);
-  console.log("id", req.body.id);
+
   Project.findOneAndUpdate({ _id: req.body.id }, updatedProject)
     .then(project => {
       res.status(200).send(project);

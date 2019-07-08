@@ -64,25 +64,38 @@ class TableofProjects extends Component {
               width: 200
             },
             {
+              title: "Owner",
+              width: 200,
+              key: "owner",
+              dataIndex: "owner",
+
+              render: owner => {
+                let color = "geekblue";
+                if (owner === "Mathias") {
+                  color = "pink";
+                } else if (owner === "Clément") {
+                  color = "geekblue";
+                } else if (owner.length < 7) {
+                  color = "green";
+                } else {
+                  color = "volcano";
+                }
+                return (
+                  <span>
+                    <Tag color={color} key={owner}>
+                      {owner.toUpperCase()}
+                    </Tag>
+                  </span>
+                );
+              }
+            },
+            {
               title: "Description du projet",
               dataIndex: "description",
               key: "description",
               width: 650
             },
 
-            {
-              title: "Owner",
-              width: 200,
-              key: "owner",
-              dataIndex: "owner",
-              render: tag => (
-                <span>
-                  <Tag color="geekblue" key={tag}>
-                    {tag.toUpperCase()}
-                  </Tag>
-                </span>
-              )
-            },
             {
               title: "Actions",
               key: "action",

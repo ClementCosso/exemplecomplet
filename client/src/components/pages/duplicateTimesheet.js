@@ -32,6 +32,7 @@ class DuplicateTimesheets extends Component {
   state = {
     redirect: false,
     forbidenWeeks: [],
+    allowClear: false,
     weekToTest: 0,
     disabled: true,
     dataSource: [],
@@ -135,7 +136,6 @@ class DuplicateTimesheets extends Component {
   };
 
   onDateChange(date, dateString) {
-    console.log("hello");
     this.setState({
       year: parseFloat(date.format("YYYY")),
       week: parseFloat(date.format("W")),
@@ -152,50 +152,42 @@ class DuplicateTimesheets extends Component {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].project = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
 
   handlelundiChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].lundi = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
   handlemardiChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].mardi = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
   handlemercrediChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].mercredi = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
   handlejeudiChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].jeudi = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
   handlevendrediChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].vendredi = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
   handlesamediChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].samedi = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
   handledimancheChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
     stateCopy.works[index].dimanche = e;
     this.setState(stateCopy);
-    console.log(this.state.works);
   }
 
   addworks = e => {
@@ -231,6 +223,7 @@ class DuplicateTimesheets extends Component {
             />
             <div className="weekPicker">
               <WeekPicker
+                allowClear={this.state.allowClear}
                 locale={fr_FR}
                 onChange={(e, f) => this.onDateChange(e, f)}
                 placeholder="Select Week"
@@ -404,23 +397,17 @@ class DuplicateTimesheets extends Component {
                 }
               }
             ]}
-            dataSource={this.state.dataSource.map(
-              (e, index) => (
-                console.log(this.state.dataSource),
-                console.log(this.state.dataSource.length),
-                {
-                  name: e.project,
-                  lundi: e.lundi,
-                  mardi: e.mardi,
-                  mercredi: e.mercredi,
-                  jeudi: e.jeudi,
-                  vendredi: e.vendredi,
-                  samedi: e.samedi,
-                  dimanche: e.dimanche,
-                  key: index
-                }
-              )
-            )}
+            dataSource={this.state.dataSource.map((e, index) => ({
+              name: e.project,
+              lundi: e.lundi,
+              mardi: e.mardi,
+              mercredi: e.mercredi,
+              jeudi: e.jeudi,
+              vendredi: e.vendredi,
+              samedi: e.samedi,
+              dimanche: e.dimanche,
+              key: index
+            }))}
           />
         </div>
       </div>

@@ -10,9 +10,6 @@ const bcryptSalt = 10;
 //==================  middlewares  ==================//
 
 let isAuthenticated = (req, res, next) => {
-  console.log("log", req.user);
-  console.log("log", req.isAuthenticated());
-  console.log("log", req.session);
   if (req.user) {
     // <== if there's user in the session (user is logged in)
     next(); // ==> go to the next route ---
@@ -23,7 +20,6 @@ let isAuthenticated = (req, res, next) => {
 };
 
 let isAdmin = (req, res, next) => {
-  console.log(req.user);
   if (req.user.administrator) {
     // <== if there's user in the session (user is logged in)
     next(); // ==> go to the next route ---
@@ -34,7 +30,6 @@ let isAdmin = (req, res, next) => {
 };
 
 let isLeader = (req, res, next) => {
-  console.log(req.user);
   if (req.user.teamleader) {
     // <== if there's user in the session (user is logged in)
     next(); // ==> go to the next route ---
@@ -161,6 +156,15 @@ router.post("/calendar/edit/:id", isAuthenticated, (req, res, next) => {
 router.get("/calendar/edit/:id", (req, res, next) => {
   Calendar.findOne({ _id: req.params.id }).then(cal => {
     res.send(cal);
+  });
+});
+
+router.get("/calendar/all", isAuthenticated, (req, res, next) => {
+  Calendar.find().then(calendars => {
+    calendars.sort(function(a, b) {
+      return b.week - a.week;
+    });
+    res.send(calendars);
   });
 });
 

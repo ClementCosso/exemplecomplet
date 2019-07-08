@@ -11,6 +11,7 @@ import {
   Select,
   Checkbox,
   DatePicker,
+  Switch,
   Icon
 } from "antd";
 import { Link } from "react-router-dom";
@@ -32,8 +33,8 @@ class Teams extends Component {
     image: "",
     quote: "",
     administrator: false,
-    teamleader: false,
     freelance: false,
+    teamleader: false,
     role: ""
   };
   showDrawer = () => {
@@ -89,11 +90,15 @@ class Teams extends Component {
     this.refreshTeams();
   };
   handleFreeChange = e => {
-    this.setState({ freelance: e.target.value });
+    this.setState({ freelance: e.target.checked });
   };
   handleAdminChange = e => {
-    this.setState({ administrator: e.target.value });
+    this.setState({ administrator: e.target.checked });
   };
+
+  editUser(e) {
+    api.editUser(e).then(res => this.refreshTeams());
+  }
 
   render() {
     return (
@@ -226,7 +231,6 @@ class Teams extends Component {
                             <Checkbox
                               id="freelance"
                               checked={this.state.freelance}
-                              value="on"
                               onChange={this.handleFreeChange}
                             >
                               Freelance
@@ -237,7 +241,6 @@ class Teams extends Component {
                             <Checkbox
                               id="administrator"
                               checked={this.state.administrator}
-                              value="on"
                               onChange={this.handleAdminChange}
                             >
                               Admin
@@ -302,6 +305,8 @@ class Teams extends Component {
                 getUser={this.getUser}
                 keyId={e._id}
                 image={e.image}
+                editUser={this.editUser.bind(this)}
+                afteredit={this.refreshTeams}
               />
             ))}{" "}
         </div>

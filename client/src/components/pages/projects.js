@@ -83,7 +83,6 @@ class Projects extends Component {
   }
 
   editProject(e) {
-    console.log("call");
     api.editProject(e).then(res => this.refreshProjects());
   }
 
