@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../util/apis";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import fr_FR from "antd/lib/locale-provider/fr_FR";
 import "moment/locale/fr";
 import {
@@ -58,7 +58,7 @@ class EditTimesheets extends Component {
     const calendar = {
       week: this.state.week,
       year: this.state.year,
-      works: this.state.works
+      works: this.state.dataSource
     };
     api
       .editCalendar(this.props.timesheetId, calendar)
@@ -101,51 +101,46 @@ class EditTimesheets extends Component {
 
   handleProjectChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].project = e;
+    stateCopy.dataSource[index].project = e;
     this.setState(stateCopy);
   }
 
   handlelundiChange(index, e) {
+    console.log(index, e);
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].lundi = e;
+    stateCopy.dataSource[index].lundi = e;
     this.setState(stateCopy);
   }
   handlemardiChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].mardi = e;
+    stateCopy.dataSource[index].mardi = e;
     this.setState(stateCopy);
   }
   handlemercrediChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].mercredi = e;
+    stateCopy.dataSource[index].mercredi = e;
     this.setState(stateCopy);
   }
   handlejeudiChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].jeudi = e;
+    stateCopy.dataSource[index].jeudi = e;
     this.setState(stateCopy);
   }
   handlevendrediChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].vendredi = e;
+    stateCopy.dataSource[index].vendredi = e;
     this.setState(stateCopy);
   }
   handlesamediChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].samedi = e;
+    stateCopy.dataSource[index].samedi = e;
     this.setState(stateCopy);
   }
   handledimancheChange(index, e) {
     let stateCopy = Object.assign({}, this.state);
-    stateCopy.works[index].dimanche = e;
+    stateCopy.dataSource[index].dimanche = e;
     this.setState(stateCopy);
   }
-
-  //   addNewTimesheets = e => {
-  //     api
-  //       .addNewTimesheets(this.state)
-  //       .then(res => this.setState({ redirect: true }));
-  //   };
 
   addworks = e => {
     this.state.works.push({
@@ -162,7 +157,43 @@ class EditTimesheets extends Component {
     this.setState({ works: this.state.works });
   };
 
+  deleteWork = e => {
+    const worksBefore = this.state.dataSource.slice(0, e);
+    const worksAfter = this.state.dataSource.slice(
+      e + 1,
+      this.state.dataSource.length
+    );
+    const NewWorks = worksBefore.concat(worksAfter);
+    const NewWorks2 = NewWorks.map((e, index) => {
+      return {
+        project: e.project,
+        lundi: e.lundi,
+        mardi: e.mardi,
+        mercredi: e.mercredi,
+        jeudi: e.jeudi,
+        vendredi: e.vendredi,
+        samedi: e.samedi,
+        dimanche: e.dimanche,
+        key: index
+      };
+    });
+
+    this.setState({ dataSource: NewWorks2 });
+  };
+
   render() {
+    const DataSource = this.state.dataSource.map((e, index) => ({
+      name: e.project,
+      lundi: e.lundi,
+      mardi: e.mardi,
+      mercredi: e.mercredi,
+      jeudi: e.jeudi,
+      vendredi: e.vendredi,
+      samedi: e.samedi,
+      dimanche: e.dimanche,
+      key: e.key
+    }));
+
     return this.state.redirect ? (
       <Redirect to="/timesheets" />
     ) : (
@@ -178,7 +209,7 @@ class EditTimesheets extends Component {
               onChange={e => this.handleChange(e)}
               enterButton
             />
-            <div className="weekPicker">
+            <div className="weekPicker-ts">
               <WeekPicker
                 disabled
                 allowClear={this.state.allowClear}
@@ -190,7 +221,6 @@ class EditTimesheets extends Component {
             <div className="timesheets-buttons">
               <div className="addline-button">
                 <Button
-                  ghost
                   shape="round"
                   type="primary"
                   onClick={e => {
@@ -352,19 +382,27 @@ class EditTimesheets extends Component {
                     />
                   );
                 }
+              },
+              {
+                title: "Supprimer",
+                key: "action",
+
+                width: 70,
+                render: (text, record) => (
+                  <span>
+                    <Link>
+                      <Icon
+                        onClick={() => {
+                          this.deleteWork(record.key);
+                        }}
+                        type="delete"
+                      />
+                    </Link>
+                  </span>
+                )
               }
             ]}
-            dataSource={this.state.dataSource.map((e, index) => ({
-              name: e.project,
-              lundi: e.lundi,
-              mardi: e.mardi,
-              mercredi: e.mercredi,
-              jeudi: e.jeudi,
-              vendredi: e.vendredi,
-              samedi: e.samedi,
-              dimanche: e.dimanche,
-              key: index
-            }))}
+            dataSource={DataSource}
           />
         </div>
       </div>

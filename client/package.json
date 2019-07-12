@@ -15,7 +15,8 @@
     "react-dom": "^16.8.6",
     "react-native-linear-gradient": "^2.5.4",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-vis": "^1.11.7"
   },
   "scripts": {
     "start": "react-app-rewired start",

@@ -8,7 +8,8 @@ import {
   DatePicker,
   Table,
   Divider,
-  Tag
+  Tag,
+  Tooltip
 } from "antd";
 import ProjectModal from "../util/editProjectModal";
 import { Link } from "react-router-dom";
@@ -37,6 +38,7 @@ class WeeklySumOfTime extends Component {
   }
 
   render() {
+    const { date } = this.props;
     const Source = [];
 
     for (var data of this.state.calendars) {
@@ -57,13 +59,13 @@ class WeeklySumOfTime extends Component {
           ];
 
         array = magicalFunction(array, stream);
-        // console.log(array);
+
         array = array.reduce((pv, cv) => pv + cv, 0);
 
         // console.log(array);
         somme = somme + array;
       }
-      // console.log(somme);
+
       Source.push({
         week: data.week,
         year: data.year,
@@ -110,19 +112,19 @@ class WeeklySumOfTime extends Component {
                 width: 100
               },
               {
-                title: "Action",
+                title: "Détail",
                 key: "action",
 
                 width: 70,
                 render: (text, record) => (
                   <span>
                     <Link>
-                      <Icon
-                        onClick={() =>
-                          this.props.date(record.year, record.week)
-                        }
-                        type="dashboard"
-                      />
+                      <Tooltip placement="right" title={"Détail de la semaine"}>
+                        <Icon
+                          onClick={() => date(record.year, record.week)}
+                          type="eye"
+                        />
+                      </Tooltip>
                     </Link>
                   </span>
                 )

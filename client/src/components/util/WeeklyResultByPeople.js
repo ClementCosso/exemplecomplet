@@ -89,7 +89,7 @@ class WeeklyResultByPeople extends Component {
                 width: 150
               },
               {
-                title: "Stats",
+                title: "Statistiques personnelles",
                 width: 150,
                 key: "percent",
                 dataIndex: "percent",
@@ -98,8 +98,8 @@ class WeeklyResultByPeople extends Component {
                     <div>
                       <Progress
                         strokeColor={{
-                          "0%": "#8ACDEA",
-                          "100%": "#0E34A0"
+                          "0%": "#03B96C",
+                          "100%": "#03B96C"
                         }}
                         percent={stat}
                         status="active"

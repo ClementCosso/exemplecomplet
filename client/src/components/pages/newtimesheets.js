@@ -148,6 +148,7 @@ class NewTimesheets extends Component {
       this.setState({ disabled: false });
     }
   };
+
   onDateChange(date, dateString) {
     this.setState({
       year: parseFloat(date.format("YYYY")),
@@ -156,6 +157,7 @@ class NewTimesheets extends Component {
     });
     this.testValue(`${date.format("YYYY")}${date.format("W")}`);
   }
+
   handleSemaineChange = val => {
     this.setState(
       { week: val, weekToTest: `${this.state.year}${val}` },
@@ -191,7 +193,40 @@ class NewTimesheets extends Component {
     this.setState({ works: this.state.works });
   };
 
+  deleteWork = e => {
+    const worksBefore = this.state.works.slice(0, e);
+    const worksAfter = this.state.works.slice(e + 1, this.state.works.length);
+    const NewWorks = worksBefore.concat(worksAfter);
+    const NewWorks2 = NewWorks.map((e, index) => {
+      return {
+        project: e.project,
+        lundi: e.lundi,
+        mardi: e.mardi,
+        mercredi: e.mercredi,
+        jeudi: e.jeudi,
+        vendredi: e.vendredi,
+        samedi: e.samedi,
+        dimanche: e.dimanche,
+        key: index
+      };
+    });
+
+    this.setState({ works: NewWorks2 });
+  };
+
   render() {
+    const DataSource = this.state.works.map((e, index) => ({
+      name: e.project,
+      lundi: e.lundi,
+      mardi: e.mardi,
+      mercredi: e.mercredi,
+      jeudi: e.jeudi,
+      vendredi: e.vendredi,
+      samedi: e.samedi,
+      dimanche: e.dimanche,
+      key: e.key
+    }));
+    console.log(DataSource);
     return this.state.redirect ? (
       <Redirect to="/timesheets" />
     ) : (
@@ -207,7 +242,7 @@ class NewTimesheets extends Component {
               onChange={e => this.handleChange(e)}
               enterButton
             />
-            <div className="weekPicker">
+            <div className="weekPicker-ts">
               <WeekPicker
                 allowClear={this.state.allowClear}
                 locale={fr_FR}
@@ -218,7 +253,6 @@ class NewTimesheets extends Component {
             <div className="timesheets-buttons">
               <div className="addline-button">
                 <Button
-                  ghost
                   shape="round"
                   type="primary"
                   onClick={e => {
@@ -283,6 +317,7 @@ class NewTimesheets extends Component {
                 render: (name, work) => {
                   return (
                     <InputNumber
+                      value={work.lundi}
                       min={0}
                       max={12}
                       onChange={e => this.handlelundiChange(work.key, e)}
@@ -297,6 +332,7 @@ class NewTimesheets extends Component {
                 render: (name, work) => {
                   return (
                     <InputNumber
+                      value={work.mardi}
                       min={0}
                       max={12}
                       onChange={e => this.handlemardiChange(work.key, e)}
@@ -312,6 +348,7 @@ class NewTimesheets extends Component {
                   return (
                     <InputNumber
                       min={0}
+                      value={work.mercredi}
                       max={12}
                       onChange={e => this.handlemercrediChange(work.key, e)}
                     />
@@ -325,6 +362,7 @@ class NewTimesheets extends Component {
                 render: (name, work) => {
                   return (
                     <InputNumber
+                      value={work.jeudi}
                       min={0}
                       max={12}
                       onChange={e => this.handlejeudiChange(work.key, e)}
@@ -339,6 +377,7 @@ class NewTimesheets extends Component {
                 render: (name, work) => {
                   return (
                     <InputNumber
+                      value={work.vendredi}
                       min={0}
                       max={12}
                       onChange={e => this.handlevendrediChange(work.key, e)}
@@ -353,6 +392,7 @@ class NewTimesheets extends Component {
                 render: (name, work) => {
                   return (
                     <InputNumber
+                      value={work.samedi}
                       min={0}
                       max={12}
                       onChange={e => this.handlesamediChange(work.key, e)}
@@ -367,26 +407,34 @@ class NewTimesheets extends Component {
                 render: (name, work) => {
                   return (
                     <InputNumber
+                      value={work.dimanche}
                       min={0}
                       max={12}
                       onChange={e => this.handledimancheChange(work.key, e)}
                     />
                   );
                 }
+              },
+              {
+                title: "Supprimer",
+                key: "action",
+
+                width: 70,
+                render: (text, record) => (
+                  <span>
+                    <Link>
+                      <Icon
+                        onClick={() => {
+                          this.deleteWork(record.key);
+                        }}
+                        type="delete"
+                      />
+                    </Link>
+                  </span>
+                )
               }
             ]}
-            dataSource={this.state.works.map((e, index) => ({
-              name: e.project,
-              lundi: e.lundi,
-              mardi: e.mardi,
-              mercredi: e.mercredi,
-              jeudi: e.jeudi,
-              vendredi: e.vendredi,
-              samedi: e.samedi,
-              dimanche: e.dimanche,
-
-              key: index
-            }))}
+            dataSource={DataSource}
           />
         </div>
       </div>

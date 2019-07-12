@@ -78,6 +78,10 @@ const api = {
   },
   getAllCalendars: function() {
     return ressource.get(`/calendar/all`).then(res => res.data);
+  },
+
+  RelanceMailjet: function(body) {
+    return ressource.post("/admin/mail", body).then(res => res.data);
   }
 };
 

@@ -14,6 +14,7 @@ import {
   DatePicker,
   Table,
   Divider,
+  Tooltip,
   Tag
 } from "antd";
 import { Link } from "react-router-dom";
@@ -57,64 +58,72 @@ class Timesheets extends Component {
             />
 
             <div>
-              <Button ghost shape="round" type="primary">
+              <Button shape="round" type="primary">
                 <Link to="/timesheets/new">
-                  <Icon type="plus" /> Nouvelle Timesheet
+                  <Icon type="plus" /> Nouvelle timesheet
                 </Link>
               </Button>
             </div>
           </div>
         </div>
         <div>
-          <div className="TimesheetsRecapTable">
-            <Table
-              columns={[
-                {
-                  title: "Année",
-                  dataIndex: "year",
-                  key: "year",
-                  width: 100
-                },
-                {
-                  title: "Semaine",
-                  dataIndex: "week",
-                  key: "week",
-                  width: 100
-                },
+          <div className="TimesheetsPage">
+            <div className="TimesheetsRecapTable">
+              <Table
+                columns={[
+                  {
+                    title: "Année",
+                    dataIndex: "year",
+                    key: "year",
+                    width: 200
+                  },
+                  {
+                    title: "Semaine",
+                    dataIndex: "week",
+                    key: "week",
+                    width: 200
+                  },
 
-                {
-                  title: "Action",
-                  key: "action",
+                  {
+                    title: "Action",
+                    key: "action",
 
-                  width: 200,
-                  render: (text, record) => (
-                    <span>
-                      <Link to={`/timesheets/duplicate/${record.key}`}>
-                        <Icon type="apartment" />
-                      </Link>
-                      <Divider type="vertical" />
-                      <Link to={`/timesheets/edit/${record.key}`}>
-                        <Icon type="edit" />
-                      </Link>
-                      <Divider type="vertical" />
-                      <Link>
-                        <Icon
-                          onClick={() => this.deleteCalendar(record.key)}
-                          type="delete"
-                        />
-                      </Link>
-                    </span>
-                  )
-                }
-              ]}
-              dataSource={this.state.calendars.map(e => ({
-                year: e.year,
-                week: e.week,
-                key: e._id
-              }))}
-            />
+                    width: 250,
+                    render: (text, record) => (
+                      <span>
+                        <Tooltip placement="top" title={"Dupliquer"}>
+                          <Link to={`/timesheets/duplicate/${record.key}`}>
+                            <Icon type="branches" />
+                          </Link>
+                        </Tooltip>
+                        <Divider type="vertical" />{" "}
+                        <Tooltip placement="top" title={"Editer"}>
+                          <Link to={`/timesheets/edit/${record.key}`}>
+                            <Icon type="edit" />
+                          </Link>
+                        </Tooltip>
+                        <Divider type="vertical" />
+                        <Tooltip placement="top" title={"Supprimer"}>
+                          <Link>
+                            <Icon
+                              onClick={() => this.deleteCalendar(record.key)}
+                              type="delete"
+                            />
+                          </Link>
+                        </Tooltip>
+                      </span>
+                    )
+                  }
+                ]}
+                dataSource={this.state.calendars.map(e => ({
+                  year: e.year,
+                  week: e.week,
+                  key: e._id
+                }))}
+              />
+            </div>{" "}
           </div>{" "}
-        </div>{" "}
+        </div>
       </div>
     );
   }

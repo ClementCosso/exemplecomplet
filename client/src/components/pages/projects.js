@@ -101,12 +101,7 @@ class Projects extends Component {
             />
 
             <div>
-              <Button
-                ghost
-                shape="round"
-                type="primary"
-                onClick={this.showDrawer}
-              >
+              <Button shape="round" type="primary" onClick={this.showDrawer}>
                 <Icon type="plus" /> Nouveau projet
               </Button>
               <Drawer

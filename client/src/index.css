@@ -34,19 +34,42 @@ code {
 }
 
 .dashboard-row-1 {
+  padding-top: 150px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .dash-box {
   border: 0.5px solid rgba(165, 165, 165, 0.116);
-  background-color: rgb(250, 250, 250);
+
+  background-color: rgb(255, 255, 255);
   margin-top: 1%;
   padding: 10px;
   width: 32%;
 }
 
+.dash-box-graph {
+  border: 0.5px solid rgba(165, 165, 165, 0.116);
+
+  background-color: rgb(255, 255, 255);
+  margin-top: 1%;
+  padding: 10px;
+  width: 65.3%;
+}
+
 .dash-box:hover {
+  /* background-color: rgba(182, 182, 182, 0.411); */
+
+  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
+    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  transition: box-shadow 0.3s ease-in-out;
+  /* color: rgb(10, 0, 143); */
+  /* box-shadow: inset 0px 5px 5px 0px rgba(179, 179, 179, 0.24),
+    inset 0px 1px 5px 0px rgba(224, 224, 224, 0.507); */
+}
+.dash-box-graph:hover {
   /* background-color: rgba(182, 182, 182, 0.411); */
 
   box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
@@ -98,6 +121,36 @@ code {
   margin-right: 10vw;
 }
 
+.nav2-box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.nav2-box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.nav2 {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  display: flex;
+
+  background-color: rgb(255, 255, 255);
+  justify-content: space-between;
+  width: 100vw;
+  height: 70px;
+  align-items: center;
+  border-bottom: 1px solid rgba(190, 190, 190, 0.301);
+}
+
 .navbar {
   height: 70px;
   display: flex;
@@ -131,7 +184,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 20px;
+  padding-right: 10px;
   padding-left: 20px;
 }
 
@@ -142,17 +195,25 @@ code {
   /* box-shadow: inset 0px 5px 5px 0px rgba(179, 179, 179, 0.24),
     inset 0px 1px 5px 0px rgba(224, 224, 224, 0.507); */
 }
-.projectPage {
+.projectsTableContainer {
   border: 0.5px solid rgba(165, 165, 165, 0.116);
-  background-color: rgb(250, 250, 250);
-  box-shadow: 0px 0px 5px 4px rgba(114, 95, 129, 0.096),
-    0px 0px 3px 2px rgba(194, 194, 194, 0.11);
+  background-color: rgb(255, 255, 255);
   border-radius: 3px;
+  margin-left: 10px;
+  margin-right: 35px;
   padding: 20px;
-  margin: 22px 5% 5px 5%;
+  margin-top: 165px;
+}
+.projectPage {
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+}
 
-  display: flex;
-  justify-content: space-around;
+.projectsTableContainer:hover {
+  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
+    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .searchBar {
@@ -161,15 +222,19 @@ code {
 }
 
 .subnavbar {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  z-index: 10;
   height: 70px;
   display: flex;
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(255, 255, 255);
   flex-direction: column;
   justify-content: center;
-  border-bottom: 0.2px solid rgba(95, 11, 112, 0.39);
+  border-bottom: 0.2px solid rgba(85, 85, 85, 0.11);
 
-  box-shadow: 0px 5px 5px 0px rgba(114, 95, 129, 0.096),
-    0px 1px 5px 0px rgba(194, 194, 194, 0.192);
+  box-shadow: 0px 5px 5px 0px rgba(7, 44, 13, 0.185),
+    0px 1px 5px 0px rgba(194, 194, 194, 0.288);
 }
 
 .subcontent {
@@ -182,12 +247,13 @@ code {
 }
 
 .TimesheetsTable {
+  padding-bottom: 30px;
   border: 0.5px solid rgba(165, 165, 165, 0.116);
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(255, 255, 255);
 
   border-radius: 3px;
   padding: 20px;
-  margin: 22px 5% 5px 5%;
+  margin: 160px 5% 5px 5%;
 
   display: flex;
   justify-content: space-around;
@@ -199,14 +265,18 @@ code {
   transition: box-shadow 0.3s ease-in-out;
 }
 
+.TimesheetsPage {
+  display: flex;
+  margin-left: 10px;
+}
+
 .TimesheetsRecapTable {
   border: 0.5px solid rgba(165, 165, 165, 0.116);
-  background-color: rgb(250, 250, 250);
-
+  background-color: rgb(255, 255, 255);
+  margin-top: 165px;
   border-radius: 3px;
   padding: 20px;
-  margin: 22px 5% 5px 5%;
-  width: 40vw;
+
   display: flex;
   justify-content: space-around;
 }
@@ -217,6 +287,7 @@ code {
   transition: box-shadow 0.3s ease-in-out;
 }
 .team-container {
+  margin-top: 140px;
   display: flex;
   flex-wrap: wrap;
   padding-left: 50px;
@@ -225,11 +296,11 @@ code {
 }
 
 .timesheets-table {
-  margin-top: 22px;
+  margin-top: 140px;
 }
 
-.weekPicker {
-  margin-right: 30%;
+.weekPicker-dashboard {
+  margin-right: 22%;
 }
 
 #components-form-demo-normal-login .login-form {

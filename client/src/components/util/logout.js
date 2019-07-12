@@ -32,6 +32,7 @@ class Logout extends Component {
   render() {
     return (
       <Button
+        ghost
         shape="round"
         type="primary"
         icon="logout"

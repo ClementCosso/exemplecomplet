@@ -11,6 +11,7 @@ import {
   Row,
   Select,
   Checkbox,
+  Tooltip,
   DatePicker
 } from "antd";
 
@@ -105,14 +106,15 @@ class TeamCard extends Component {
           }
           actions={[
             <div>
-              {/* <Link to={`/teams/edit/${this.props.keyId}`}> */}
-              <Icon
-                onClick={e => {
-                  this.getUser(this.props.keyId);
-                  this.showDrawer();
-                }}
-                type="edit"
-              />
+              <Tooltip placement="top" title={"Editer"}>
+                <Icon
+                  onClick={e => {
+                    this.getUser(this.props.keyId);
+                    this.showDrawer();
+                  }}
+                  type="edit"
+                />
+              </Tooltip>
               <Drawer
                 title={`Editer le profil de ${this.props.title}`}
                 width={720}
@@ -270,11 +272,12 @@ class TeamCard extends Component {
               </Drawer>
               {/* </Link> */}
             </div>,
-
-            <Icon
-              onClick={() => this.props.deleteUser(this.props.keyId)}
-              type="delete"
-            />
+            <Tooltip placement="top" title={"Supprimer"}>
+              <Icon
+                onClick={() => this.props.deleteUser(this.props.keyId)}
+                type="delete"
+              />
+            </Tooltip>
           ]}
         >
           <Meta title={this.props.title} description={this.props.description} />

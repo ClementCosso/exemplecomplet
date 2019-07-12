@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { Icon, Input, Button } from "antd";
-import image from "../../../src/the_future_of_vendor_credentialing.png";
+import image from "../../../src/teamwork.svg";
 
 class Login extends Component {
   constructor(props) {

@@ -14,6 +14,7 @@ import EditUser from "./components/pages/editUser";
 import Home from "./home.jpg";
 import DisconnectedNav from "./components/util/disconnectedNav";
 import ConnectedNav from "./components/util/connectedNav";
+import ConnectedNav2 from "./components/util/ConnectedNav2";
 import ProjectModal from "./components/util/editProjectModal";
 import EditTimesheets from "./components/pages/editTimesheets";
 import DuplicateTimesheets from "./components/pages/duplicateTimesheet";
@@ -63,7 +64,7 @@ class App extends Component {
         <div className="Nav">
           {this.state.currentUser ? (
             <header>
-              <ConnectedNav
+              <ConnectedNav2
                 currentUser={this.state.currentUser}
                 onUserChange={userDoc => this.syncCurrentUser(userDoc)}
               />
@@ -83,6 +84,11 @@ class App extends Component {
           <Route
             exact
             path="/dashboard"
+            render={() => this.isAuthenticated(<Dashboard />)}
+          />
+          <Route
+            exact
+            path="/"
             render={() => this.isAuthenticated(<Dashboard />)}
           />
           <Route

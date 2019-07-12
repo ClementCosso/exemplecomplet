@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Logout from "../util/logout";
+import { Menu, Icon } from "antd";
+
+const { SubMenu } = Menu;
 
 class ConnectedNav extends Component {
   render() {
@@ -12,15 +15,15 @@ class ConnectedNav extends Component {
               <div className="nav-first-part">
                 <Link className="nav-items" to="/dashboard">
                   {" "}
-                  Dashboard{" "}
+                  Tableau de bord{" "}
                 </Link>
                 <Link icon="team" className="nav-items" to="/teams">
                   {" "}
-                  Teams{" "}
+                  Equipes{" "}
                 </Link>
                 <Link className="nav-items" to="/projects">
                   {" "}
-                  Projects{" "}
+                  Projets{" "}
                 </Link>
                 <Link className="nav-items" to="/timesheets">
                   {" "}

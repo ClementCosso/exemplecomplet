@@ -12,6 +12,7 @@ import {
   DatePicker,
   Table,
   Divider,
+  Tooltip,
   Tag
 } from "antd";
 import ProjectModal from "../util/editProjectModal";
@@ -70,15 +71,15 @@ class TableofProjects extends Component {
               dataIndex: "owner",
 
               render: owner => {
-                let color = "geekblue";
+                let color = "#00D30A";
                 if (owner === "Mathias") {
                   color = "pink";
                 } else if (owner === "Clément") {
-                  color = "geekblue";
-                } else if (owner.length < 7) {
-                  color = "green";
+                  color = "#03B96C";
+                } else if (owner.length < 9) {
+                  color = "#0078FF";
                 } else {
-                  color = "volcano";
+                  color = "#FDB502";
                 }
                 return (
                   <span>
@@ -93,7 +94,7 @@ class TableofProjects extends Component {
               title: "Description du projet",
               dataIndex: "description",
               key: "description",
-              width: 650
+              width: 660
             },
 
             {
@@ -101,30 +102,34 @@ class TableofProjects extends Component {
               key: "action",
               render: (text, record) => (
                 <span>
-                  <Link>
-                    <Icon
-                      color="black"
-                      onClick={() => {
-                        // this.toggleChildMenu();
-                        this.setState({
-                          title: record.name,
-                          description: record.description,
-                          owner: record.owner,
-                          id: record.key
-                        });
-                        this.showDrawer();
-                      }}
-                      type="edit"
-                    />
-                  </Link>
+                  <Tooltip placement="top" title={"Editer"}>
+                    <Link>
+                      <Icon
+                        color="black"
+                        onClick={() => {
+                          // this.toggleChildMenu();
+                          this.setState({
+                            title: record.name,
+                            description: record.description,
+                            owner: record.owner,
+                            id: record.key
+                          });
+                          this.showDrawer();
+                        }}
+                        type="edit"
+                      />
+                    </Link>
+                  </Tooltip>
 
                   <Divider type="vertical" />
-                  <Link>
-                    <Icon
-                      onClick={() => this.props.deleteProject(record.key)}
-                      type="delete"
-                    />
-                  </Link>
+                  <Tooltip placement="top" title={"Supprimer"}>
+                    <Link>
+                      <Icon
+                        onClick={() => this.props.deleteProject(record.key)}
+                        type="delete"
+                      />
+                    </Link>
+                  </Tooltip>
                 </span>
               )
             }

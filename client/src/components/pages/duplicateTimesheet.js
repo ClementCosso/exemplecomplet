@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../util/apis";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import fr_FR from "antd/lib/locale-provider/fr_FR";
 import "moment/locale/fr";
 import {
@@ -69,7 +69,7 @@ class DuplicateTimesheets extends Component {
     const calendar = {
       week: this.state.week,
       year: this.state.year,
-      works: this.state.works
+      works: this.state.dataSource
     };
     api
       .editCalendar(this.props.timesheetId, calendar)
@@ -205,7 +205,42 @@ class DuplicateTimesheets extends Component {
     this.setState({ works: this.state.works });
   };
 
+  deleteWork = e => {
+    const worksBefore = this.state.dataSource.slice(0, e);
+    const worksAfter = this.state.dataSource.slice(
+      e + 1,
+      this.state.dataSource.length
+    );
+    const NewWorks = worksBefore.concat(worksAfter);
+    const NewWorks2 = NewWorks.map((e, index) => {
+      return {
+        project: e.project,
+        lundi: e.lundi,
+        mardi: e.mardi,
+        mercredi: e.mercredi,
+        jeudi: e.jeudi,
+        vendredi: e.vendredi,
+        samedi: e.samedi,
+        dimanche: e.dimanche,
+        key: index
+      };
+    });
+
+    this.setState({ dataSource: NewWorks2 });
+  };
+
   render() {
+    const DataSource = this.state.dataSource.map((e, index) => ({
+      name: e.project,
+      lundi: e.lundi,
+      mardi: e.mardi,
+      mercredi: e.mercredi,
+      jeudi: e.jeudi,
+      vendredi: e.vendredi,
+      samedi: e.samedi,
+      dimanche: e.dimanche,
+      key: e.key
+    }));
     return this.state.redirect ? (
       <Redirect to="/timesheets" />
     ) : (
@@ -232,7 +267,6 @@ class DuplicateTimesheets extends Component {
             <div className="timesheets-buttons">
               <div className="addline-button">
                 <Button
-                  ghost
                   shape="round"
                   type="primary"
                   onClick={e => {
@@ -395,19 +429,27 @@ class DuplicateTimesheets extends Component {
                     />
                   );
                 }
+              },
+              {
+                title: "Supprimer",
+                key: "action",
+
+                width: 70,
+                render: (text, record) => (
+                  <span>
+                    <Link>
+                      <Icon
+                        onClick={() => {
+                          this.deleteWork(record.key);
+                        }}
+                        type="delete"
+                      />
+                    </Link>
+                  </span>
+                )
               }
             ]}
-            dataSource={this.state.dataSource.map((e, index) => ({
-              name: e.project,
-              lundi: e.lundi,
-              mardi: e.mardi,
-              mercredi: e.mercredi,
-              jeudi: e.jeudi,
-              vendredi: e.vendredi,
-              samedi: e.samedi,
-              dimanche: e.dimanche,
-              key: index
-            }))}
+            dataSource={DataSource}
           />
         </div>
       </div>

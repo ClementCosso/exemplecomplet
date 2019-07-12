@@ -4,6 +4,10 @@ const User = require("../models/User");
 const Project = require("../models/Project");
 const Calendar = require("../models/Calendar");
 const bcrypt = require("bcrypt");
+const mailjet = require("node-mailjet").connect(
+  process.env.MJ_APIKEY_PUBLIC,
+  process.env.MJ_APIKEY_PRIVATE
+);
 
 const bcryptSalt = 10;
 
@@ -129,10 +133,45 @@ router.post("/project/edit/", isAuthenticated, isAdmin, (req, res, next) => {
     });
 });
 
-//==================  routes  ==================//
-
 router.get("/projects/new", isAuthenticated, isAdmin, (req, res, next) => {
   res.render("newproject");
+});
+
+router.post("/mail", isAuthenticated, isAdmin, (req, res, next) => {
+  console.log(req.body);
+  const destinataire = req.body.email;
+  const week = req.body.week;
+  const name = req.body.name;
+  const request = mailjet.post("send", { version: "v3.1" }).request({
+    Messages: [
+      {
+        From: {
+          Email: "clement@relevanc.com",
+          Name: "JCN"
+        },
+        To: [
+          {
+            Email: destinataire,
+            Name: name
+          }
+        ],
+        Subject: "Unfriendly redminder",
+        TextPart: "Cher Lucien, vous êtes virés",
+        HTMLPart: `<h3>Hello ${name}, vous n'avez pas rempli votre feuille de temps de la semaine ${week}.</h3> <br />
+        <ul><li>Un oubli = une gifle</li>
+        <li>Deux oublis = Zéro prime</li>
+        <li>Trois oublis = viré sans passer par la compta</li></ul>
+        <br />`
+      }
+    ]
+  });
+  request
+    .then(result => {
+      console.log(result.body);
+    })
+    .catch(err => {
+      console.log(err.statusCode);
+    });
 });
 
 module.exports = router;

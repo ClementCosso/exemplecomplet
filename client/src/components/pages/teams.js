@@ -115,12 +115,7 @@ class Teams extends Component {
             />
 
             <div>
-              <Button
-                ghost
-                type="primary"
-                shape="round"
-                onClick={this.showDrawer}
-              >
+              <Button type="primary" shape="round" onClick={this.showDrawer}>
                 <Icon type="plus" /> Nouveau profil
               </Button>
               <div className="drawer">

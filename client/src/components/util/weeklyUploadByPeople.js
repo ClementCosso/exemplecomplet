@@ -10,8 +10,10 @@ import {
   Select,
   Checkbox,
   DatePicker,
+  notification,
   Table,
   Divider,
+  Tooltip,
   Tag
 } from "antd";
 import ProjectModal from "../util/editProjectModal";
@@ -28,6 +30,21 @@ class WeeklyUploadByPeople extends Component {
     team: [],
     year: "",
     week: ""
+  };
+
+  RelanceMailjet(name, email) {
+    api
+      .RelanceMailjet({ email: email, name: name, week: this.state.week })
+      .then(res => console.log("ok"));
+    this.openNotification(name);
+  }
+
+  openNotification = name => {
+    notification.open({
+      message: "Relance envoyée",
+      description: `La relance a bien été envoyée au destinataire ${name}`,
+      icon: <Icon type="twitter" style={{ color: "#03B96C" }} />
+    });
   };
 
   refreshCalendars = () => {
@@ -75,6 +92,7 @@ class WeeklyUploadByPeople extends Component {
         .some(c => c.user === e._id);
       return {
         user: e.username,
+        email: e.email,
         hasFilledTimesheet
       };
     });
@@ -82,20 +100,32 @@ class WeeklyUploadByPeople extends Component {
     const resultats = ListeDeNoms.map((e, index) => {
       if (this.state.week > 0) {
         if (e.hasFilledTimesheet === true) {
-          return { user: e.user, hasFilled: "DONE", key: e[index] };
+          return {
+            user: e.user,
+            email: e.email,
+            hasFilled: "DONE",
+            key: e[index]
+          };
         } else {
-          return { user: e.user, hasFilled: "missing", key: e[index] };
+          return {
+            user: e.user,
+            email: e.email,
+            hasFilled: "missing",
+            key: e[index]
+          };
         }
       } else {
         if (e.hasFilledTimesheet === true) {
           return {
             user: e.user,
+            email: e.email,
             hasFilled: "Choisir une semaine",
             key: e[index]
           };
         } else {
           return {
             user: e.user,
+            email: e.email,
             hasFilled: "Choisir une semaine",
             key: e[index]
           };
@@ -114,19 +144,19 @@ class WeeklyUploadByPeople extends Component {
                 title: "Team",
                 dataIndex: "user",
                 key: "user",
-                width: 150
+                width: 140
               },
               {
                 title: `Semaine ${this.state.week}`,
-                width: 150,
+                width: 140,
                 key: "hasFilled",
                 dataIndex: "hasFilled",
                 render: posted => {
                   let color = "white";
                   if (posted === "DONE") {
-                    color = "#4FAF47";
+                    color = "#03B96C";
                   } else if (posted === "missing") {
-                    color = "#f50";
+                    color = "#ff6161";
                   } else {
                     color = "white";
                   }
@@ -138,6 +168,26 @@ class WeeklyUploadByPeople extends Component {
                     </span>
                   );
                 }
+              },
+              {
+                title: "Relance",
+                width: 20,
+                key: "remind",
+                dataIndex: "remind",
+                render: (text, record) => (
+                  <span>
+                    <Link>
+                      <Tooltip placement="right" title={"Relancer"}>
+                        <Icon
+                          onClick={() =>
+                            this.RelanceMailjet(record.user, record.email)
+                          }
+                          type="alert"
+                        />
+                      </Tooltip>
+                    </Link>
+                  </span>
+                )
               }
             ]}
             dataSource={resultats}

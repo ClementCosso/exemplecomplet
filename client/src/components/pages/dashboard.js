@@ -9,6 +9,8 @@ import fr_FR from "antd/lib/locale-provider/fr_FR";
 import "moment/locale/fr";
 import Weekly2 from "../util/weekly2";
 import Weekly3 from "../util/weekly3";
+import QuarterlyResults from "../util/QuarterlyResults";
+import Graph1 from "../util/graph1";
 const { WeekPicker } = DatePicker;
 const { Search } = Input;
 
@@ -36,6 +38,11 @@ class Dashboard extends Component {
     this.getWeekNumber(new Date());
   }
 
+  dateSet = (year, week) => {
+    console.log(this.state);
+    this.setState({ year, week });
+  };
+
   onDateChange(date, dateString) {
     this.setState({
       year: parseFloat(date.format("YYYY")),
@@ -54,7 +61,7 @@ class Dashboard extends Component {
               disabled
               enterButton
             />
-            <div className="weekPicker">
+            <div className="weekPicker-dashboard">
               <WeekPicker
                 allowClear={this.state.allowClear}
                 locale={fr_FR}
@@ -78,6 +85,12 @@ class Dashboard extends Component {
           </div>
           <div className="dash-box">
             <WeeklyResultByPeople />
+          </div>
+          <div className="dash-box ">
+            <QuarterlyResults />
+          </div>
+          <div className="dash-box-graph ">
+            <Graph1 />
           </div>
         </div>
       </div>

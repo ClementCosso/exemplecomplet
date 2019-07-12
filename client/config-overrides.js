@@ -9,7 +9,12 @@ module.exports = override(
   }),
   addLessLoader({
     javascriptEnabled: true,
-    modifyVars: { "@primary-color": "#0E34A0" }
+    modifyVars: {
+      "@primary-color": "#03B96C",
+      "@table-header-bg": "#f2f2f2",
+      "@table-row-hover-bg": "#f2f2f2",
+      "@text-color": "#63666a"
+    }
   })
 );
 
