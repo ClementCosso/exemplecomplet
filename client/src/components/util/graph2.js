@@ -17,13 +17,15 @@ import {
   Hint
 } from "react-vis";
 const { Text } = Typography;
-class Graph1 extends Component {
+
+export default class Graph2 extends Component {
   state = {
     value: false,
     name: "",
     calendars: [],
     projects: []
   };
+
   componentDidMount() {
     this.getWeekNumber(new Date());
     this.refreshCalendars();
@@ -53,22 +55,19 @@ class Graph1 extends Component {
 
   render() {
     const { value } = this.state;
-    const { name } = this.state.name;
-    const DataBase = this.state.calendars;
     const Allprojects = this.state.projects;
 
     const mappingOfWorks = this.state.calendars
       .filter(e => e.year === this.state.year)
-      .filter(f => f.week === this.state.week - 1)
+      .filter(
+        f => f.week <= this.state.week - 1 && f.week > this.state.week - 5
+      )
       .map(e => e.works);
-    console.log("mapping of works", mappingOfWorks);
 
     var concat = [];
     for (var j = 0; j < mappingOfWorks.length; j++) {
       concat = mappingOfWorks[j].concat(concat);
     }
-
-    console.log("concat", concat);
 
     const DataString = [];
     for (var k = 0; k < Allprojects.length; k++) {
@@ -102,19 +101,14 @@ class Graph1 extends Component {
       (acc, curV) => acc + curV,
       0
     );
-    const RestObject = [
-      {
-        Project: "All others",
-        theta: Math.floor(RestReduced * 100) / 100
-      }
-    ];
+    const RestObject = [{ Project: "All others", theta: RestReduced }];
 
     const DataSource = FirstData.concat(RestObject);
 
     return (
       <div>
         <div className="textBadge">
-          <Text code>Top 5 projets - semaine {this.state.week - 1}</Text>
+          <Text code>Top 5 projets - cumul 4 semaines</Text>
         </div>
         <div>
           <RadialChart
@@ -154,4 +148,3 @@ class Graph1 extends Component {
     );
   }
 }
-export default Graph1;

@@ -10,6 +10,7 @@ import {
   Select,
   Checkbox,
   DatePicker,
+  Text,
   Table,
   Divider,
   Progress,
@@ -60,8 +61,6 @@ class WeeklyResultByPeople extends Component {
   }
 
   render() {
-    const now = new Date();
-
     const DataSource = this.state.team;
     const percent = [];
     for (var i = 0; i < DataSource.length; i++) {
@@ -76,11 +75,15 @@ class WeeklyResultByPeople extends Component {
         )
       });
     }
+    const percentSorted = percent.sort(function(a, b) {
+      return a.percent - b.percent;
+    });
 
     return (
       <div>
         <div>
           <Table
+            pagination={{ pageSize: 8 }}
             columns={[
               {
                 title: "Team",
@@ -109,7 +112,7 @@ class WeeklyResultByPeople extends Component {
                 }
               }
             ]}
-            dataSource={percent}
+            dataSource={percentSorted}
           />
         </div>
       </div>

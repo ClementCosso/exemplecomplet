@@ -19,6 +19,8 @@ import {
 } from "antd";
 import { Link } from "react-router-dom";
 import SubNavbar from "../util/subNavbar";
+import Graph4 from "../util/graph4";
+import Graph5 from "../util/graph5";
 const { Search } = Input;
 
 class Timesheets extends Component {
@@ -75,13 +77,13 @@ class Timesheets extends Component {
                     title: "Année",
                     dataIndex: "year",
                     key: "year",
-                    width: 200
+                    width: 270
                   },
                   {
                     title: "Semaine",
                     dataIndex: "week",
                     key: "week",
-                    width: 200
+                    width: 270
                   },
 
                   {
@@ -96,7 +98,7 @@ class Timesheets extends Component {
                             <Icon type="branches" />
                           </Link>
                         </Tooltip>
-                        <Divider type="vertical" />{" "}
+                        <Divider type="vertical" />
                         <Tooltip placement="top" title={"Editer"}>
                           <Link to={`/timesheets/edit/${record.key}`}>
                             <Icon type="edit" />
@@ -121,8 +123,12 @@ class Timesheets extends Component {
                   key: e._id
                 }))}
               />
-            </div>{" "}
-          </div>{" "}
+            </div>
+            <div className="TimesheetsRecapTable">
+              <Graph4 />
+              <Graph5 />
+            </div>
+          </div>
         </div>
       </div>
     );

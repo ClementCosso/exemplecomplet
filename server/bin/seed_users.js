@@ -12,7 +12,7 @@ module.exports = [
     freelance: false,
     quote: "il faut pas pousser Mehdi dans les orties",
     teamleader: true,
-    email: "c@rc.com",
+    email: "clement@relevanc.com",
     role: "Projet",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt))
   },

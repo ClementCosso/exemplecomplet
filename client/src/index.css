@@ -2,6 +2,26 @@
   margin-right: 3vw;
 }
 
+.image {
+  width: 25vw;
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #f5f5f5;
+  /* overflow: hidden; */
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.carouselcard {
+  width: 30vw;
+  height: 40vh;
+}
+
 .background {
   height: 100%;
   background-repeat: no-repeat;
@@ -34,7 +54,7 @@ code {
 }
 
 .dashboard-row-1 {
-  padding-top: 150px;
+  padding-top: 145px;
   padding-bottom: 30px;
   display: flex;
   justify-content: space-around;
@@ -48,36 +68,38 @@ code {
   margin-top: 1%;
   padding: 10px;
   width: 32%;
+  height: 64vh;
+}
+
+.ts-box {
+  border: 0.5px solid rgba(165, 165, 165, 0.116);
+  background-color: rgb(255, 255, 255);
+  margin-top: 165px;
+  padding: 10px;
+  width: 32%;
+  height: 64vh;
 }
 
 .dash-box-graph {
   border: 0.5px solid rgba(165, 165, 165, 0.116);
-
   background-color: rgb(255, 255, 255);
   margin-top: 1%;
   padding: 10px;
   width: 65.3%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 64vh;
 }
 
 .dash-box:hover {
-  /* background-color: rgba(182, 182, 182, 0.411); */
-
-  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
-    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  box-shadow: 0px 0px 6px 4px rgba(205, 204, 206, 0.075),
+    0px 0px 4px 2px rgba(194, 194, 194, 0.11);
   transition: box-shadow 0.3s ease-in-out;
-  /* color: rgb(10, 0, 143); */
-  /* box-shadow: inset 0px 5px 5px 0px rgba(179, 179, 179, 0.24),
-    inset 0px 1px 5px 0px rgba(224, 224, 224, 0.507); */
 }
 .dash-box-graph:hover {
-  /* background-color: rgba(182, 182, 182, 0.411); */
-
-  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
-    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  box-shadow: 0px 0px 6px 4px rgba(205, 204, 206, 0.075),
+    0px 0px 4px 2px rgba(194, 194, 194, 0.11);
   transition: box-shadow 0.3s ease-in-out;
-  /* color: rgb(10, 0, 143); */
-  /* box-shadow: inset 0px 5px 5px 0px rgba(179, 179, 179, 0.24),
-    inset 0px 1px 5px 0px rgba(224, 224, 224, 0.507); */
 }
 
 .form-container {
@@ -93,12 +115,22 @@ code {
   justify-content: space-around;
   height: 100vh;
 }
+
+.graph3 {
+  margin-top: 3vh;
+}
+.graph3box {
+  margin-left: 4vw;
+  width: 60%;
+}
 #login-image {
   width: 20vw;
   height: auto;
 }
 
 .login-input {
+  margin-right: 3vh;
+  margin-left: 3vh;
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
@@ -108,17 +140,26 @@ code {
 }
 .LoginPage {
   display: flex;
+  padding-left: 10vw;
+  padding-right: 10vw;
   justify-content: space-around;
   align-items: center;
-  padding-right: 20vw;
 }
 .login-form {
   width: 30vw;
-  margin-left: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.445);
+  border: 0.5px solid rgba(165, 165, 165, 0.39);
+  border-radius: 5px;
+  height: 50vh;
 }
-.login-image {
-  width: 20vw;
-  margin-right: 10vw;
+
+.login-form:hover {
+  box-shadow: 0px 0px 6px 4px rgba(205, 204, 206, 0.075),
+    0px 0px 4px 2px rgba(194, 194, 194, 0.11);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .nav2-box1 {
@@ -199,8 +240,8 @@ code {
   border: 0.5px solid rgba(165, 165, 165, 0.116);
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
-  margin-left: 10px;
-  margin-right: 35px;
+  margin-left: 25px;
+  margin-right: 25px;
   padding: 20px;
   margin-top: 165px;
 }
@@ -211,8 +252,8 @@ code {
 }
 
 .projectsTableContainer:hover {
-  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
-    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  box-shadow: 0px 0px 6px 4px rgba(205, 204, 206, 0.075),
+    0px 0px 4px 2px rgba(194, 194, 194, 0.11);
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -242,14 +283,46 @@ code {
   justify-content: space-between;
   margin-right: 30px;
 }
+
+.subnavbar-dashboard {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  z-index: 10;
+  height: 70px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 0.2px solid rgba(85, 85, 85, 0.11);
+
+  box-shadow: 0px 5px 5px 0px rgba(7, 44, 13, 0.185),
+    0px 1px 5px 0px rgba(194, 194, 194, 0.288);
+}
+
+.subcontent-dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+.dash-align-right {
+  position: fixed;
+  right: 32px;
+}
+
+.textBadge {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 7px;
+  border-bottom: 1.1px solid rgba(110, 110, 110, 0.322);
+}
 .timesheets-buttons {
   display: flex;
 }
 
 .TimesheetsTable {
   padding-bottom: 30px;
-  border: 0.5px solid rgba(165, 165, 165, 0.116);
   background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgba(165, 165, 165, 0.116);
 
   border-radius: 3px;
   padding: 20px;
@@ -260,13 +333,14 @@ code {
 }
 
 .TimesheetsTable:hover {
-  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
-    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  box-shadow: 0px 0px 6px 4px rgba(205, 204, 206, 0.075),
+    0px 0px 4px 2px rgba(194, 194, 194, 0.11);
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .TimesheetsPage {
   display: flex;
+  justify-content: space-around;
   margin-left: 10px;
 }
 
@@ -276,14 +350,14 @@ code {
   margin-top: 165px;
   border-radius: 3px;
   padding: 20px;
-
+  width: 49%;
   display: flex;
   justify-content: space-around;
 }
 
 .TimesheetsRecapTable:hover {
-  box-shadow: 0px 0px 5px 3px rgba(205, 204, 206, 0.075),
-    0px 0px 3px 1px rgba(194, 194, 194, 0.11);
+  box-shadow: 0px 0px 6px 4px rgba(205, 204, 206, 0.075),
+    0px 0px 4px 2px rgba(194, 194, 194, 0.11);
   transition: box-shadow 0.3s ease-in-out;
 }
 .team-container {

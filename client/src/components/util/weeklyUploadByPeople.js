@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { LocaleProvider } from "antd";
 import fr_FR from "antd/lib/locale-provider/fr_FR";
-import "moment/locale/fr";
 
 import {
   Icon,
@@ -139,6 +138,7 @@ class WeeklyUploadByPeople extends Component {
       <div>
         <div>
           <Table
+            pagination={{ pageSize: 8 }}
             columns={[
               {
                 title: "Team",

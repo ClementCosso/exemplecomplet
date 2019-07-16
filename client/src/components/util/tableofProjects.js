@@ -62,7 +62,13 @@ class TableofProjects extends Component {
               title: "Nom du projet",
               dataIndex: "name",
               key: "name",
-              width: 200
+              width: 500
+            },
+            {
+              title: "Description du projet",
+              dataIndex: "description",
+              key: "description",
+              width: 1000
             },
             {
               title: "Owner",
@@ -74,7 +80,7 @@ class TableofProjects extends Component {
                 let color = "#00D30A";
                 if (owner === "Mathias") {
                   color = "pink";
-                } else if (owner === "Clément") {
+                } else if (owner === "Clément 👻") {
                   color = "#03B96C";
                 } else if (owner.length < 9) {
                   color = "#0078FF";
@@ -89,12 +95,6 @@ class TableofProjects extends Component {
                   </span>
                 );
               }
-            },
-            {
-              title: "Description du projet",
-              dataIndex: "description",
-              key: "description",
-              width: 660
             },
 
             {

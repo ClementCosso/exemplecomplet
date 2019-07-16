@@ -17,7 +17,7 @@ import {
   Hint
 } from "react-vis";
 const { Text } = Typography;
-class Graph1 extends Component {
+class Graph4 extends Component {
   state = {
     value: false,
     name: "",
@@ -30,7 +30,7 @@ class Graph1 extends Component {
     this.refreshProjects();
   }
   refreshCalendars = () => {
-    api.getAllCalendars().then(calendars => {
+    api.getCalendars().then(calendars => {
       this.setState({ calendars: calendars });
     });
   };
@@ -154,4 +154,4 @@ class Graph1 extends Component {
     );
   }
 }
-export default Graph1;
+export default Graph4;

@@ -98,12 +98,7 @@ class TeamCard extends Component {
         <Card
           hoverable
           style={{ width: 300 }}
-          cover={
-            <img
-              alt="example"
-              src="https://images.pexels.com/photos/285286/pexels-photo-285286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            />
-          }
+          cover={<img alt="example" src={this.props.image} />}
           actions={[
             <div>
               <Tooltip placement="top" title={"Editer"}>

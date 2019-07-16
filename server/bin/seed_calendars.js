@@ -1,290 +1,597 @@
 module.exports = [
-  {
-    user: 2,
-    works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.4268 }, { project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.4268 }],
-    year: 2019,
-    week: 3
-  },
-  {
-    user: 4,
-    works: [{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 }],
-    year: 2019,
-    week: 31
-  },
-  {
-    user: 7,
-    works: [{ project: 0,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.5665 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 }],
-    year: 2019,
-    week: 16
-  },
-  {
-    user: 6,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.5357 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 49
-  },
-  {
-    user: 6,
-    works: [{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.3815 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 47
-  },
-  {
-    user: 1,
-    works: [{ project: 0,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4648 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 26
-  },
-  {
-    user: 0,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.3896 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 12
-  },
-  {
-    user: 4,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.3258 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 16
-  },
-  {
-    user: 1,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.6671 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 37
-  },
-  {
-    user: 4,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.8897 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 34
-  },
-  {
-    user: 3,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.0771 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 43
-  },
-  {
-    user: 3,
-    works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.65 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 2
-  },
-  {
-    user: 9,
-    works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.1945 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 30
-  },
-  {
-    user: 1,
-    works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.2056 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 4
-  },
-  {
-    user: 8,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 27
-  },
-  {
-    user: 1,
-    works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.886 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 43
-  },
-  {
-    user: 8,
-    works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.2199 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 39
-  },
-  {
-    user: 8,
-    works: [{ project: 0,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.8415 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
-    year: 2019,
-    week: 6
-  },
-  {
-    user: 6,
-    works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.3904 }],
-    year: 2019,
-    week: 6
-  },
-  {
-    user: 4,
-    works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.4256 }],
-    year: 2019,
-    week: 26
-  },
-  {
-    user: 9,
-    works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.2173 }],
-    year: 2019,
-    week: 11
-  },
-  {
-    user: 6,
-    works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.4524 }],
-    year: 2019,
-    week: 30
-  },
-  {
-    user: 9,
-    works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.8441 }],
-    year: 2019,
-    week: 47
-  },
-  {
-    user: 4,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.9179 }],
-    year: 2019,
-    week: 9
-  },
-  {
-    user: 5,
-    works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.2201 }],
-    year: 2019,
-    week: 18
-  },
-  {
-    user: 1,
-    works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.1829 }],
-    year: 2019,
-    week: 37
-  },
-  {
-    user: 8,
-    works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.797 }],
-    year: 2019,
-    week: 38
-  },
-  {
-    user: 1,
-    works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.2511 }],
-    year: 2019,
-    week: 38
-  },
-  {
-    user: 8,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.7191 }],
-    year: 2019,
-    week: 25
-  },
-  {
-    user: 2,
-    works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.8723 }],
-    year: 2019,
-    week: 11
-  },
-  {
-    user: 2,
-    works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.262 }],
-    year: 2019,
-    week: 44
-  },
-  {
-    user: 3,
-    works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.4502 }],
-    year: 2019,
-    week: 38
-  },
-  {
-    user: 8,
-    works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.692 }],
-    year: 2019,
-    week: 39
-  },
-  {
-    user: 5,
-    works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.3692 }],
-    year: 2019,
-    week: 49
-  },
-  {
-    user: 8,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.4424 }],
-    year: 2019,
-    week: 7
-  },
-  {
-    user: 5,
-    works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.9586 }],
-    year: 2019,
-    week: 37
-  },
-  {
-    user: 2,
-    works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.1713 }],
-    year: 2019,
-    week: 40
-  },
-  {
-    user: 7,
-    works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.9194 }],
-    year: 2019,
-    week: 48
-  },
-  {
-    user: 4,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.0015 }],
-    year: 2019,
-    week: 40
-  },
-  {
-    user: 0,
-    works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.0509 }],
-    year: 2019,
-    week: 29
-  },
-  {
-    user: 8,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.6029 }],
-    year: 2019,
-    week: 9
-  },
-  {
-    user: 0,
-    works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.5234 }],
-    year: 2019,
-    week: 37
-  },
-  {
-    user: 5,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.8631 },{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.8631 }],
-    year: 2019,
-    week: 44
-  },
-  {
-    user: 8,
-    works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.3096 }],
-    year: 2019,
-    week: 21
-  },
-  {
-    user: 8,
-    works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.5078 }],
-    year: 2019,
-    week: 31
-  },
-  {
-    user: 3,
-    works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.7287 }],
-    year: 2019,
-    week: 7
-  },
-  {
-    user: 3,
-    works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.1709 }],
-    year: 2019,
-    week: 2
-  },
-  {
-    user: 8,
-    works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.8904 }],
-    year: 2019,
-    week: 27
-  }
-];
+{user: 0, works: [{project: 4, lundi: 4, mardi: 4, mercredi: 0, jeudi: 5, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 1},
+{user: 1, works: [{project: 1, lundi: 1.13, mardi: 4.01, mercredi: 3.61, jeudi: 4.29, vendredi: 5.21, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.14, mardi: 3.57, mercredi: 3.23, jeudi: 3.0, vendredi: 1.89, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 1},
+{user: 2, works: [{project: 0, lundi: 8, mardi: 6, mercredi: 6, jeudi: 6, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 1},
+{user: 3, works: [{project: 6, lundi: 0.5, mardi: 1.05, mercredi: 0.52, jeudi: 0.1, vendredi: 0.9, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.11, mardi: 0.37, mercredi: 4.31, jeudi: 0.17, vendredi: 0.99, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.31, mardi: 0.15, mercredi: 4.03, jeudi: 2.38, vendredi: 0.54, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 1},
+{user: 4, works: [{project: 2, lundi: 1.49, mardi: 3.42, mercredi: 2.67, jeudi: 1.0, vendredi: 0.9, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.9, mardi: 1.07, mercredi: 6.12, jeudi: 4.68, vendredi: 0.56, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 1},
+{user: 5, works: [{project: 2, lundi: 9, mardi: 9, mercredi: 8, jeudi: 0, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 1},
+{user: 6, works: [{project: 9, lundi: 1.28, mardi: 0.0, mercredi: 1.17, jeudi: 2.9, vendredi: 0.71, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.12, mardi: 0.0, mercredi: 2.18, jeudi: 0.51, vendredi: 3.22, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 1},
+{user: 7, works: [{project: 7, lundi: 6, mardi: 4, mercredi: 8, jeudi: 5, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 1},
+{user: 8, works: [{project: 2, lundi: 9, mardi: 5, mercredi: 2, jeudi: 2, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 1},
+{user: 9, works: [{project: 3, lundi: 0.95, mardi: 0.38, mercredi: 0.1, jeudi: 0.48, vendredi: 2.57, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 1.12, mardi: 0.56, mercredi: 0.48, jeudi: 0.17, vendredi: 3.62, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 1.82, mardi: 0.8, mercredi: 0.78, jeudi: 0.6, vendredi: 0.88, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 1},
+{user: 10, works: [{project: 8, lundi: 4, mardi: 9, mercredi: 5, jeudi: 8, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 1},
+{user: 0, works: [{project: 4, lundi: 7, mardi: 6, mercredi: 7, jeudi: 4, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 2},
+{user: 1, works: [{project: 1, lundi: 1.92, mardi: 1.87, mercredi: 0.05, jeudi: 1.96, vendredi: 1.66, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.56, mardi: 2.91, mercredi: 0.57, jeudi: 2.15, vendredi: 1.63, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 2},
+{user: 2, works: [{project: 0, lundi: 4, mardi: 6, mercredi: 0, jeudi: 7, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 2},
+{user: 3, works: [{project: 6, lundi: 0.58, mardi: 0.98, mercredi: 0.32, jeudi: 0.14, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 0.39, mardi: 0.02, mercredi: 0.29, jeudi: 0.75, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.07, mardi: 0.2, mercredi: 0.17, jeudi: 2.71, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 2},
+{user: 4, works: [{project: 2, lundi: 0.39, mardi: 1.6, mercredi: 0.77, jeudi: 0.09, vendredi: 4.1, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.79, mardi: 2.55, mercredi: 1.16, jeudi: 3.17, vendredi: 1.34, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 2},
+{user: 5, works: [{project: 2, lundi: 5, mardi: 6, mercredi: 2, jeudi: 0, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 2},
+{user: 6, works: [{project: 9, lundi: 0.16, mardi: 3.64, mercredi: 2.88, jeudi: 0.11, vendredi: 4.24, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.94, mardi: 2.9, mercredi: 0.76, jeudi: 1.88, vendredi: 2.43, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 2},
+{user: 7, works: [{project: 7, lundi: 6, mardi: 1, mercredi: 7, jeudi: 7, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 2},
+{user: 8, works: [{project: 2, lundi: 6, mardi: 6, mercredi: 9, jeudi: 1, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 2},
+{user: 9, works: [{project: 3, lundi: 0.0, mardi: 0.11, mercredi: 0.0, jeudi: 1.75, vendredi: 1.1, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 0.0, mardi: 0.66, mercredi: 0.0, jeudi: 1.48, vendredi: 0.21, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.0, mardi: 0.76, mercredi: 0.0, jeudi: 1.71, vendredi: 1.02, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 2},
+{user: 10, works: [{project: 8, lundi: 4, mardi: 1, mercredi: 3, jeudi: 7, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 2},
+{user: 0, works: [{project: 4, lundi: 7, mardi: 5, mercredi: 2, jeudi: 6, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 3},
+{user: 1, works: [{project: 1, lundi: 0.0, mardi: 0.0, mercredi: 0.96, jeudi: 1.07, vendredi: 1.86, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.0, mardi: 0.0, mercredi: 1.47, jeudi: 4.27, vendredi: 2.37, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 3},
+{user: 2, works: [{project: 0, lundi: 5, mardi: 9, mercredi: 9, jeudi: 5, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 3},
+{user: 3, works: [{project: 6, lundi: 1.16, mardi: 0.07, mercredi: 3.48, jeudi: 0.73, vendredi: 2.31, samedi: 0.0, dimanche: 0.0}, {project: 7, lundi: 1.0, mardi: 1.96, mercredi: 1.31, jeudi: 1.05, vendredi: 1.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.59, mardi: 2.4, mercredi: 0.45, jeudi: 1.21, vendredi: 2.54, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 3},
+{user: 4, works: [{project: 2, lundi: 2.67, mardi: 2.16, mercredi: 1.82, jeudi: 3.8, vendredi: 0.51, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.87, mardi: 1.34, mercredi: 0.34, jeudi: 3.71, vendredi: 1.27, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 3},
+{user: 5, works: [{project: 2, lundi: 4, mardi: 8, mercredi: 7, jeudi: 1, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 3},
+{user: 6, works: [{project: 9, lundi: 0.15, mardi: 2.74, mercredi: 0.16, jeudi: 1.57, vendredi: 1.07, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.29, mardi: 1.42, mercredi: 1.31, jeudi: 1.25, vendredi: 0.3, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 3},
+{user: 7, works: [{project: 7, lundi: 5, mardi: 3, mercredi: 1, jeudi: 7, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 3},
+{user: 8, works: [{project: 2, lundi: 4, mardi: 2, mercredi: 7, jeudi: 6, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 3},
+{user: 9, works: [{project: 3, lundi: 0.37, mardi: 1.12, mercredi: 2.82, jeudi: 1.85, vendredi: 1.02, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 3.59, mardi: 1.25, mercredi: 0.12, jeudi: 3.2, vendredi: 1.56, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.7, mardi: 0.97, mercredi: 0.18, jeudi: 2.56, vendredi: 3.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 3},
+{user: 10, works: [{project: 8, lundi: 1, mardi: 9, mercredi: 6, jeudi: 6, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 3},
+{user: 0, works: [{project: 4, lundi: 4, mardi: 8, mercredi: 0, jeudi: 7, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 4},
+{user: 1, works: [{project: 1, lundi: 1.5, mardi: 1.7, mercredi: 0.38, jeudi: 0.0, vendredi: 1.6, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 2.49, mardi: 2.19, mercredi: 2.61, jeudi: 0.0, vendredi: 1.51, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 4},
+{user: 2, works: [{project: 0, lundi: 6, mardi: 4, mercredi: 1, jeudi: 6, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 4},
+{user: 3, works: [{project: 6, lundi: 0.92, mardi: 0.99, mercredi: 1.51, jeudi: 0.6, vendredi: 0.42, samedi: 0.0, dimanche: 0.0}, {project: 6, lundi: 0.58, mardi: 0.38, mercredi: 1.77, jeudi: 1.65, vendredi: 0.52, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.65, mardi: 0.99, mercredi: 3.28, jeudi: 1.84, vendredi: 0.88, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 4},
+{user: 4, works: [{project: 2, lundi: 0.0, mardi: 0.83, mercredi: 0.94, jeudi: 0.39, vendredi: 1.1, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 1.29, mercredi: 0.7, jeudi: 0.26, vendredi: 0.08, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 4},
+{user: 5, works: [{project: 2, lundi: 5, mardi: 2, mercredi: 6, jeudi: 1, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 4},
+{user: 6, works: [{project: 9, lundi: 0.17, mardi: 0.45, mercredi: 0.0, jeudi: 0.08, vendredi: 0.76, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.21, mardi: 3.63, mercredi: 0.0, jeudi: 6.85, vendredi: 0.33, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 4},
+{user: 7, works: [{project: 7, lundi: 7, mardi: 3, mercredi: 4, jeudi: 2, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 4},
+{user: 8, works: [{project: 2, lundi: 5, mardi: 9, mercredi: 7, jeudi: 3, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 4},
+{user: 9, works: [{project: 3, lundi: 0.5, mardi: 0.73, mercredi: 0.75, jeudi: 0.17, vendredi: 3.62, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 1.06, mardi: 1.94, mercredi: 2.38, jeudi: 0.23, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.84, mardi: 2.11, mercredi: 0.21, jeudi: 0.67, vendredi: 0.57, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 4},
+{user: 10, works: [{project: 6, lundi: 9, mardi: 0, mercredi: 5, jeudi: 1, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 4},
+{user: 0, works: [{project: 4, lundi: 6, mardi: 0, mercredi: 6, jeudi: 5, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 5},
+{user: 1, works: [{project: 1, lundi: 2.59, mardi: 2.36, mercredi: 0.28, jeudi: 2.69, vendredi: 2.13, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 2.48, mardi: 0.94, mercredi: 3.73, jeudi: 0.22, vendredi: 1.62, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 5},
+{user: 2, works: [{project: 0, lundi: 4, mardi: 1, mercredi: 0, jeudi: 5, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 5},
+{user: 3, works: [{project: 6, lundi: 0.28, mardi: 1.77, mercredi: 1.63, jeudi: 0.47, vendredi: 1.44, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.44, mardi: 1.99, mercredi: 0.85, jeudi: 1.67, vendredi: 1.61, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.19, mardi: 0.92, mercredi: 0.07, jeudi: 2.09, vendredi: 2.25, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 5},
+{user: 4, works: [{project: 2, lundi: 0.0, mardi: 0.0, mercredi: 0.25, jeudi: 0.46, vendredi: 0.96, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 0.0, mercredi: 5.83, jeudi: 0.31, vendredi: 2.46, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 5},
+{user: 5, works: [{project: 2, lundi: 8, mardi: 3, mercredi: 8, jeudi: 5, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 5},
+{user: 6, works: [{project: 9, lundi: 1.47, mardi: 0.0, mercredi: 2.85, jeudi: 2.71, vendredi: 1.76, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.34, mardi: 0.0, mercredi: 3.02, jeudi: 2.25, vendredi: 0.19, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 5},
+{user: 7, works: [{project: 7, lundi: 5, mardi: 0, mercredi: 4, jeudi: 4, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 5},
+{user: 8, works: [{project: 2, lundi: 5, mardi: 0, mercredi: 1, jeudi: 9, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 5},
+{user: 9, works: [{project: 3, lundi: 2.23, mardi: 0.0, mercredi: 0.31, jeudi: 2.09, vendredi: 2.73, samedi: 0.0, dimanche: 0.0}, {project: 6, lundi: 2.18, mardi: 0.0, mercredi: 0.57, jeudi: 1.21, vendredi: 0.82, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 1.81, mardi: 0.0, mercredi: 0.69, jeudi: 2.5, vendredi: 1.6, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 5},
+{user: 10, works: [{project: 6, lundi: 4, mardi: 5, mercredi: 4, jeudi: 5, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 5},
+{user: 0, works: [{project: 4, lundi: 8, mardi: 8, mercredi: 2, jeudi: 9, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 6},
+{user: 1, works: [{project: 1, lundi: 1.59, mardi: 3.83, mercredi: 4.35, jeudi: 0.15, vendredi: 1.49, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.36, mardi: 0.5, mercredi: 3.56, jeudi: 0.95, vendredi: 2.01, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 6},
+{user: 2, works: [{project: 0, lundi: 3, mardi: 7, mercredi: 1, jeudi: 2, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 6},
+{user: 3, works: [{project: 6, lundi: 0.47, mardi: 1.32, mercredi: 2.49, jeudi: 1.14, vendredi: 0.63, samedi: 0.0, dimanche: 0.0}, {project: 4, lundi: 1.63, mardi: 2.16, mercredi: 1.79, jeudi: 0.42, vendredi: 0.54, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.71, mardi: 2.21, mercredi: 3.5, jeudi: 1.78, vendredi: 0.73, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 6},
+{user: 4, works: [{project: 2, lundi: 0.76, mardi: 0.0, mercredi: 3.43, jeudi: 1.37, vendredi: 0.34, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.34, mardi: 0.0, mercredi: 0.08, jeudi: 2.66, vendredi: 0.23, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 6},
+{user: 5, works: [{project: 2, lundi: 2, mardi: 4, mercredi: 3, jeudi: 9, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 6},
+{user: 6, works: [{project: 9, lundi: 0.72, mardi: 0.0, mercredi: 1.51, jeudi: 0.92, vendredi: 0.46, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.01, mardi: 0.0, mercredi: 2.93, jeudi: 3.09, vendredi: 0.22, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 6},
+{user: 7, works: [{project: 7, lundi: 7, mardi: 2, mercredi: 6, jeudi: 6, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 6},
+{user: 8, works: [{project: 2, lundi: 7, mardi: 9, mercredi: 0, jeudi: 7, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 6},
+{user: 9, works: [{project: 3, lundi: 0.42, mardi: 2.24, mercredi: 0.0, jeudi: 0.68, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 6, lundi: 0.76, mardi: 3.48, mercredi: 0.0, jeudi: 0.61, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.03, mardi: 0.24, mercredi: 0.0, jeudi: 0.01, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 6},
+{user: 10, works: [{project: 6, lundi: 0, mardi: 6, mercredi: 5, jeudi: 7, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 6},
+{user: 0, works: [{project: 4, lundi: 7, mardi: 4, mercredi: 7, jeudi: 4, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 7},
+{user: 1, works: [{project: 1, lundi: 0.84, mardi: 0.36, mercredi: 0.41, jeudi: 3.06, vendredi: 2.52, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.35, mardi: 0.33, mercredi: 0.47, jeudi: 1.39, vendredi: 1.24, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 7},
+{user: 2, works: [{project: 0, lundi: 8, mardi: 9, mercredi: 9, jeudi: 3, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 7},
+{user: 3, works: [{project: 6, lundi: 0.32, mardi: 2.79, mercredi: 1.8, jeudi: 0.94, vendredi: 1.58, samedi: 0.0, dimanche: 0.0}, {project: 3, lundi: 0.84, mardi: 3.62, mercredi: 1.74, jeudi: 1.27, vendredi: 4.05, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.01, mardi: 0.88, mercredi: 0.7, jeudi: 0.56, vendredi: 1.8, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 7},
+{user: 4, works: [{project: 2, lundi: 0.77, mardi: 1.52, mercredi: 2.51, jeudi: 2.99, vendredi: 0.31, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.68, mardi: 0.43, mercredi: 0.56, jeudi: 0.27, vendredi: 0.13, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 7},
+{user: 5, works: [{project: 2, lundi: 5, mardi: 0, mercredi: 7, jeudi: 8, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 7},
+{user: 6, works: [{project: 9, lundi: 1.54, mardi: 0.89, mercredi: 2.91, jeudi: 1.36, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.39, mardi: 3.48, mercredi: 5.21, jeudi: 2.53, vendredi: 0.53, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 7},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 3, mercredi: 3, jeudi: 1, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 7},
+{user: 8, works: [{project: 2, lundi: 7, mardi: 0, mercredi: 4, jeudi: 9, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 7},
+{user: 9, works: [{project: 3, lundi: 0.45, mardi: 1.96, mercredi: 0.4, jeudi: 1.15, vendredi: 0.4, samedi: 0.0, dimanche: 0.0}, {project: 6, lundi: 0.05, mardi: 3.13, mercredi: 0.08, jeudi: 0.84, vendredi: 1.86, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.18, mardi: 0.15, mercredi: 0.03, jeudi: 1.31, vendredi: 0.84, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 7},
+{user: 10, works: [{project: 6, lundi: 0, mardi: 9, mercredi: 5, jeudi: 4, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 7},
+{user: 0, works: [{project: 4, lundi: 3, mardi: 3, mercredi: 6, jeudi: 2, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 8},
+{user: 1, works: [{project: 1, lundi: 0.19, mardi: 0.46, mercredi: 4.23, jeudi: 0.65, vendredi: 0.16, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.34, mardi: 0.12, mercredi: 2.19, jeudi: 1.22, vendredi: 2.57, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 8},
+{user: 2, works: [{project: 0, lundi: 0, mardi: 7, mercredi: 8, jeudi: 8, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 8},
+{user: 3, works: [{project: 6, lundi: 0.21, mardi: 1.44, mercredi: 2.14, jeudi: 0.52, vendredi: 2.61, samedi: 0.0, dimanche: 0.0}, {project: 2, lundi: 0.13, mardi: 0.48, mercredi: 3.66, jeudi: 0.07, vendredi: 1.59, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.33, mardi: 0.77, mercredi: 0.76, jeudi: 0.59, vendredi: 0.92, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 8},
+{user: 4, works: [{project: 2, lundi: 3.01, mardi: 3.56, mercredi: 0.11, jeudi: 2.83, vendredi: 2.73, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.83, mardi: 1.62, mercredi: 0.83, jeudi: 2.71, vendredi: 1.63, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 8},
+{user: 5, works: [{project: 2, lundi: 1, mardi: 4, mercredi: 7, jeudi: 2, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 8},
+{user: 6, works: [{project: 9, lundi: 3.53, mardi: 0.41, mercredi: 3.31, jeudi: 3.4, vendredi: 1.84, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.11, mardi: 0.47, mercredi: 4.52, jeudi: 1.2, vendredi: 2.74, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 8},
+{user: 7, works: [{project: 7, lundi: 0, mardi: 1, mercredi: 3, jeudi: 7, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 8},
+{user: 8, works: [{project: 2, lundi: 4, mardi: 3, mercredi: 3, jeudi: 0, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 8},
+{user: 9, works: [{project: 3, lundi: 0.67, mardi: 2.39, mercredi: 0.39, jeudi: 1.09, vendredi: 2.61, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.3, mardi: 2.39, mercredi: 0.82, jeudi: 0.12, vendredi: 2.39, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.7, mardi: 1.37, mercredi: 1.05, jeudi: 0.06, vendredi: 0.84, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 8},
+{user: 10, works: [{project: 5, lundi: 1, mardi: 6, mercredi: 2, jeudi: 2, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 8},
+{user: 0, works: [{project: 4, lundi: 4, mardi: 5, mercredi: 0, jeudi: 2, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 9},
+{user: 1, works: [{project: 1, lundi: 2.44, mardi: 0.45, mercredi: 2.98, jeudi: 0.47, vendredi: 1.13, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.49, mardi: 0.76, mercredi: 1.48, jeudi: 1.24, vendredi: 1.59, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 9},
+{user: 2, works: [{project: 0, lundi: 1, mardi: 2, mercredi: 4, jeudi: 5, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 9},
+{user: 3, works: [{project: 6, lundi: 4.83, mardi: 1.8, mercredi: 2.11, jeudi: 1.43, vendredi: 1.8, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 0.42, mardi: 2.52, mercredi: 2.36, jeudi: 1.59, vendredi: 0.43, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.89, mardi: 0.27, mercredi: 0.79, jeudi: 0.33, vendredi: 1.35, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 9},
+{user: 4, works: [{project: 2, lundi: 3.94, mardi: 0.15, mercredi: 1.89, jeudi: 0.32, vendredi: 0.98, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.17, mardi: 0.37, mercredi: 4.59, jeudi: 4.32, vendredi: 1.66, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 9},
+{user: 5, works: [{project: 2, lundi: 1, mardi: 2, mercredi: 1, jeudi: 5, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 9},
+{user: 6, works: [{project: 9, lundi: 0.84, mardi: 1.06, mercredi: 0.0, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.28, mardi: 1.74, mercredi: 0.0, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 9},
+{user: 7, works: [{project: 7, lundi: 7, mardi: 0, mercredi: 6, jeudi: 4, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 9},
+{user: 8, works: [{project: 2, lundi: 1, mardi: 4, mercredi: 2, jeudi: 3, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 9},
+{user: 9, works: [{project: 3, lundi: 0.0, mardi: 2.19, mercredi: 1.81, jeudi: 2.33, vendredi: 0.43, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 2.13, mercredi: 2.84, jeudi: 0.2, vendredi: 0.35, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.0, mardi: 2.79, mercredi: 1.25, jeudi: 1.06, vendredi: 1.05, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 9},
+{user: 10, works: [{project: 5, lundi: 9, mardi: 5, mercredi: 4, jeudi: 4, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 9},
+{user: 0, works: [{project: 4, lundi: 1, mardi: 1, mercredi: 1, jeudi: 0, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 10},
+{user: 1, works: [{project: 1, lundi: 0.65, mardi: 1.52, mercredi: 1.63, jeudi: 0.0, vendredi: 1.91, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.41, mardi: 1.26, mercredi: 0.4, jeudi: 0.0, vendredi: 1.91, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 10},
+{user: 2, works: [{project: 0, lundi: 5, mardi: 7, mercredi: 3, jeudi: 7, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 10},
+{user: 3, works: [{project: 6, lundi: 1.4, mardi: 0.63, mercredi: 0.16, jeudi: 0.6, vendredi: 1.44, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.24, mardi: 1.32, mercredi: 2.63, jeudi: 0.34, vendredi: 1.68, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.6, mardi: 0.87, mercredi: 2.63, jeudi: 0.28, vendredi: 1.01, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 10},
+{user: 4, works: [{project: 2, lundi: 2.8, mardi: 2.58, mercredi: 2.85, jeudi: 0.87, vendredi: 1.01, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.23, mardi: 0.51, mercredi: 2.01, jeudi: 1.11, vendredi: 0.23, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 10},
+{user: 5, works: [{project: 2, lundi: 0, mardi: 7, mercredi: 0, jeudi: 8, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 10},
+{user: 6, works: [{project: 9, lundi: 0.38, mardi: 1.82, mercredi: 1.62, jeudi: 1.43, vendredi: 0.67, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.35, mardi: 4.34, mercredi: 3.81, jeudi: 5.86, vendredi: 1.19, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 10},
+{user: 7, works: [{project: 7, lundi: 8, mardi: 1, mercredi: 4, jeudi: 4, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 10},
+{user: 8, works: [{project: 2, lundi: 7, mardi: 7, mercredi: 8, jeudi: 7, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 10},
+{user: 9, works: [{project: 3, lundi: 0.29, mardi: 0.0, mercredi: 1.88, jeudi: 1.22, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.24, mardi: 0.0, mercredi: 1.78, jeudi: 2.49, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.17, mardi: 0.0, mercredi: 0.19, jeudi: 2.26, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 10},
+{user: 10, works: [{project: 5, lundi: 1, mardi: 2, mercredi: 9, jeudi: 6, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 10},
+{user: 0, works: [{project: 4, lundi: 5, mardi: 8, mercredi: 7, jeudi: 9, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 11},
+{user: 1, works: [{project: 1, lundi: 1.96, mardi: 0.69, mercredi: 0.92, jeudi: 0.27, vendredi: 1.57, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.26, mardi: 0.57, mercredi: 1.66, jeudi: 3.01, vendredi: 4.26, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 11},
+{user: 2, works: [{project: 0, lundi: 0, mardi: 7, mercredi: 9, jeudi: 1, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 11},
+{user: 3, works: [{project: 6, lundi: 0.0, mardi: 0.0, mercredi: 0.12, jeudi: 1.45, vendredi: 0.72, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.0, mardi: 0.0, mercredi: 2.43, jeudi: 0.21, vendredi: 3.5, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 0.0, mercredi: 0.21, jeudi: 0.14, vendredi: 2.23, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 11},
+{user: 4, works: [{project: 2, lundi: 2.93, mardi: 2.88, mercredi: 0.64, jeudi: 2.92, vendredi: 0.86, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 5.3, mardi: 1.17, mercredi: 0.91, jeudi: 3.08, vendredi: 0.96, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 11},
+{user: 5, works: [{project: 2, lundi: 7, mardi: 0, mercredi: 8, jeudi: 4, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 11},
+{user: 6, works: [{project: 9, lundi: 1.01, mardi: 5.31, mercredi: 0.0, jeudi: 0.99, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.02, mardi: 0.62, mercredi: 0.0, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 11},
+{user: 7, works: [{project: 7, lundi: 8, mardi: 6, mercredi: 1, jeudi: 9, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 11},
+{user: 8, works: [{project: 2, lundi: 9, mardi: 5, mercredi: 2, jeudi: 5, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 11},
+{user: 9, works: [{project: 3, lundi: 0.57, mardi: 1.15, mercredi: 0.31, jeudi: 2.26, vendredi: 0.77, samedi: 0.0, dimanche: 0.0}, {project: 2, lundi: 0.19, mardi: 1.02, mercredi: 0.76, jeudi: 1.86, vendredi: 0.03, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.91, mardi: 0.97, mercredi: 1.75, jeudi: 2.61, vendredi: 1.05, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 11},
+{user: 10, works: [{project: 2, lundi: 1, mardi: 0, mercredi: 4, jeudi: 5, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 11},
+{user: 0, works: [{project: 4, lundi: 5, mardi: 1, mercredi: 9, jeudi: 9, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 12},
+{user: 1, works: [{project: 1, lundi: 0.36, mardi: 3.38, mercredi: 2.07, jeudi: 1.78, vendredi: 1.37, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.03, mardi: 0.17, mercredi: 4.01, jeudi: 4.81, vendredi: 1.14, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 12},
+{user: 2, works: [{project: 0, lundi: 3, mardi: 3, mercredi: 7, jeudi: 6, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 12},
+{user: 3, works: [{project: 6, lundi: 0.0, mardi: 0.0, mercredi: 1.28, jeudi: 0.08, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 0.0, mardi: 0.0, mercredi: 1.66, jeudi: 0.78, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 0.0, mercredi: 1.93, jeudi: 0.73, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 12},
+{user: 4, works: [{project: 2, lundi: 0.71, mardi: 3.39, mercredi: 0.47, jeudi: 1.96, vendredi: 2.4, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.19, mardi: 4.23, mercredi: 0.04, jeudi: 2.51, vendredi: 3.89, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 12},
+{user: 5, works: [{project: 2, lundi: 7, mardi: 8, mercredi: 0, jeudi: 0, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 12},
+{user: 6, works: [{project: 9, lundi: 0.0, mardi: 3.77, mercredi: 2.32, jeudi: 1.49, vendredi: 2.4, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 4.79, mercredi: 2.65, jeudi: 4.13, vendredi: 1.16, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 12},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 6, mercredi: 1, jeudi: 6, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 12},
+{user: 8, works: [{project: 2, lundi: 3, mardi: 7, mercredi: 0, jeudi: 8, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 12},
+{user: 9, works: [{project: 3, lundi: 3.06, mardi: 0.2, mercredi: 5.29, jeudi: 0.06, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 2, lundi: 1.81, mardi: 0.24, mercredi: 0.57, jeudi: 0.99, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.52, mardi: 0.28, mercredi: 0.28, jeudi: 2.38, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 12},
+{user: 10, works: [{project: 2, lundi: 4, mardi: 4, mercredi: 7, jeudi: 6, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 12},
+{user: 0, works: [{project: 4, lundi: 5, mardi: 7, mercredi: 4, jeudi: 8, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 13},
+{user: 1, works: [{project: 1, lundi: 2.54, mardi: 2.33, mercredi: 2.14, jeudi: 0.0, vendredi: 0.2, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.21, mardi: 0.27, mercredi: 1.64, jeudi: 0.0, vendredi: 0.29, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 13},
+{user: 2, works: [{project: 0, lundi: 2, mardi: 8, mercredi: 0, jeudi: 2, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 13},
+{user: 3, works: [{project: 6, lundi: 2.42, mardi: 0.81, mercredi: 1.04, jeudi: 2.23, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 2, lundi: 1.85, mardi: 1.69, mercredi: 0.77, jeudi: 3.23, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.4, mardi: 3.12, mercredi: 2.18, jeudi: 1.23, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 13},
+{user: 4, works: [{project: 2, lundi: 0.0, mardi: 1.01, mercredi: 1.83, jeudi: 1.32, vendredi: 0.63, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 2.61, mercredi: 2.57, jeudi: 1.53, vendredi: 0.53, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 13},
+{user: 5, works: [{project: 2, lundi: 4, mardi: 3, mercredi: 2, jeudi: 6, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 13},
+{user: 6, works: [{project: 9, lundi: 2.74, mardi: 0.0, mercredi: 2.31, jeudi: 1.95, vendredi: 0.04, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.24, mardi: 0.0, mercredi: 1.86, jeudi: 2.05, vendredi: 1.87, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 13},
+{user: 7, works: [{project: 7, lundi: 0, mardi: 5, mercredi: 9, jeudi: 2, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 13},
+{user: 8, works: [{project: 2, lundi: 6, mardi: 7, mercredi: 6, jeudi: 9, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 13},
+{user: 9, works: [{project: 3, lundi: 3.09, mardi: 5.21, mercredi: 2.2, jeudi: 0.87, vendredi: 1.59, samedi: 0.0, dimanche: 0.0}, {project: 2, lundi: 2.78, mardi: 2.0, mercredi: 1.1, jeudi: 0.11, vendredi: 0.52, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.45, mardi: 0.74, mercredi: 1.35, jeudi: 0.27, vendredi: 0.69, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 13},
+{user: 10, works: [{project: 2, lundi: 6, mardi: 6, mercredi: 5, jeudi: 7, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 13},
+{user: 0, works: [{project: 4, lundi: 2, mardi: 9, mercredi: 5, jeudi: 2, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 14},
+{user: 1, works: [{project: 1, lundi: 1.47, mardi: 0.9, mercredi: 1.02, jeudi: 1.89, vendredi: 4.0, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.14, mardi: 1.21, mercredi: 0.56, jeudi: 4.0, vendredi: 3.47, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 14},
+{user: 2, works: [{project: 0, lundi: 1, mardi: 1, mercredi: 8, jeudi: 8, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 14},
+{user: 3, works: [{project: 6, lundi: 0.0, mardi: 1.15, mercredi: 3.65, jeudi: 1.71, vendredi: 0.18, samedi: 0.0, dimanche: 0.0}, {project: 3, lundi: 0.0, mardi: 2.45, mercredi: 0.34, jeudi: 3.09, vendredi: 1.09, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 0.98, mercredi: 3.43, jeudi: 0.57, vendredi: 2.53, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 14},
+{user: 4, works: [{project: 2, lundi: 3.79, mardi: 1.73, mercredi: 0.0, jeudi: 2.38, vendredi: 0.72, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.23, mardi: 3.22, mercredi: 0.0, jeudi: 2.78, vendredi: 1.12, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 14},
+{user: 5, works: [{project: 2, lundi: 2, mardi: 8, mercredi: 5, jeudi: 2, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 14},
+{user: 6, works: [{project: 9, lundi: 0.26, mardi: 6.61, mercredi: 2.11, jeudi: 1.57, vendredi: 0.33, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.33, mardi: 0.56, mercredi: 1.62, jeudi: 0.53, vendredi: 0.42, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 14},
+{user: 7, works: [{project: 7, lundi: 2, mardi: 5, mercredi: 8, jeudi: 1, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 14},
+{user: 8, works: [{project: 2, lundi: 2, mardi: 4, mercredi: 5, jeudi: 4, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 14},
+{user: 9, works: [{project: 3, lundi: 0.0, mardi: 1.38, mercredi: 0.0, jeudi: 0.7, vendredi: 0.37, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.0, mardi: 1.95, mercredi: 0.0, jeudi: 0.68, vendredi: 0.14, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.0, mardi: 0.69, mercredi: 0.0, jeudi: 0.75, vendredi: 0.12, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 14},
+{user: 10, works: [{project: 0, lundi: 6, mardi: 1, mercredi: 3, jeudi: 5, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 14},
+{user: 0, works: [{project: 4, lundi: 9, mardi: 7, mercredi: 1, jeudi: 9, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 15},
+{user: 1, works: [{project: 1, lundi: 0.0, mardi: 3.83, mercredi: 3.46, jeudi: 1.93, vendredi: 0.42, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.0, mardi: 2.91, mercredi: 2.07, jeudi: 0.64, vendredi: 1.98, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 15},
+{user: 2, works: [{project: 0, lundi: 3, mardi: 2, mercredi: 9, jeudi: 9, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 15},
+{user: 3, works: [{project: 6, lundi: 0.0, mardi: 0.04, mercredi: 0.95, jeudi: 2.13, vendredi: 0.26, samedi: 0.0, dimanche: 0.0}, {project: 4, lundi: 0.0, mardi: 1.73, mercredi: 0.33, jeudi: 0.68, vendredi: 0.3, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 1.18, mercredi: 1.86, jeudi: 0.42, vendredi: 0.18, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 15},
+{user: 4, works: [{project: 2, lundi: 0.0, mardi: 5.1, mercredi: 3.02, jeudi: 5.17, vendredi: 2.8, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 0.85, mercredi: 2.17, jeudi: 0.39, vendredi: 2.96, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 15},
+{user: 5, works: [{project: 2, lundi: 8, mardi: 0, mercredi: 1, jeudi: 3, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 15},
+{user: 6, works: [{project: 9, lundi: 0.23, mardi: 1.62, mercredi: 2.05, jeudi: 0.0, vendredi: 4.36, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.63, mardi: 0.73, mercredi: 1.9, jeudi: 0.0, vendredi: 3.44, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 15},
+{user: 7, works: [{project: 7, lundi: 8, mardi: 3, mercredi: 1, jeudi: 6, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 15},
+{user: 8, works: [{project: 2, lundi: 0, mardi: 0, mercredi: 0, jeudi: 4, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 15},
+{user: 9, works: [{project: 3, lundi: 0.26, mardi: 1.19, mercredi: 0.54, jeudi: 0.39, vendredi: 0.37, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.23, mardi: 0.86, mercredi: 0.29, jeudi: 3.0, vendredi: 0.1, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.31, mardi: 0.86, mercredi: 0.02, jeudi: 0.61, vendredi: 0.17, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 15},
+{user: 10, works: [{project: 0, lundi: 3, mardi: 3, mercredi: 1, jeudi: 8, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 15},
+{user: 0, works: [{project: 4, lundi: 2, mardi: 0, mercredi: 9, jeudi: 1, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 16},
+{user: 1, works: [{project: 1, lundi: 0.72, mardi: 2.78, mercredi: 0.61, jeudi: 1.47, vendredi: 1.84, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.07, mardi: 1.17, mercredi: 0.65, jeudi: 2.54, vendredi: 1.77, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 16},
+{user: 2, works: [{project: 0, lundi: 3, mardi: 3, mercredi: 6, jeudi: 2, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 16},
+{user: 3, works: [{project: 6, lundi: 0.64, mardi: 0.94, mercredi: 0.0, jeudi: 0.28, vendredi: 2.04, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.67, mardi: 1.67, mercredi: 0.0, jeudi: 1.04, vendredi: 2.09, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.71, mardi: 0.26, mercredi: 0.0, jeudi: 1.25, vendredi: 0.55, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 16},
+{user: 4, works: [{project: 2, lundi: 3.42, mardi: 2.11, mercredi: 0.93, jeudi: 0.38, vendredi: 0.5, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.87, mardi: 2.77, mercredi: 1.45, jeudi: 1.51, vendredi: 0.75, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 16},
+{user: 5, works: [{project: 2, lundi: 5, mardi: 5, mercredi: 5, jeudi: 2, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 16},
+{user: 6, works: [{project: 9, lundi: 0.48, mardi: 0.0, mercredi: 0.74, jeudi: 0.32, vendredi: 1.42, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 4.26, mardi: 0.0, mercredi: 1.44, jeudi: 0.3, vendredi: 4.86, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 16},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 3, mercredi: 5, jeudi: 3, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 16},
+{user: 8, works: [{project: 2, lundi: 2, mardi: 4, mercredi: 2, jeudi: 2, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 16},
+{user: 9, works: [{project: 3, lundi: 1.6, mardi: 2.24, mercredi: 3.6, jeudi: 0.69, vendredi: 1.38, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.19, mardi: 2.02, mercredi: 0.05, jeudi: 1.94, vendredi: 0.4, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 1.26, mardi: 4.18, mercredi: 4.23, jeudi: 4.19, vendredi: 2.11, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 16},
+{user: 10, works: [{project: 0, lundi: 3, mardi: 6, mercredi: 9, jeudi: 0, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 16},
+{user: 0, works: [{project: 4, lundi: 8, mardi: 3, mercredi: 2, jeudi: 2, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 17},
+{user: 1, works: [{project: 1, lundi: 0.82, mardi: 3.09, mercredi: 0.0, jeudi: 0.57, vendredi: 1.83, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.76, mardi: 0.36, mercredi: 0.0, jeudi: 1.87, vendredi: 2.66, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 17},
+{user: 2, works: [{project: 0, lundi: 7, mardi: 8, mercredi: 2, jeudi: 1, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 17},
+{user: 3, works: [{project: 6, lundi: 0.57, mardi: 1.37, mercredi: 3.43, jeudi: 0.39, vendredi: 2.71, samedi: 0.0, dimanche: 0.0}, {project: 6, lundi: 0.17, mardi: 1.25, mercredi: 3.06, jeudi: 0.37, vendredi: 0.4, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.57, mardi: 0.5, mercredi: 2.27, jeudi: 0.67, vendredi: 0.73, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 17},
+{user: 4, works: [{project: 2, lundi: 0.38, mardi: 3.48, mercredi: 2.11, jeudi: 0.0, vendredi: 2.18, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.53, mardi: 1.29, mercredi: 3.35, jeudi: 0.0, vendredi: 1.71, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 17},
+{user: 5, works: [{project: 2, lundi: 6, mardi: 8, mercredi: 1, jeudi: 1, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 17},
+{user: 6, works: [{project: 9, lundi: 0.0, mardi: 3.52, mercredi: 1.22, jeudi: 2.49, vendredi: 5.06, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 3.15, mercredi: 4.67, jeudi: 1.89, vendredi: 0.98, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 17},
+{user: 7, works: [{project: 7, lundi: 6, mardi: 2, mercredi: 8, jeudi: 1, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 17},
+{user: 8, works: [{project: 2, lundi: 4, mardi: 6, mercredi: 9, jeudi: 6, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 17},
+{user: 9, works: [{project: 3, lundi: 0.64, mardi: 0.48, mercredi: 0.0, jeudi: 1.2, vendredi: 1.26, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 0.85, mardi: 2.38, mercredi: 0.0, jeudi: 1.7, vendredi: 2.27, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.32, mardi: 1.6, mercredi: 0.0, jeudi: 2.55, vendredi: 2.22, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 17},
+{user: 10, works: [{project: 1, lundi: 8, mardi: 4, mercredi: 8, jeudi: 1, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 17},
+{user: 0, works: [{project: 4, lundi: 3, mardi: 5, mercredi: 0, jeudi: 5, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 18},,
+{user: 1, works: [{project: 1, lundi: 0.94, mardi: 0.47, mercredi: 1.66, jeudi: 0.43, vendredi: 0.54, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.14, mardi: 0.17, mercredi: 1.3, jeudi: 2.15, vendredi: 1.79, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 18},,
+{user: 2, works: [{project: 0, lundi: 4, mardi: 7, mercredi: 0, jeudi: 8, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 18},,
+{user: 3, works: [{project: 6, lundi: 2.97, mardi: 0.89, mercredi: 1.02, jeudi: 3.87, vendredi: 3.28, samedi: 0.0, dimanche: 0.0}, {project: 7, lundi: 1.46, mardi: 1.26, mercredi: 0.99, jeudi: 1.07, vendredi: 0.11, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.27, mardi: 1.33, mercredi: 0.97, jeudi: 1.07, vendredi: 2.61, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 18},,
+{user: 4, works: [{project: 2, lundi: 1.15, mardi: 0.0, mercredi: 0.95, jeudi: 0.15, vendredi: 0.06, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.06, mardi: 0.0, mercredi: 0.33, jeudi: 1.91, vendredi: 4.25, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 18},,
+{user: 5, works: [{project: 2, lundi: 5, mardi: 4, mercredi: 2, jeudi: 0, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 18},,
+{user: 6, works: [{project: 9, lundi: 0.94, mardi: 0.84, mercredi: 2.49, jeudi: 2.36, vendredi: 1.86, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.61, mardi: 0.8, mercredi: 1.02, jeudi: 0.92, vendredi: 2.07, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 18},,
+{user: 7, works: [{project: 7, lundi: 9, mardi: 7, mercredi: 4, jeudi: 5, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 18},,
+{user: 8, works: [{project: 2, lundi: 7, mardi: 4, mercredi: 8, jeudi: 2, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 18},,
+{user: 9, works: [{project: 3, lundi: 0.31, mardi: 1.09, mercredi: 1.94, jeudi: 0.7, vendredi: 0.61, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 1.43, mardi: 0.83, mercredi: 3.75, jeudi: 0.48, vendredi: 0.48, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 1.19, mardi: 0.6, mercredi: 0.88, jeudi: 0.36, vendredi: 0.43, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 18},,
+{user: 10, works: [{project: 1, lundi: 1, mardi: 6, mercredi: 8, jeudi: 7, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 18},,
+{user: 0, works: [{project: 4, lundi: 5, mardi: 6, mercredi: 0, jeudi: 1, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 19},
+{user: 1, works: [{project: 1, lundi: 0.15, mardi: 2.56, mercredi: 1.35, jeudi: 1.8, vendredi: 3.55, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.8, mardi: 1.64, mercredi: 2.98, jeudi: 0.78, vendredi: 0.96, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 19},
+{user: 2, works: [{project: 0, lundi: 0, mardi: 0, mercredi: 0, jeudi: 7, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 19},
+{user: 3, works: [{project: 6, lundi: 1.3, mardi: 1.49, mercredi: 0.0, jeudi: 0.31, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 0.69, mardi: 3.27, mercredi: 0.0, jeudi: 0.2, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.21, mardi: 1.69, mercredi: 0.0, jeudi: 0.18, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 19},
+{user: 4, works: [{project: 2, lundi: 1.52, mardi: 0.56, mercredi: 1.92, jeudi: 2.96, vendredi: 0.27, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 4.3, mardi: 0.33, mercredi: 0.77, jeudi: 0.06, vendredi: 0.93, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 19},
+{user: 5, works: [{project: 2, lundi: 1, mardi: 4, mercredi: 5, jeudi: 4, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 19},
+{user: 6, works: [{project: 9, lundi: 0.63, mardi: 0.0, mercredi: 3.66, jeudi: 1.28, vendredi: 0.17, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.63, mardi: 0.0, mercredi: 1.55, jeudi: 1.16, vendredi: 0.49, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 19},
+{user: 7, works: [{project: 7, lundi: 8, mardi: 1, mercredi: 8, jeudi: 5, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 19},
+{user: 8, works: [{project: 2, lundi: 0, mardi: 8, mercredi: 1, jeudi: 1, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 19},
+{user: 9, works: [{project: 3, lundi: 0.51, mardi: 0.68, mercredi: 0.56, jeudi: 1.97, vendredi: 1.09, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 0.85, mardi: 0.48, mercredi: 1.9, jeudi: 2.08, vendredi: 1.89, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 1.41, mardi: 1.7, mercredi: 1.74, jeudi: 0.98, vendredi: 2.2, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 19},
+{user: 10, works: [{project: 1, lundi: 9, mardi: 7, mercredi: 5, jeudi: 4, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 19},
+{user: 0, works: [{project: 4, lundi: 6, mardi: 3, mercredi: 6, jeudi: 3, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 20},
+{user: 1, works: [{project: 1, lundi: 1.38, mardi: 0.49, mercredi: 4.27, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.86, mardi: 0.4, mercredi: 1.66, jeudi: 4.97, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 20},
+{user: 2, works: [{project: 0, lundi: 7, mardi: 5, mercredi: 0, jeudi: 8, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 20},
+{user: 3, works: [{project: 6, lundi: 1.16, mardi: 1.11, mercredi: 0.35, jeudi: 1.86, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.39, mardi: 0.9, mercredi: 0.03, jeudi: 1.12, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.27, mardi: 0.68, mercredi: 0.29, jeudi: 1.47, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 20},
+{user: 4, works: [{project: 2, lundi: 2.32, mardi: 0.56, mercredi: 0.43, jeudi: 2.41, vendredi: 0.86, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.05, mardi: 0.07, mercredi: 1.04, jeudi: 2.51, vendredi: 0.34, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 20},
+{user: 5, works: [{project: 2, lundi: 1, mardi: 7, mercredi: 6, jeudi: 1, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 20},
+{user: 6, works: [{project: 9, lundi: 1.29, mardi: 1.35, mercredi: 0.12, jeudi: 2.3, vendredi: 1.13, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 3.25, mardi: 2.11, mercredi: 1.22, jeudi: 2.79, vendredi: 2.15, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 20},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 4, mercredi: 1, jeudi: 1, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 20},
+{user: 8, works: [{project: 2, lundi: 8, mardi: 8, mercredi: 7, jeudi: 2, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 20},
+{user: 9, works: [{project: 3, lundi: 1.13, mardi: 0.0, mercredi: 0.32, jeudi: 0.53, vendredi: 1.16, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 0.06, mardi: 0.0, mercredi: 0.21, jeudi: 0.9, vendredi: 1.55, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.38, mardi: 0.0, mercredi: 0.17, jeudi: 0.33, vendredi: 0.17, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 20},
+{user: 10, works: [{project: 1, lundi: 8, mardi: 2, mercredi: 4, jeudi: 9, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 20},
+{user: 0, works: [{project: 4, lundi: 8, mardi: 3, mercredi: 8, jeudi: 6, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 21},
+{user: 1, works: [{project: 1, lundi: 0.77, mardi: 0.45, mercredi: 1.6, jeudi: 4.01, vendredi: 1.47, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.47, mardi: 0.69, mercredi: 1.34, jeudi: 2.37, vendredi: 4.15, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 21},
+{user: 2, works: [{project: 0, lundi: 9, mardi: 1, mercredi: 7, jeudi: 5, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 21},
+{user: 3, works: [{project: 6, lundi: 1.29, mardi: 0.0, mercredi: 0.87, jeudi: 0.37, vendredi: 2.96, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 2.49, mardi: 0.0, mercredi: 0.05, jeudi: 1.15, vendredi: 2.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.58, mardi: 0.0, mercredi: 0.97, jeudi: 1.13, vendredi: 1.54, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 21},
+{user: 4, works: [{project: 2, lundi: 0.03, mardi: 0.43, mercredi: 1.8, jeudi: 4.37, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.95, mardi: 0.65, mercredi: 1.2, jeudi: 1.33, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 21},
+{user: 5, works: [{project: 2, lundi: 9, mardi: 3, mercredi: 6, jeudi: 0, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 21},
+{user: 6, works: [{project: 9, lundi: 2.21, mardi: 0.28, mercredi: 0.49, jeudi: 3.2, vendredi: 1.46, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.02, mardi: 0.93, mercredi: 0.19, jeudi: 3.2, vendredi: 0.68, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 21},
+{user: 7, works: [{project: 7, lundi: 0, mardi: 0, mercredi: 8, jeudi: 8, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 21},
+{user: 8, works: [{project: 2, lundi: 4, mardi: 5, mercredi: 1, jeudi: 9, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 21},
+{user: 9, works: [{project: 3, lundi: 0.55, mardi: 2.37, mercredi: 0.58, jeudi: 2.64, vendredi: 0.23, samedi: 0.0, dimanche: 0.0}, {project: 1, lundi: 0.41, mardi: 3.44, mercredi: 0.46, jeudi: 0.13, vendredi: 2.18, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.81, mardi: 2.11, mercredi: 0.03, jeudi: 2.48, vendredi: 1.59, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 21},
+{user: 10, works: [{project: 1, lundi: 2, mardi: 0, mercredi: 2, jeudi: 3, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 21},
+{user: 0, works: [{project: 4, lundi: 3, mardi: 4, mercredi: 3, jeudi: 6, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 22},
+{user: 1, works: [{project: 1, lundi: 0.26, mardi: 0.29, mercredi: 3.04, jeudi: 0.82, vendredi: 1.15, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.99, mardi: 0.83, mercredi: 2.43, jeudi: 0.39, vendredi: 5.41, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 22},
+{user: 2, works: [{project: 0, lundi: 0, mardi: 9, mercredi: 3, jeudi: 6, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 22},
+{user: 3, works: [{project: 6, lundi: 1.11, mardi: 0.85, mercredi: 0.61, jeudi: 0.47, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.04, mardi: 1.38, mercredi: 0.84, jeudi: 0.09, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.98, mardi: 1.26, mercredi: 0.89, jeudi: 1.06, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 22},
+{user: 4, works: [{project: 2, lundi: 1.16, mardi: 0.0, mercredi: 1.81, jeudi: 4.46, vendredi: 0.04, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.24, mardi: 0.0, mercredi: 2.18, jeudi: 3.02, vendredi: 0.65, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 22},
+{user: 5, works: [{project: 2, lundi: 5, mardi: 2, mercredi: 6, jeudi: 2, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 22},
+{user: 6, works: [{project: 9, lundi: 0.71, mardi: 2.36, mercredi: 0.97, jeudi: 0.31, vendredi: 1.44, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.56, mardi: 0.62, mercredi: 0.09, jeudi: 0.26, vendredi: 3.57, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 22},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 8, mercredi: 2, jeudi: 8, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 22},
+{user: 8, works: [{project: 2, lundi: 8, mardi: 1, mercredi: 2, jeudi: 7, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 22},
+{user: 9, works: [{project: 3, lundi: 0.46, mardi: 2.55, mercredi: 4.63, jeudi: 0.24, vendredi: 0.38, samedi: 0.0, dimanche: 0.0}, {project: 7, lundi: 0.0, mardi: 0.33, mercredi: 0.36, jeudi: 0.14, vendredi: 0.09, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.35, mardi: 4.39, mercredi: 0.95, jeudi: 0.42, vendredi: 0.27, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 22},
+{user: 10, works: [{project: 7, lundi: 6, mardi: 5, mercredi: 1, jeudi: 7, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 22},
+{user: 0, works: [{project: 4, lundi: 8, mardi: 7, mercredi: 5, jeudi: 1, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 23},
+{user: 1, works: [{project: 1, lundi: 2.13, mardi: 0.03, mercredi: 1.68, jeudi: 1.99, vendredi: 1.31, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.86, mardi: 2.41, mercredi: 1.33, jeudi: 2.54, vendredi: 0.16, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 23},
+{user: 2, works: [{project: 0, lundi: 9, mardi: 8, mercredi: 8, jeudi: 3, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 23},
+{user: 3, works: [{project: 6, lundi: 1.42, mardi: 1.27, mercredi: 0.85, jeudi: 0.24, vendredi: 1.98, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.29, mardi: 1.9, mercredi: 0.95, jeudi: 1.52, vendredi: 1.96, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.78, mardi: 0.35, mercredi: 0.36, jeudi: 2.1, vendredi: 0.22, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 23},
+{user: 4, works: [{project: 2, lundi: 0.0, mardi: 1.25, mercredi: 1.93, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 1.97, mercredi: 0.61, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 23},
+{user: 5, works: [{project: 2, lundi: 1, mardi: 9, mercredi: 4, jeudi: 9, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 23},
+{user: 6, works: [{project: 9, lundi: 0.88, mardi: 0.26, mercredi: 0.56, jeudi: 0.11, vendredi: 2.17, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.04, mardi: 0.63, mercredi: 0.25, jeudi: 2.36, vendredi: 0.97, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 23},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 4, mercredi: 7, jeudi: 8, vendredi: 3, samedi: 0, dimanche: 0}], year: 2019, week: 23},
+{user: 8, works: [{project: 2, lundi: 5, mardi: 3, mercredi: 0, jeudi: 4, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 23},
+{user: 9, works: [{project: 3, lundi: 0.35, mardi: 0.0, mercredi: 0.29, jeudi: 1.72, vendredi: 1.02, samedi: 0.0, dimanche: 0.0}, {project: 7, lundi: 0.23, mardi: 0.0, mercredi: 1.94, jeudi: 2.84, vendredi: 0.41, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.41, mardi: 0.0, mercredi: 0.34, jeudi: 2.35, vendredi: 2.58, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 23},
+{user: 10, works: [{project: 6, lundi: 0, mardi: 8, mercredi: 2, jeudi: 4, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 23},
+{user: 0, works: [{project: 4, lundi: 4, mardi: 2, mercredi: 5, jeudi: 9, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 24},
+{user: 1, works: [{project: 1, lundi: 0.19, mardi: 0.0, mercredi: 4.08, jeudi: 0.0, vendredi: 0.77, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.23, mardi: 0.0, mercredi: 1.27, jeudi: 0.0, vendredi: 1.48, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 24},
+{user: 2, works: [{project: 0, lundi: 0, mardi: 6, mercredi: 1, jeudi: 8, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 24},
+{user: 3, works: [{project: 6, lundi: 2.19, mardi: 3.81, mercredi: 0.15, jeudi: 0.31, vendredi: 2.01, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.43, mardi: 0.04, mercredi: 0.2, jeudi: 0.13, vendredi: 1.25, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.83, mardi: 0.99, mercredi: 0.39, jeudi: 0.0, vendredi: 1.4, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 24},
+{user: 4, works: [{project: 2, lundi: 0.0, mardi: 0.0, mercredi: 0.09, jeudi: 0.6, vendredi: 2.61, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.0, mardi: 0.0, mercredi: 0.54, jeudi: 4.01, vendredi: 1.81, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 24},
+{user: 5, works: [{project: 2, lundi: 2, mardi: 5, mercredi: 8, jeudi: 6, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 24},
+{user: 6, works: [{project: 9, lundi: 0.04, mardi: 1.1, mercredi: 0.0, jeudi: 1.43, vendredi: 0.16, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.52, mardi: 0.68, mercredi: 0.0, jeudi: 5.32, vendredi: 3.42, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 24},
+{user: 7, works: [{project: 7, lundi: 1, mardi: 7, mercredi: 0, jeudi: 0, vendredi: 8, samedi: 0, dimanche: 0}], year: 2019, week: 24},
+{user: 8, works: [{project: 2, lundi: 9, mardi: 3, mercredi: 4, jeudi: 9, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 24},
+{user: 9, works: [{project: 3, lundi: 1.66, mardi: 1.3, mercredi: 3.86, jeudi: 0.1, vendredi: 1.58, samedi: 0.0, dimanche: 0.0}, {project: 6, lundi: 2.36, mardi: 1.46, mercredi: 0.42, jeudi: 1.59, vendredi: 4.36, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 2.29, mardi: 1.3, mercredi: 0.52, jeudi: 1.27, vendredi: 0.28, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 24},
+{user: 10, works: [{project: 6, lundi: 7, mardi: 5, mercredi: 7, jeudi: 4, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 24},
+{user: 0, works: [{project: 4, lundi: 9, mardi: 1, mercredi: 9, jeudi: 4, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 25},
+{user: 1, works: [{project: 1, lundi: 2.13, mardi: 3.32, mercredi: 1.57, jeudi: 1.31, vendredi: 3.31, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 2.01, mardi: 3.78, mercredi: 3.59, jeudi: 2.19, vendredi: 0.44, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 25},
+{user: 2, works: [{project: 0, lundi: 3, mardi: 1, mercredi: 6, jeudi: 1, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 25},
+{user: 3, works: [{project: 6, lundi: 0.76, mardi: 2.17, mercredi: 0.0, jeudi: 0.71, vendredi: 0.15, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.14, mardi: 1.04, mercredi: 0.0, jeudi: 0.01, vendredi: 0.94, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.86, mardi: 2.0, mercredi: 0.0, jeudi: 0.65, vendredi: 2.1, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 25},
+{user: 4, works: [{project: 2, lundi: 2.5, mardi: 0.0, mercredi: 0.33, jeudi: 1.54, vendredi: 2.87, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.8, mardi: 0.0, mercredi: 0.38, jeudi: 1.6, vendredi: 2.12, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 25},
+{user: 5, works: [{project: 2, lundi: 2, mardi: 2, mercredi: 4, jeudi: 1, vendredi: 2, samedi: 0, dimanche: 0}], year: 2019, week: 25},
+{user: 6, works: [{project: 9, lundi: 1.38, mardi: 2.42, mercredi: 2.99, jeudi: 0.18, vendredi: 3.09, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.07, mardi: 1.01, mercredi: 2.48, jeudi: 0.63, vendredi: 1.01, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 25},
+{user: 7, works: [{project: 7, lundi: 6, mardi: 5, mercredi: 8, jeudi: 4, vendredi: 1, samedi: 0, dimanche: 0}], year: 2019, week: 25},
+{user: 8, works: [{project: 2, lundi: 1, mardi: 9, mercredi: 4, jeudi: 0, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 25},
+{user: 9, works: [{project: 3, lundi: 0.79, mardi: 0.0, mercredi: 0.19, jeudi: 1.34, vendredi: 0.96, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.26, mardi: 0.0, mercredi: 0.42, jeudi: 0.05, vendredi: 0.32, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.75, mardi: 0.0, mercredi: 0.02, jeudi: 2.44, vendredi: 3.2, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 25},
+{user: 10, works: [{project: 9, lundi: 8, mardi: 3, mercredi: 1, jeudi: 9, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 25},
+{user: 0, works: [{project: 4, lundi: 4, mardi: 3, mercredi: 8, jeudi: 6, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 26},
+{user: 1, works: [{project: 1, lundi: 0.89, mardi: 1.33, mercredi: 1.91, jeudi: 2.3, vendredi: 1.42, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.07, mardi: 0.46, mercredi: 0.87, jeudi: 1.2, vendredi: 1.34, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 26},
+{user: 2, works: [{project: 0, lundi: 5, mardi: 7, mercredi: 8, jeudi: 3, vendredi: 0, samedi: 0, dimanche: 0}], year: 2019, week: 26},
+{user: 3, works: [{project: 6, lundi: 1.73, mardi: 0.94, mercredi: 1.9, jeudi: 0.71, vendredi: 0.06, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.3, mardi: 2.87, mercredi: 0.36, jeudi: 1.68, vendredi: 1.06, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.84, mardi: 0.98, mercredi: 2.55, jeudi: 0.45, vendredi: 0.83, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 26},
+{user: 4, works: [{project: 2, lundi: 3.53, mardi: 0.74, mercredi: 0.48, jeudi: 0.0, vendredi: 0.0, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.19, mardi: 1.1, mercredi: 0.97, jeudi: 0.0, vendredi: 1.58, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 26},
+{user: 5, works: [{project: 2, lundi: 4, mardi: 5, mercredi: 5, jeudi: 4, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 26},
+{user: 6, works: [{project: 9, lundi: 0.63, mardi: 1.88, mercredi: 0.0, jeudi: 0.1, vendredi: 2.29, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.86, mardi: 2.72, mercredi: 0.0, jeudi: 1.48, vendredi: 3.36, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 26},
+{user: 7, works: [{project: 7, lundi: 9, mardi: 9, mercredi: 6, jeudi: 6, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 26},
+{user: 8, works: [{project: 2, lundi: 0, mardi: 0, mercredi: 6, jeudi: 2, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 26},
+{user: 9, works: [{project: 3, lundi: 3.07, mardi: 0.24, mercredi: 1.82, jeudi: 0.1, vendredi: 0.6, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.25, mardi: 0.82, mercredi: 1.32, jeudi: 0.71, vendredi: 0.83, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 2.67, mardi: 0.72, mercredi: 1.15, jeudi: 0.41, vendredi: 0.2, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 26},
+{user: 10, works: [{project: 9, lundi: 8, mardi: 0, mercredi: 8, jeudi: 7, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 26},
+{user: 0, works: [{project: 4, lundi: 2, mardi: 6, mercredi: 4, jeudi: 5, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 27},
+{user: 1, works: [{project: 1, lundi: 2.9, mardi: 3.14, mercredi: 2.42, jeudi: 1.12, vendredi: 1.81, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.25, mardi: 0.3, mercredi: 0.44, jeudi: 0.44, vendredi: 1.21, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 27},
+{user: 2, works: [{project: 0, lundi: 6, mardi: 7, mercredi: 7, jeudi: 6, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 27},
+{user: 3, works: [{project: 6, lundi: 0.31, mardi: 0.67, mercredi: 1.17, jeudi: 1.91, vendredi: 1.28, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.81, mardi: 1.42, mercredi: 0.74, jeudi: 0.57, vendredi: 1.57, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.16, mardi: 1.06, mercredi: 0.68, jeudi: 0.69, vendredi: 1.53, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 27},
+{user: 4, works: [{project: 2, lundi: 3.66, mardi: 1.49, mercredi: 0.16, jeudi: 3.04, vendredi: 0.86, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 4.17, mardi: 1.33, mercredi: 0.99, jeudi: 1.89, vendredi: 1.53, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 27},
+{user: 5, works: [{project: 2, lundi: 7, mardi: 6, mercredi: 2, jeudi: 1, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 27},
+{user: 6, works: [{project: 9, lundi: 0.72, mardi: 0.81, mercredi: 1.62, jeudi: 0.7, vendredi: 2.35, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.18, mardi: 1.37, mercredi: 2.19, jeudi: 2.16, vendredi: 0.69, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 27},
+{user: 7, works: [{project: 7, lundi: 4, mardi: 6, mercredi: 6, jeudi: 2, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 27},
+{user: 8, works: [{project: 2, lundi: 0, mardi: 3, mercredi: 4, jeudi: 6, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 27},
+{user: 9, works: [{project: 3, lundi: 0.48, mardi: 0.24, mercredi: 1.06, jeudi: 0.47, vendredi: 1.55, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 3.1, mardi: 0.23, mercredi: 0.08, jeudi: 0.76, vendredi: 0.7, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 0.9, mardi: 0.26, mercredi: 1.1, jeudi: 2.7, vendredi: 0.36, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 27},
+{user: 10, works: [{project: 8, lundi: 9, mardi: 7, mercredi: 6, jeudi: 0, vendredi: 4, samedi: 0, dimanche: 0}], year: 2019, week: 27},
+{user: 0, works: [{project: 4, lundi: 5, mardi: 1, mercredi: 1, jeudi: 2, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 28},
+{user: 1, works: [{project: 1, lundi: 3.55, mardi: 0.57, mercredi: 0.0, jeudi: 0.52, vendredi: 0.13, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 1.77, mardi: 2.2, mercredi: 0.0, jeudi: 0.43, vendredi: 0.8, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 28},
+{user: 2, works: [{project: 0, lundi: 4, mardi: 2, mercredi: 9, jeudi: 6, vendredi: 5, samedi: 0, dimanche: 0}], year: 2019, week: 28},
+{user: 3, works: [{project: 6, lundi: 1.7, mardi: 1.82, mercredi: 0.21, jeudi: 2.1, vendredi: 0.36, samedi: 0.0, dimanche: 0.0}, {project: 9, lundi: 0.68, mardi: 0.85, mercredi: 0.73, jeudi: 0.12, vendredi: 0.68, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 2.55, mardi: 0.97, mercredi: 3.85, jeudi: 3.65, vendredi: 0.68, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 28},
+{user: 4, works: [{project: 2, lundi: 1.1, mardi: 2.0, mercredi: 4.1, jeudi: 2.13, vendredi: 4.07, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 1.7, mardi: 0.58, mercredi: 2.05, jeudi: 0.37, vendredi: 0.27, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 28},
+{user: 5, works: [{project: 2, lundi: 1, mardi: 8, mercredi: 1, jeudi: 5, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 28},
+{user: 6, works: [{project: 9, lundi: 0.4, mardi: 0.0, mercredi: 3.3, jeudi: 0.66, vendredi: 2.22, samedi: 0.0, dimanche: 0.0}, {project: 5, lundi: 0.4, mardi: 0.0, mercredi: 1.2, jeudi: 2.45, vendredi: 1.56, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 28},
+{user: 7, works: [{project: 7, lundi: 8, mardi: 5, mercredi: 5, jeudi: 3, vendredi: 6, samedi: 0, dimanche: 0}], year: 2019, week: 28},
+{user: 8, works: [{project: 2, lundi: 8, mardi: 1, mercredi: 7, jeudi: 3, vendredi: 7, samedi: 0, dimanche: 0}], year: 2019, week: 28},
+{user: 9, works: [{project: 3, lundi: 1.38, mardi: 1.46, mercredi: 2.17, jeudi: 0.29, vendredi: 0.31, samedi: 0.0, dimanche: 0.0}, {project: 8, lundi: 3.26, mardi: 1.56, mercredi: 0.94, jeudi: 0.59, vendredi: 1.31, samedi: 0.0, dimanche: 0.0}, {project: 0, lundi: 2.72, mardi: 1.69, mercredi: 1.39, jeudi: 0.42, vendredi: 1.15, samedi: 0.0, dimanche: 0.0}], year: 2019, week: 28},
+{user: 10, works: [{project: 8, lundi: 2, mardi: 8, mercredi: 7, jeudi: 8, vendredi: 9, samedi: 0, dimanche: 0}], year: 2019, week: 28}]
+  // {
+  //   user: 2,
+  //   works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.4268 }, { project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.4268 }],
+  //   year: 2019,
+  //   week: 3
+  // },
+  // {
+  //   user: 4,
+  //   works: [{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 }],
+  //   year: 2019,
+  //   week: 31
+  // },
+  // {
+  //   user: 7,
+  //   works: [{ project: 0,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.5665 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 }],
+  //   year: 2019,
+  //   week: 16
+  // },
+  // {
+  //   user: 6,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.5357 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 49
+  // },
+  // {
+  //   user: 6,
+  //   works: [{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.3815 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 47
+  // },
+  // {
+  //   user: 1,
+  //   works: [{ project: 0,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4648 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 26
+  // },
+  // {
+  //   user: 0,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.3896 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 12
+  // },
+  // {
+  //   user: 4,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.3258 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 16
+  // },
+  // {
+  //   user: 1,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.6671 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 37
+  // },
+  // {
+  //   user: 4,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.8897 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 34
+  // },
+  // {
+  //   user: 3,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.0771 },{ project: 8,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.3749 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 43
+  // },
+  // {
+  //   user: 3,
+  //   works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.65 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 2
+  // },
+  // {
+  //   user: 9,
+  //   works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.1945 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 30
+  // },
+  // {
+  //   user: 1,
+  //   works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 4.2056 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 4
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 27
+  // },
+  // {
+  //   user: 1,
+  //   works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.886 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 43
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.2199 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 39
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 0,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.8415 },{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.4655 }],
+  //   year: 2019,
+  //   week: 6
+  // },
+  // {
+  //   user: 6,
+  //   works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.3904 }],
+  //   year: 2019,
+  //   week: 6
+  // },
+  // {
+  //   user: 4,
+  //   works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.4256 }],
+  //   year: 2019,
+  //   week: 26
+  // },
+  // {
+  //   user: 9,
+  //   works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.2173 }],
+  //   year: 2019,
+  //   week: 11
+  // },
+  // {
+  //   user: 6,
+  //   works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.4524 }],
+  //   year: 2019,
+  //   week: 30
+  // },
+  // {
+  //   user: 9,
+  //   works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.8441 }],
+  //   year: 2019,
+  //   week: 47
+  // },
+  // {
+  //   user: 4,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.9179 }],
+  //   year: 2019,
+  //   week: 9
+  // },
+  // {
+  //   user: 5,
+  //   works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.2201 }],
+  //   year: 2019,
+  //   week: 18
+  // },
+  // {
+  //   user: 1,
+  //   works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.1829 }],
+  //   year: 2019,
+  //   week: 37
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.797 }],
+  //   year: 2019,
+  //   week: 38
+  // },
+  // {
+  //   user: 1,
+  //   works: [{ project: 6,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.2511 }],
+  //   year: 2019,
+  //   week: 38
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.7191 }],
+  //   year: 2019,
+  //   week: 25
+  // },
+  // {
+  //   user: 2,
+  //   works: [{ project: 1,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.8723 }],
+  //   year: 2019,
+  //   week: 11
+  // },
+  // {
+  //   user: 2,
+  //   works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.262 }],
+  //   year: 2019,
+  //   week: 44
+  // },
+  // {
+  //   user: 3,
+  //   works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.4502 }],
+  //   year: 2019,
+  //   week: 38
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 3,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.692 }],
+  //   year: 2019,
+  //   week: 39
+  // },
+  // {
+  //   user: 5,
+  //   works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.3692 }],
+  //   year: 2019,
+  //   week: 49
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.4424 }],
+  //   year: 2019,
+  //   week: 7
+  // },
+  // {
+  //   user: 5,
+  //   works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 2.9586 }],
+  //   year: 2019,
+  //   week: 37
+  // },
+  // {
+  //   user: 2,
+  //   works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.1713 }],
+  //   year: 2019,
+  //   week: 40
+  // },
+  // {
+  //   user: 7,
+  //   works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.9194 }],
+  //   year: 2019,
+  //   week: 48
+  // },
+  // {
+  //   user: 4,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.0015 }],
+  //   year: 2019,
+  //   week: 40
+  // },
+  // {
+  //   user: 0,
+  //   works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.0509 }],
+  //   year: 2019,
+  //   week: 29
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.6029 }],
+  //   year: 2019,
+  //   week: 9
+  // },
+  // {
+  //   user: 0,
+  //   works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 3.5234 }],
+  //   year: 2019,
+  //   week: 37
+  // },
+  // {
+  //   user: 5,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.8631 },{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 6.8631 }],
+  //   year: 2019,
+  //   week: 44
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 4,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.3096 }],
+  //   year: 2019,
+  //   week: 21
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 2,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 5.5078 }],
+  //   year: 2019,
+  //   week: 31
+  // },
+  // {
+  //   user: 3,
+  //   works: [{ project: 5,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.7287 }],
+  //   year: 2019,
+  //   week: 7
+  // },
+  // {
+  //   user: 3,
+  //   works: [{ project: 9,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 1.1709 }],
+  //   year: 2019,
+  //   week: 2
+  // },
+  // {
+  //   user: 8,
+  //   works: [{ project: 7,mardi:0, mercredi:0, jeudi:0, vendredi :0, samedi : 0, dimanche :0, lundi: 0.8904 }],
+  //   year: 2019,
+  //   week: 27
+  // }];

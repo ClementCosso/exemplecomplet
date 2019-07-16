@@ -277,165 +277,166 @@ class NewTimesheets extends Component {
             </div>
           </div>
         </div>
-
-        <div className="TimesheetsTable">
-          <Table
-            columns={[
-              {
-                title: "Nom du projet",
-                dataIndex: "name",
-                width: 400,
-                key: "name",
-                render: (text, record) => (
-                  <Select
-                    id={record.name}
-                    style={{ width: "100%" }}
-                    onChange={e => this.handleProjectChange(record.key, e)}
-                    showSearch
-                    placeholder="Projet"
-                    optionFilterProp="children"
-                    filterOption={(input, option) =>
-                      option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
-                    }
-                  >
-                    {this.state.projects.map(e => {
-                      return (
-                        <Option key={e._id} value={e._id}>
-                          {e.title}
-                        </Option>
-                      );
-                    })}
-                  </Select>
-                )
-              },
-              {
-                title: "Lundi",
-                dataIndex: "lundi",
-                key: "lundi",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      value={work.lundi}
-                      min={0}
-                      max={12}
-                      onChange={e => this.handlelundiChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Mardi",
-                dataIndex: "mardi",
-                key: "mardi",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      value={work.mardi}
-                      min={0}
-                      max={12}
-                      onChange={e => this.handlemardiChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Mercredi",
-                dataIndex: "mercredi",
-                key: "mercredi",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      min={0}
-                      value={work.mercredi}
-                      max={12}
-                      onChange={e => this.handlemercrediChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Jeudi",
-                dataIndex: "jeudi",
-                key: "jeudi",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      value={work.jeudi}
-                      min={0}
-                      max={12}
-                      onChange={e => this.handlejeudiChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Vendredi",
-                dataIndex: "vendredi",
-                key: "vendredi",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      value={work.vendredi}
-                      min={0}
-                      max={12}
-                      onChange={e => this.handlevendrediChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Samedi",
-                dataIndex: "samedi",
-                key: "samedi",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      value={work.samedi}
-                      min={0}
-                      max={12}
-                      onChange={e => this.handlesamediChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Dimanche",
-                dataIndex: "dimanche",
-                key: "dimanche",
-                render: (name, work) => {
-                  return (
-                    <InputNumber
-                      value={work.dimanche}
-                      min={0}
-                      max={12}
-                      onChange={e => this.handledimancheChange(work.key, e)}
-                    />
-                  );
-                }
-              },
-              {
-                title: "Supprimer",
-                key: "action",
-
-                width: 70,
-                render: (text, record) => (
-                  <span>
-                    <Link>
-                      <Icon
-                        onClick={() => {
-                          this.deleteWork(record.key);
-                        }}
-                        type="delete"
+        <div className="TimesheetsPage">
+          <div className="TimesheetsTable">
+            <Table
+              columns={[
+                {
+                  title: "Nom du projet",
+                  dataIndex: "name",
+                  width: 400,
+                  key: "name",
+                  render: (text, record) => (
+                    <Select
+                      id={record.name}
+                      style={{ width: "100%" }}
+                      onChange={e => this.handleProjectChange(record.key, e)}
+                      showSearch
+                      placeholder="Projet"
+                      optionFilterProp="children"
+                      filterOption={(input, option) =>
+                        option.props.children
+                          .toLowerCase()
+                          .indexOf(input.toLowerCase()) >= 0
+                      }
+                    >
+                      {this.state.projects.map(e => {
+                        return (
+                          <Option key={e._id} value={e._id}>
+                            {e.title}
+                          </Option>
+                        );
+                      })}
+                    </Select>
+                  )
+                },
+                {
+                  title: "Lundi",
+                  dataIndex: "lundi",
+                  key: "lundi",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        value={work.lundi}
+                        min={0}
+                        max={12}
+                        onChange={e => this.handlelundiChange(work.key, e)}
                       />
-                    </Link>
-                  </span>
-                )
-              }
-            ]}
-            dataSource={DataSource}
-          />
+                    );
+                  }
+                },
+                {
+                  title: "Mardi",
+                  dataIndex: "mardi",
+                  key: "mardi",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        value={work.mardi}
+                        min={0}
+                        max={12}
+                        onChange={e => this.handlemardiChange(work.key, e)}
+                      />
+                    );
+                  }
+                },
+                {
+                  title: "Mercredi",
+                  dataIndex: "mercredi",
+                  key: "mercredi",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        min={0}
+                        value={work.mercredi}
+                        max={12}
+                        onChange={e => this.handlemercrediChange(work.key, e)}
+                      />
+                    );
+                  }
+                },
+                {
+                  title: "Jeudi",
+                  dataIndex: "jeudi",
+                  key: "jeudi",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        value={work.jeudi}
+                        min={0}
+                        max={12}
+                        onChange={e => this.handlejeudiChange(work.key, e)}
+                      />
+                    );
+                  }
+                },
+                {
+                  title: "Vendredi",
+                  dataIndex: "vendredi",
+                  key: "vendredi",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        value={work.vendredi}
+                        min={0}
+                        max={12}
+                        onChange={e => this.handlevendrediChange(work.key, e)}
+                      />
+                    );
+                  }
+                },
+                {
+                  title: "Samedi",
+                  dataIndex: "samedi",
+                  key: "samedi",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        value={work.samedi}
+                        min={0}
+                        max={12}
+                        onChange={e => this.handlesamediChange(work.key, e)}
+                      />
+                    );
+                  }
+                },
+                {
+                  title: "Dimanche",
+                  dataIndex: "dimanche",
+                  key: "dimanche",
+                  render: (name, work) => {
+                    return (
+                      <InputNumber
+                        value={work.dimanche}
+                        min={0}
+                        max={12}
+                        onChange={e => this.handledimancheChange(work.key, e)}
+                      />
+                    );
+                  }
+                },
+                {
+                  title: "Supprimer",
+                  key: "action",
+
+                  width: 70,
+                  render: (text, record) => (
+                    <span>
+                      <Link>
+                        <Icon
+                          onClick={() => {
+                            this.deleteWork(record.key);
+                          }}
+                          type="delete"
+                        />
+                      </Link>
+                    </span>
+                  )
+                }
+              ]}
+              dataSource={DataSource}
+            />
+          </div>
         </div>
       </div>
     );

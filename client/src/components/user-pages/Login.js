@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
-import { Icon, Input, Button } from "antd";
-import image from "../../../src/teamwork.svg";
-
+import { Icon, Input, Button, Typography, Carousel } from "antd";
+import image1 from "../../../src/teamwork.svg";
+import image2 from "../../../src/growth.svg";
+import image3 from "../../../src/calendar.svg";
+import image4 from "../../../src/rocket-launch.svg";
+const { Text } = Typography;
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -80,18 +83,23 @@ class Login extends Component {
                   onPressEnter={event => this.handleSubmit(event)}
                 />
               </div>
-              <Button
-                type="primary"
-                shape="round"
-                icon="login"
-                onClick={event => this.handleSubmit(event)}
-              >
-                Log In
-              </Button>
-              {this.state.message && <div> {this.state.message} </div>}
+
+              <div>
+                <Button
+                  className="login-input login-btn"
+                  type="primary"
+                  shape="round"
+                  icon="login"
+                  onClick={event => this.handleSubmit(event)}
+                >
+                  Log In
+                </Button>
+
+                {this.state.message && <div> {this.state.message} </div>}
+              </div>
             </div>
             <div className="login-image">
-              <img src={image} />
+              <img src={image1} />
             </div>
           </section>
         </form>
